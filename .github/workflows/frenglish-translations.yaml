@@ -4,8 +4,8 @@ on:
   push:
     branches:
       - '**' # Trigger on push to any branch
-  permissions: # <-- Control what the automatic GITHUB_TOKEN can do
-    contents: read
+permissions: # <-- Control what the automatic GITHUB_TOKEN can do
+  contents: read
 
 jobs:
   translate_and_format:
