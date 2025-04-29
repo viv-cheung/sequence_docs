@@ -29,7 +29,7 @@ jobs:
         run: |
           # Ensure you have a package.json and package-lock.json
           # Add @frenglish/sdk to your package.json: npm install @frenglish/sdk --save
-          npm ci # Use 'ci' for faster, more reliable installs in CI
+          npm install
 
       - name: Setup Git User
         run: |
