@@ -1,5 +1,4 @@
-
-import FrenglishSDK from '@frenglish/sdk'
+const FrenglishSDK = require('@frenglish/sdk');
 
 async function fetchConfigAndSetOutputs() {
   const apiKey = process.env.FRENGLISH_API_KEY;
