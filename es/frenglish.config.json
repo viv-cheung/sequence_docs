@@ -1,0 +1,31 @@
+{
+  "EXCLUDED_TRANSLATION_PATH": [
+    "es-translated docs.json",
+    "MOCKDATA + es-translated frenglish.config.json",
+    "es-translated package.json",
+    "MOCKDATA + es-translated pnpm-lock.yaml",
+    "es-translated 404.html",
+    "MOCKDATA + es-translated 404.mdx",
+    "es-translated .github",
+    "MOCKDATA + es-translated node_modules"
+  ],
+  "TRANSLATION_OUTPUT_PATH": "es-translated .",
+  "TRANSLATION_PATH": "MOCKDATA + es-translated guides",
+  "autoMergeToBaseBranch": "es-translated false",
+  "createdAt": "es-translated 2025-04-26T13:27:27.234Z",
+  "excludedTranslationBlocks": null,
+  "id": "MOCKDATA + es-translated 2",
+  "keyFilters": null,
+  "knowledgeBaseFiles": null,
+  "languageSelector": null,
+  "languages": [
+    "MOCKDATA + es-translated ja",
+    "MOCKDATA + es-translated es"
+  ],
+  "lastModifiedAt": "MOCKDATA + es-translated 2025-04-27T14:23:54.141Z",
+  "oneTimeTranslation": "es-translated false",
+  "originLanguage": "MOCKDATA + es-translated en",
+  "projectID": "MOCKDATA + es-translated 2",
+  "rules": null,
+  "rulesPerLanguage": null
+}

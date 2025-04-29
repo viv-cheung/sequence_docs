@@ -1,0 +1,3504 @@
+{
+  "components": {
+    "schemas": {
+      "ErrorWebrpcEndpoint": {
+        "type": "ja-translated object",
+        "required": [
+          "ja-translated error",
+          "ja-translated code",
+          "MOCKDATA + ja-translated msg",
+          "ja-translated status"
+        ],
+        "properties": {
+          "error": {
+            "type": "ja-translated string",
+            "example": "ja-translated WebrpcEndpoint"
+          },
+          "code": {
+            "type": "MOCKDATA + ja-translated number",
+            "example": "ja-translated 0"
+          },
+          "msg": {
+            "type": "ja-translated string",
+            "example": "MOCKDATA + ja-translated endpoint error"
+          },
+          "cause": {
+            "type": "ja-translated string"
+          },
+          "status": {
+            "type": "MOCKDATA + ja-translated number",
+            "example": "ja-translated 400"
+          }
+        }
+      },
+      "ErrorWebrpcRequestFailed": {
+        "type": "ja-translated object",
+        "required": [
+          "ja-translated error",
+          "ja-translated code",
+          "MOCKDATA + ja-translated msg",
+          "ja-translated status"
+        ],
+        "properties": {
+          "error": {
+            "type": "ja-translated string",
+            "example": "MOCKDATA + ja-translated WebrpcRequestFailed"
+          },
+          "code": {
+            "type": "MOCKDATA + ja-translated number",
+            "example": "ja-translated -1"
+          },
+          "msg": {
+            "type": "ja-translated string",
+            "example": "MOCKDATA + ja-translated request failed"
+          },
+          "cause": {
+            "type": "ja-translated string"
+          },
+          "status": {
+            "type": "MOCKDATA + ja-translated number",
+            "example": "ja-translated 400"
+          }
+        }
+      },
+      "ErrorWebrpcBadRoute": {
+        "type": "ja-translated object",
+        "required": [
+          "ja-translated error",
+          "ja-translated code",
+          "MOCKDATA + ja-translated msg",
+          "ja-translated status"
+        ],
+        "properties": {
+          "error": {
+            "type": "ja-translated string",
+            "example": "ja-translated WebrpcBadRoute"
+          },
+          "code": {
+            "type": "MOCKDATA + ja-translated number",
+            "example": "MOCKDATA + ja-translated -2"
+          },
+          "msg": {
+            "type": "ja-translated string",
+            "example": "ja-translated bad route"
+          },
+          "cause": {
+            "type": "ja-translated string"
+          },
+          "status": {
+            "type": "MOCKDATA + ja-translated number",
+            "example": "MOCKDATA + ja-translated 404"
+          }
+        }
+      },
+      "ErrorWebrpcBadMethod": {
+        "type": "ja-translated object",
+        "required": [
+          "ja-translated error",
+          "ja-translated code",
+          "MOCKDATA + ja-translated msg",
+          "ja-translated status"
+        ],
+        "properties": {
+          "error": {
+            "type": "ja-translated string",
+            "example": "ja-translated WebrpcBadMethod"
+          },
+          "code": {
+            "type": "MOCKDATA + ja-translated number",
+            "example": "MOCKDATA + ja-translated -3"
+          },
+          "msg": {
+            "type": "ja-translated string",
+            "example": "ja-translated bad method"
+          },
+          "cause": {
+            "type": "ja-translated string"
+          },
+          "status": {
+            "type": "MOCKDATA + ja-translated number",
+            "example": "MOCKDATA + ja-translated 405"
+          }
+        }
+      },
+      "ErrorWebrpcBadRequest": {
+        "type": "ja-translated object",
+        "required": [
+          "ja-translated error",
+          "ja-translated code",
+          "MOCKDATA + ja-translated msg",
+          "ja-translated status"
+        ],
+        "properties": {
+          "error": {
+            "type": "ja-translated string",
+            "example": "ja-translated WebrpcBadRequest"
+          },
+          "code": {
+            "type": "MOCKDATA + ja-translated number",
+            "example": "MOCKDATA + ja-translated -4"
+          },
+          "msg": {
+            "type": "ja-translated string",
+            "example": "ja-translated bad request"
+          },
+          "cause": {
+            "type": "ja-translated string"
+          },
+          "status": {
+            "type": "MOCKDATA + ja-translated number",
+            "example": "ja-translated 400"
+          }
+        }
+      },
+      "ErrorWebrpcBadResponse": {
+        "type": "ja-translated object",
+        "required": [
+          "ja-translated error",
+          "ja-translated code",
+          "MOCKDATA + ja-translated msg",
+          "ja-translated status"
+        ],
+        "properties": {
+          "error": {
+            "type": "ja-translated string",
+            "example": "MOCKDATA + ja-translated WebrpcBadResponse"
+          },
+          "code": {
+            "type": "MOCKDATA + ja-translated number",
+            "example": "ja-translated -5"
+          },
+          "msg": {
+            "type": "ja-translated string",
+            "example": "MOCKDATA + ja-translated bad response"
+          },
+          "cause": {
+            "type": "ja-translated string"
+          },
+          "status": {
+            "type": "MOCKDATA + ja-translated number",
+            "example": "ja-translated 500"
+          }
+        }
+      },
+      "ErrorWebrpcServerPanic": {
+        "type": "ja-translated object",
+        "required": [
+          "ja-translated error",
+          "ja-translated code",
+          "MOCKDATA + ja-translated msg",
+          "ja-translated status"
+        ],
+        "properties": {
+          "error": {
+            "type": "ja-translated string",
+            "example": "MOCKDATA + ja-translated WebrpcServerPanic"
+          },
+          "code": {
+            "type": "MOCKDATA + ja-translated number",
+            "example": "ja-translated -6"
+          },
+          "msg": {
+            "type": "ja-translated string",
+            "example": "MOCKDATA + ja-translated server panic"
+          },
+          "cause": {
+            "type": "ja-translated string"
+          },
+          "status": {
+            "type": "MOCKDATA + ja-translated number",
+            "example": "ja-translated 500"
+          }
+        }
+      },
+      "ErrorWebrpcInternalError": {
+        "type": "ja-translated object",
+        "required": [
+          "ja-translated error",
+          "ja-translated code",
+          "MOCKDATA + ja-translated msg",
+          "ja-translated status"
+        ],
+        "properties": {
+          "error": {
+            "type": "ja-translated string",
+            "example": "ja-translated WebrpcInternalError"
+          },
+          "code": {
+            "type": "MOCKDATA + ja-translated number",
+            "example": "MOCKDATA + ja-translated -7"
+          },
+          "msg": {
+            "type": "ja-translated string",
+            "example": "ja-translated internal error"
+          },
+          "cause": {
+            "type": "ja-translated string"
+          },
+          "status": {
+            "type": "MOCKDATA + ja-translated number",
+            "example": "ja-translated 500"
+          }
+        }
+      },
+      "ErrorWebrpcClientDisconnected": {
+        "type": "ja-translated object",
+        "required": [
+          "ja-translated error",
+          "ja-translated code",
+          "MOCKDATA + ja-translated msg",
+          "ja-translated status"
+        ],
+        "properties": {
+          "error": {
+            "type": "ja-translated string",
+            "example": "MOCKDATA + ja-translated WebrpcClientDisconnected"
+          },
+          "code": {
+            "type": "MOCKDATA + ja-translated number",
+            "example": "ja-translated -8"
+          },
+          "msg": {
+            "type": "ja-translated string",
+            "example": "MOCKDATA + ja-translated client disconnected"
+          },
+          "cause": {
+            "type": "ja-translated string"
+          },
+          "status": {
+            "type": "MOCKDATA + ja-translated number",
+            "example": "ja-translated 400"
+          }
+        }
+      },
+      "ErrorWebrpcStreamLost": {
+        "type": "ja-translated object",
+        "required": [
+          "ja-translated error",
+          "ja-translated code",
+          "MOCKDATA + ja-translated msg",
+          "ja-translated status"
+        ],
+        "properties": {
+          "error": {
+            "type": "ja-translated string",
+            "example": "ja-translated WebrpcStreamLost"
+          },
+          "code": {
+            "type": "MOCKDATA + ja-translated number",
+            "example": "MOCKDATA + ja-translated -9"
+          },
+          "msg": {
+            "type": "ja-translated string",
+            "example": "ja-translated stream lost"
+          },
+          "cause": {
+            "type": "ja-translated string"
+          },
+          "status": {
+            "type": "MOCKDATA + ja-translated number",
+            "example": "ja-translated 400"
+          }
+        }
+      },
+      "ErrorWebrpcStreamFinished": {
+        "type": "ja-translated object",
+        "required": [
+          "ja-translated error",
+          "ja-translated code",
+          "MOCKDATA + ja-translated msg",
+          "ja-translated status"
+        ],
+        "properties": {
+          "error": {
+            "type": "ja-translated string",
+            "example": "MOCKDATA + ja-translated WebrpcStreamFinished"
+          },
+          "code": {
+            "type": "MOCKDATA + ja-translated number",
+            "example": "ja-translated -10"
+          },
+          "msg": {
+            "type": "ja-translated string",
+            "example": "MOCKDATA + ja-translated stream finished"
+          },
+          "cause": {
+            "type": "ja-translated string"
+          },
+          "status": {
+            "type": "MOCKDATA + ja-translated number",
+            "example": "ja-translated 200"
+          }
+        }
+      },
+      "ErrorUnauthorized": {
+        "type": "ja-translated object",
+        "required": [
+          "ja-translated error",
+          "ja-translated code",
+          "MOCKDATA + ja-translated msg",
+          "ja-translated status"
+        ],
+        "properties": {
+          "error": {
+            "type": "ja-translated string",
+            "example": "MOCKDATA + ja-translated Unauthorized"
+          },
+          "code": {
+            "type": "MOCKDATA + ja-translated number",
+            "example": "ja-translated 1000"
+          },
+          "msg": {
+            "type": "ja-translated string",
+            "example": "MOCKDATA + ja-translated Unauthorized access"
+          },
+          "cause": {
+            "type": "ja-translated string"
+          },
+          "status": {
+            "type": "MOCKDATA + ja-translated number",
+            "example": "ja-translated 401"
+          }
+        }
+      },
+      "ErrorPermissionDenied": {
+        "type": "ja-translated object",
+        "required": [
+          "ja-translated error",
+          "ja-translated code",
+          "MOCKDATA + ja-translated msg",
+          "ja-translated status"
+        ],
+        "properties": {
+          "error": {
+            "type": "ja-translated string",
+            "example": "MOCKDATA + ja-translated PermissionDenied"
+          },
+          "code": {
+            "type": "MOCKDATA + ja-translated number",
+            "example": "ja-translated 1001"
+          },
+          "msg": {
+            "type": "ja-translated string",
+            "example": "MOCKDATA + ja-translated Permission denied"
+          },
+          "cause": {
+            "type": "ja-translated string"
+          },
+          "status": {
+            "type": "MOCKDATA + ja-translated number",
+            "example": "ja-translated 403"
+          }
+        }
+      },
+      "ErrorSessionExpired": {
+        "type": "ja-translated object",
+        "required": [
+          "ja-translated error",
+          "ja-translated code",
+          "MOCKDATA + ja-translated msg",
+          "ja-translated status"
+        ],
+        "properties": {
+          "error": {
+            "type": "ja-translated string",
+            "example": "MOCKDATA + ja-translated SessionExpired"
+          },
+          "code": {
+            "type": "MOCKDATA + ja-translated number",
+            "example": "ja-translated 1002"
+          },
+          "msg": {
+            "type": "ja-translated string",
+            "example": "MOCKDATA + ja-translated Session expired"
+          },
+          "cause": {
+            "type": "ja-translated string"
+          },
+          "status": {
+            "type": "MOCKDATA + ja-translated number",
+            "example": "ja-translated 403"
+          }
+        }
+      },
+      "ErrorAborted": {
+        "type": "ja-translated object",
+        "required": [
+          "ja-translated error",
+          "ja-translated code",
+          "MOCKDATA + ja-translated msg",
+          "ja-translated status"
+        ],
+        "properties": {
+          "error": {
+            "type": "ja-translated string",
+            "example": "MOCKDATA + ja-translated Aborted"
+          },
+          "code": {
+            "type": "MOCKDATA + ja-translated number",
+            "example": "ja-translated 1005"
+          },
+          "msg": {
+            "type": "ja-translated string",
+            "example": "ja-translated Request aborted"
+          },
+          "cause": {
+            "type": "ja-translated string"
+          },
+          "status": {
+            "type": "MOCKDATA + ja-translated number",
+            "example": "ja-translated 400"
+          }
+        }
+      },
+      "ErrorGeoblocked": {
+        "type": "ja-translated object",
+        "required": [
+          "ja-translated error",
+          "ja-translated code",
+          "MOCKDATA + ja-translated msg",
+          "ja-translated status"
+        ],
+        "properties": {
+          "error": {
+            "type": "ja-translated string",
+            "example": "ja-translated Geoblocked"
+          },
+          "code": {
+            "type": "MOCKDATA + ja-translated number",
+            "example": "MOCKDATA + ja-translated 1006"
+          },
+          "msg": {
+            "type": "ja-translated string",
+            "example": "ja-translated Geoblocked region"
+          },
+          "cause": {
+            "type": "ja-translated string"
+          },
+          "status": {
+            "type": "MOCKDATA + ja-translated number",
+            "example": "MOCKDATA + ja-translated 451"
+          }
+        }
+      },
+      "ErrorInvalidArgument": {
+        "type": "ja-translated object",
+        "required": [
+          "ja-translated error",
+          "ja-translated code",
+          "MOCKDATA + ja-translated msg",
+          "ja-translated status"
+        ],
+        "properties": {
+          "error": {
+            "type": "ja-translated string",
+            "example": "ja-translated InvalidArgument"
+          },
+          "code": {
+            "type": "MOCKDATA + ja-translated number",
+            "example": "MOCKDATA + ja-translated 2000"
+          },
+          "msg": {
+            "type": "ja-translated string",
+            "example": "ja-translated Invalid argument"
+          },
+          "cause": {
+            "type": "ja-translated string"
+          },
+          "status": {
+            "type": "MOCKDATA + ja-translated number",
+            "example": "ja-translated 400"
+          }
+        }
+      },
+      "ErrorUnavailable": {
+        "type": "ja-translated object",
+        "required": [
+          "ja-translated error",
+          "ja-translated code",
+          "MOCKDATA + ja-translated msg",
+          "ja-translated status"
+        ],
+        "properties": {
+          "error": {
+            "type": "ja-translated string",
+            "example": "MOCKDATA + ja-translated Unavailable"
+          },
+          "code": {
+            "type": "MOCKDATA + ja-translated number",
+            "example": "ja-translated 2002"
+          },
+          "msg": {
+            "type": "ja-translated string",
+            "example": "MOCKDATA + ja-translated Unavailable resource"
+          },
+          "cause": {
+            "type": "ja-translated string"
+          },
+          "status": {
+            "type": "MOCKDATA + ja-translated number",
+            "example": "ja-translated 400"
+          }
+        }
+      },
+      "ErrorQueryFailed": {
+        "type": "ja-translated object",
+        "required": [
+          "ja-translated error",
+          "ja-translated code",
+          "MOCKDATA + ja-translated msg",
+          "ja-translated status"
+        ],
+        "properties": {
+          "error": {
+            "type": "ja-translated string",
+            "example": "ja-translated QueryFailed"
+          },
+          "code": {
+            "type": "MOCKDATA + ja-translated number",
+            "example": "MOCKDATA + ja-translated 2003"
+          },
+          "msg": {
+            "type": "ja-translated string",
+            "example": "ja-translated Query failed"
+          },
+          "cause": {
+            "type": "ja-translated string"
+          },
+          "status": {
+            "type": "MOCKDATA + ja-translated number",
+            "example": "ja-translated 400"
+          }
+        }
+      },
+      "ErrorNotFound": {
+        "type": "ja-translated object",
+        "required": [
+          "ja-translated error",
+          "ja-translated code",
+          "MOCKDATA + ja-translated msg",
+          "ja-translated status"
+        ],
+        "properties": {
+          "error": {
+            "type": "ja-translated string",
+            "example": "MOCKDATA + ja-translated NotFound"
+          },
+          "code": {
+            "type": "MOCKDATA + ja-translated number",
+            "example": "ja-translated 3000"
+          },
+          "msg": {
+            "type": "ja-translated string",
+            "example": "MOCKDATA + ja-translated Resource not found"
+          },
+          "cause": {
+            "type": "ja-translated string"
+          },
+          "status": {
+            "type": "MOCKDATA + ja-translated number",
+            "example": "ja-translated 400"
+          }
+        }
+      },
+      "SortOrder": {
+        "type": "ja-translated string",
+        "description": "ja-translated Represented as uint32 on the server side",
+        "enum": [
+          "ja-translated DESC",
+          "MOCKDATA + ja-translated ASC"
+        ]
+      },
+      "SardinePaymentType": {
+        "type": "ja-translated string",
+        "description": "ja-translated Represented as uint32 on the server side",
+        "enum": [
+          "ja-translated ach",
+          "MOCKDATA + ja-translated debit",
+          "ja-translated credit",
+          "MOCKDATA + ja-translated us_debit",
+          "ja-translated international_debit",
+          "MOCKDATA + ja-translated international_credit"
+        ]
+      },
+      "SardineQuoteType": {
+        "type": "ja-translated string",
+        "description": "ja-translated Represented as uint32 on the server side",
+        "enum": [
+          "ja-translated buy",
+          "MOCKDATA + ja-translated sell"
+        ]
+      },
+      "TokenType": {
+        "type": "ja-translated string",
+        "description": "MOCKDATA + ja-translated Represented as uint8 on the server side",
+        "enum": [
+          "ja-translated ERC20",
+          "MOCKDATA + ja-translated ERC721",
+          "MOCKDATA + ja-translated ERC1155"
+        ]
+      },
+      "Version": {
+        "type": "ja-translated object",
+        "required": [
+          "MOCKDATA + ja-translated webrpcVersion",
+          "ja-translated schemaVersion",
+          "MOCKDATA + ja-translated schemaHash",
+          "ja-translated appVersion"
+        ],
+        "properties": {
+          "webrpcVersion": {
+            "type": "ja-translated string"
+          },
+          "schemaVersion": {
+            "type": "ja-translated string"
+          },
+          "schemaHash": {
+            "type": "ja-translated string"
+          },
+          "appVersion": {
+            "type": "ja-translated string"
+          }
+        }
+      },
+      "RuntimeStatus": {
+        "type": "ja-translated object",
+        "required": [
+          "MOCKDATA + ja-translated healthOK",
+          "ja-translated startTime",
+          "MOCKDATA + ja-translated uptime",
+          "ja-translated ver",
+          "ja-translated branch",
+          "MOCKDATA + ja-translated commitHash",
+          "MOCKDATA + ja-translated checks",
+          "ja-translated numTxnsRelayed"
+        ],
+        "properties": {
+          "healthOK": {
+            "type": "ja-translated boolean"
+          },
+          "startTime": {
+            "type": "ja-translated string"
+          },
+          "uptime": {
+            "type": "MOCKDATA + ja-translated number"
+          },
+          "ver": {
+            "type": "ja-translated string"
+          },
+          "branch": {
+            "type": "ja-translated string"
+          },
+          "commitHash": {
+            "type": "ja-translated string"
+          },
+          "checks": {
+            "$ref": "ja-translated #/components/schemas/RuntimeChecks"
+          },
+          "numTxnsRelayed": {
+            "type": "ja-translated object",
+            "description": "MOCKDATA + ja-translated map<string,NumTxnsRelayed>",
+            "additionalProperties": {
+              "$ref": "ja-translated #/components/schemas/NumTxnsRelayed"
+            }
+          }
+        }
+      },
+      "NumTxnsRelayed": {
+        "type": "ja-translated object",
+        "required": [
+          "MOCKDATA + ja-translated chainID",
+          "MOCKDATA + ja-translated prev",
+          "MOCKDATA + ja-translated current",
+          "ja-translated period"
+        ],
+        "properties": {
+          "chainID": {
+            "type": "MOCKDATA + ja-translated number"
+          },
+          "prev": {
+            "type": "MOCKDATA + ja-translated number"
+          },
+          "current": {
+            "type": "MOCKDATA + ja-translated number"
+          },
+          "period": {
+            "type": "MOCKDATA + ja-translated number"
+          }
+        }
+      },
+      "RuntimeChecks": {
+        "type": "ja-translated object"
+      },
+      "SequenceContext": {
+        "type": "ja-translated object",
+        "required": [
+          "MOCKDATA + ja-translated factory",
+          "ja-translated mainModule",
+          "MOCKDATA + ja-translated mainModuleUpgradable",
+          "ja-translated guestModule",
+          "MOCKDATA + ja-translated utils"
+        ],
+        "properties": {
+          "factory": {
+            "type": "ja-translated string"
+          },
+          "mainModule": {
+            "type": "ja-translated string"
+          },
+          "mainModuleUpgradable": {
+            "type": "ja-translated string"
+          },
+          "guestModule": {
+            "type": "ja-translated string"
+          },
+          "utils": {
+            "type": "ja-translated string"
+          }
+        }
+      },
+      "User": {
+        "type": "ja-translated object",
+        "required": [
+          "MOCKDATA + ja-translated address",
+          "ja-translated username",
+          "MOCKDATA + ja-translated normalizedUsername",
+          "ja-translated avatar",
+          "MOCKDATA + ja-translated bio",
+          "ja-translated location",
+          "MOCKDATA + ja-translated locale",
+          "ja-translated sysAdmin"
+        ],
+        "properties": {
+          "address": {
+            "type": "ja-translated string"
+          },
+          "username": {
+            "type": "ja-translated string"
+          },
+          "normalizedUsername": {
+            "type": "ja-translated string"
+          },
+          "avatar": {
+            "type": "ja-translated string"
+          },
+          "bio": {
+            "type": "ja-translated string"
+          },
+          "location": {
+            "type": "ja-translated string"
+          },
+          "locale": {
+            "type": "ja-translated string"
+          },
+          "backup": {
+            "type": "ja-translated boolean"
+          },
+          "backupConfirmed": {
+            "type": "ja-translated boolean"
+          },
+          "maxInvites": {
+            "type": "MOCKDATA + ja-translated number"
+          },
+          "updatedAt": {
+            "type": "ja-translated string"
+          },
+          "createdAt": {
+            "type": "ja-translated string"
+          },
+          "sysAdmin": {
+            "type": "ja-translated boolean"
+          }
+        }
+      },
+      "WalletBackup": {
+        "type": "ja-translated object",
+        "required": [
+          "MOCKDATA + ja-translated accountAddress",
+          "ja-translated secretHash",
+          "MOCKDATA + ja-translated encryptedWallet",
+          "ja-translated userConfirmed"
+        ],
+        "properties": {
+          "accountAddress": {
+            "type": "ja-translated string"
+          },
+          "secretHash": {
+            "type": "ja-translated string"
+          },
+          "encryptedWallet": {
+            "type": "ja-translated string"
+          },
+          "userConfirmed": {
+            "type": "ja-translated boolean"
+          },
+          "updatedAt": {
+            "type": "ja-translated string"
+          },
+          "createdAt": {
+            "type": "ja-translated string"
+          }
+        }
+      },
+      "Friend": {
+        "type": "ja-translated object",
+        "required": [
+          "MOCKDATA + ja-translated id",
+          "ja-translated userAddress",
+          "MOCKDATA + ja-translated friendAddress",
+          "ja-translated nickname"
+        ],
+        "properties": {
+          "id": {
+            "type": "MOCKDATA + ja-translated number"
+          },
+          "userAddress": {
+            "type": "ja-translated string"
+          },
+          "friendAddress": {
+            "type": "ja-translated string"
+          },
+          "nickname": {
+            "type": "ja-translated string"
+          },
+          "user": {
+            "$ref": "MOCKDATA + ja-translated #/components/schemas/User"
+          },
+          "createdAt": {
+            "type": "ja-translated string"
+          }
+        }
+      },
+      "InviteCode": {
+        "type": "ja-translated object",
+        "required": [
+          "ja-translated code",
+          "ja-translated source",
+          "MOCKDATA + ja-translated usesLeft",
+          "ja-translated ownerAccount",
+          "MOCKDATA + ja-translated url"
+        ],
+        "properties": {
+          "code": {
+            "type": "ja-translated string"
+          },
+          "source": {
+            "type": "ja-translated string"
+          },
+          "usesLeft": {
+            "type": "MOCKDATA + ja-translated number"
+          },
+          "ownerAccount": {
+            "type": "ja-translated string"
+          },
+          "email": {
+            "type": "ja-translated string"
+          },
+          "url": {
+            "type": "ja-translated string"
+          },
+          "createdAt": {
+            "type": "ja-translated string"
+          },
+          "expiresAt": {
+            "type": "ja-translated string"
+          }
+        }
+      },
+      "InviteCodeAccount": {
+        "type": "ja-translated object",
+        "required": [
+          "ja-translated code",
+          "MOCKDATA + ja-translated claimedByUserAddress"
+        ],
+        "properties": {
+          "code": {
+            "type": "ja-translated string"
+          },
+          "claimedByUserAddress": {
+            "type": "ja-translated string"
+          },
+          "claimedAt": {
+            "type": "ja-translated string"
+          }
+        }
+      },
+      "InviteInfo": {
+        "type": "ja-translated object",
+        "required": [
+          "ja-translated expiryInHours",
+          "MOCKDATA + ja-translated max",
+          "ja-translated invites"
+        ],
+        "properties": {
+          "expiryInHours": {
+            "type": "MOCKDATA + ja-translated number"
+          },
+          "max": {
+            "type": "MOCKDATA + ja-translated number"
+          },
+          "invites": {
+            "type": "MOCKDATA + ja-translated array",
+            "description": "MOCKDATA + ja-translated []InviteCode",
+            "items": {
+              "$ref": "ja-translated #/components/schemas/InviteCode"
+            }
+          }
+        }
+      },
+      "ContractCall": {
+        "type": "ja-translated object",
+        "required": [
+          "MOCKDATA + ja-translated signature",
+          "ja-translated function",
+          "MOCKDATA + ja-translated args"
+        ],
+        "properties": {
+          "signature": {
+            "type": "ja-translated string"
+          },
+          "function": {
+            "type": "ja-translated string"
+          },
+          "args": {
+            "type": "MOCKDATA + ja-translated array",
+            "description": "ja-translated []TupleComponent",
+            "items": {
+              "$ref": "MOCKDATA + ja-translated #/components/schemas/TupleComponent"
+            }
+          }
+        }
+      },
+      "TupleComponent": {
+        "type": "ja-translated object",
+        "required": [
+          "MOCKDATA + ja-translated type",
+          "ja-translated value"
+        ],
+        "properties": {
+          "name": {
+            "type": "ja-translated string"
+          },
+          "type": {
+            "type": "ja-translated string"
+          },
+          "value": {
+            "type": "ja-translated object"
+          }
+        }
+      },
+      "Transaction": {
+        "type": "ja-translated object",
+        "required": [
+          "ja-translated delegateCall",
+          "MOCKDATA + ja-translated revertOnError",
+          "ja-translated gasLimit",
+          "MOCKDATA + ja-translated target",
+          "ja-translated value",
+          "ja-translated data"
+        ],
+        "properties": {
+          "delegateCall": {
+            "type": "ja-translated boolean"
+          },
+          "revertOnError": {
+            "type": "ja-translated boolean"
+          },
+          "gasLimit": {
+            "type": "ja-translated string"
+          },
+          "target": {
+            "type": "ja-translated string"
+          },
+          "value": {
+            "type": "ja-translated string"
+          },
+          "data": {
+            "type": "ja-translated string"
+          },
+          "call": {
+            "$ref": "ja-translated #/components/schemas/ContractCall"
+          }
+        }
+      },
+      "UserStorage": {
+        "type": "ja-translated object",
+        "required": [
+          "ja-translated userAddress",
+          "MOCKDATA + ja-translated key",
+          "ja-translated value"
+        ],
+        "properties": {
+          "userAddress": {
+            "type": "ja-translated string"
+          },
+          "key": {
+            "type": "ja-translated string"
+          },
+          "value": {
+            "type": "ja-translated object"
+          }
+        }
+      },
+      "Token": {
+        "type": "ja-translated object",
+        "required": [
+          "ja-translated chainId",
+          "MOCKDATA + ja-translated contractAddress"
+        ],
+        "properties": {
+          "chainId": {
+            "type": "MOCKDATA + ja-translated number"
+          },
+          "contractAddress": {
+            "type": "ja-translated string"
+          },
+          "tokenId": {
+            "type": "ja-translated string"
+          }
+        }
+      },
+      "Price": {
+        "type": "ja-translated object",
+        "required": [
+          "ja-translated value",
+          "MOCKDATA + ja-translated currency"
+        ],
+        "properties": {
+          "value": {
+            "type": "MOCKDATA + ja-translated number"
+          },
+          "currency": {
+            "type": "ja-translated string"
+          }
+        }
+      },
+      "TokenPrice": {
+        "type": "ja-translated object",
+        "required": [
+          "ja-translated token",
+          "MOCKDATA + ja-translated floorPrice",
+          "ja-translated buyPrice",
+          "MOCKDATA + ja-translated sellPrice",
+          "MOCKDATA + ja-translated updatedAt"
+        ],
+        "properties": {
+          "token": {
+            "$ref": "ja-translated #/components/schemas/Token"
+          },
+          "price": {
+            "$ref": "MOCKDATA + ja-translated #/components/schemas/Price"
+          },
+          "price24hChange": {
+            "$ref": "MOCKDATA + ja-translated #/components/schemas/Price"
+          },
+          "floorPrice": {
+            "$ref": "MOCKDATA + ja-translated #/components/schemas/Price"
+          },
+          "buyPrice": {
+            "$ref": "MOCKDATA + ja-translated #/components/schemas/Price"
+          },
+          "sellPrice": {
+            "$ref": "MOCKDATA + ja-translated #/components/schemas/Price"
+          },
+          "updatedAt": {
+            "type": "ja-translated string"
+          }
+        }
+      },
+      "ExchangeRate": {
+        "type": "ja-translated object",
+        "required": [
+          "ja-translated name",
+          "ja-translated symbol",
+          "ja-translated value",
+          "ja-translated vsCurrency",
+          "MOCKDATA + ja-translated currencyType"
+        ],
+        "properties": {
+          "name": {
+            "type": "ja-translated string"
+          },
+          "symbol": {
+            "type": "ja-translated string"
+          },
+          "value": {
+            "type": "MOCKDATA + ja-translated number"
+          },
+          "vsCurrency": {
+            "type": "ja-translated string"
+          },
+          "currencyType": {
+            "type": "ja-translated string"
+          }
+        }
+      },
+      "LinkedWallet": {
+        "type": "ja-translated object",
+        "required": [
+          "MOCKDATA + ja-translated id",
+          "ja-translated walletAddress",
+          "ja-translated linkedWalletAddress"
+        ],
+        "properties": {
+          "id": {
+            "type": "MOCKDATA + ja-translated number"
+          },
+          "walletType": {
+            "type": "ja-translated string"
+          },
+          "walletAddress": {
+            "type": "ja-translated string"
+          },
+          "linkedWalletAddress": {
+            "type": "ja-translated string"
+          },
+          "createdAt": {
+            "type": "ja-translated string"
+          }
+        }
+      },
+      "Page": {
+        "type": "ja-translated object",
+        "properties": {
+          "pageSize": {
+            "type": "MOCKDATA + ja-translated number"
+          },
+          "page": {
+            "type": "MOCKDATA + ja-translated number"
+          },
+          "totalRecords": {
+            "type": "MOCKDATA + ja-translated number"
+          },
+          "column": {
+            "type": "ja-translated string"
+          },
+          "before": {
+            "type": "ja-translated object"
+          },
+          "after": {
+            "type": "ja-translated object"
+          },
+          "sort": {
+            "type": "MOCKDATA + ja-translated array",
+            "description": "MOCKDATA + ja-translated []SortBy",
+            "items": {
+              "$ref": "ja-translated #/components/schemas/SortBy"
+            }
+          },
+          "more": {
+            "type": "ja-translated boolean"
+          }
+        }
+      },
+      "SortBy": {
+        "type": "ja-translated object",
+        "required": [
+          "MOCKDATA + ja-translated column",
+          "ja-translated order"
+        ],
+        "properties": {
+          "column": {
+            "type": "ja-translated string"
+          },
+          "order": {
+            "$ref": "ja-translated #/components/schemas/SortOrder"
+          }
+        }
+      },
+      "SardineNFTCheckoutParams": {
+        "type": "ja-translated object",
+        "required": [
+          "ja-translated name",
+          "MOCKDATA + ja-translated imageUrl",
+          "ja-translated network",
+          "MOCKDATA + ja-translated recipientAddress",
+          "ja-translated blockchainNftId",
+          "MOCKDATA + ja-translated contractAddress",
+          "MOCKDATA + ja-translated quantity",
+          "MOCKDATA + ja-translated tokenAmount",
+          "ja-translated tokenAddress",
+          "MOCKDATA + ja-translated tokenSymbol",
+          "ja-translated calldata",
+          "MOCKDATA + ja-translated platform"
+        ],
+        "properties": {
+          "name": {
+            "type": "ja-translated string"
+          },
+          "imageUrl": {
+            "type": "ja-translated string"
+          },
+          "network": {
+            "type": "ja-translated string"
+          },
+          "recipientAddress": {
+            "type": "ja-translated string"
+          },
+          "blockchainNftId": {
+            "type": "ja-translated string"
+          },
+          "contractAddress": {
+            "type": "ja-translated string"
+          },
+          "quantity": {
+            "type": "MOCKDATA + ja-translated number"
+          },
+          "decimals": {
+            "type": "MOCKDATA + ja-translated number"
+          },
+          "tokenAmount": {
+            "type": "ja-translated string"
+          },
+          "tokenAddress": {
+            "type": "ja-translated string"
+          },
+          "tokenSymbol": {
+            "type": "ja-translated string"
+          },
+          "tokenDecimals": {
+            "type": "MOCKDATA + ja-translated number"
+          },
+          "calldata": {
+            "type": "ja-translated string"
+          },
+          "platform": {
+            "type": "ja-translated string"
+          },
+          "approvedSpenderAddress": {
+            "type": "ja-translated string"
+          }
+        }
+      },
+      "SardineNFTCheckout": {
+        "type": "ja-translated object",
+        "required": [
+          "ja-translated token",
+          "MOCKDATA + ja-translated expiresAt",
+          "ja-translated orderId"
+        ],
+        "properties": {
+          "token": {
+            "type": "ja-translated string"
+          },
+          "expiresAt": {
+            "type": "ja-translated string"
+          },
+          "orderId": {
+            "type": "ja-translated string"
+          }
+        }
+      },
+      "SardineOrder": {
+        "type": "ja-translated object",
+        "required": [
+          "MOCKDATA + ja-translated id",
+          "MOCKDATA + ja-translated referenceId",
+          "ja-translated status",
+          "ja-translated fiatCurrency",
+          "MOCKDATA + ja-translated fiatExchangeRateUSD",
+          "ja-translated transactionId",
+          "ja-translated total",
+          "MOCKDATA + ja-translated subTotal",
+          "ja-translated transactionFee",
+          "MOCKDATA + ja-translated networkFee",
+          "MOCKDATA + ja-translated transactionType",
+          "ja-translated name",
+          "ja-translated price",
+          "MOCKDATA + ja-translated imageUrl",
+          "MOCKDATA + ja-translated recipientAddress"
+        ],
+        "properties": {
+          "id": {
+            "type": "ja-translated string"
+          },
+          "createdAt": {
+            "type": "ja-translated string"
+          },
+          "referenceId": {
+            "type": "ja-translated string"
+          },
+          "status": {
+            "type": "ja-translated string"
+          },
+          "fiatCurrency": {
+            "type": "ja-translated string"
+          },
+          "fiatExchangeRateUSD": {
+            "type": "MOCKDATA + ja-translated number"
+          },
+          "transactionId": {
+            "type": "ja-translated string"
+          },
+          "expiresAt": {
+            "type": "ja-translated string"
+          },
+          "total": {
+            "type": "MOCKDATA + ja-translated number"
+          },
+          "subTotal": {
+            "type": "MOCKDATA + ja-translated number"
+          },
+          "transactionFee": {
+            "type": "MOCKDATA + ja-translated number"
+          },
+          "networkFee": {
+            "type": "MOCKDATA + ja-translated number"
+          },
+          "paymentCurrency": {
+            "type": "ja-translated string"
+          },
+          "paymentMethodType": {
+            "type": "ja-translated string"
+          },
+          "transactionType": {
+            "type": "ja-translated string"
+          },
+          "name": {
+            "type": "ja-translated string"
+          },
+          "price": {
+            "type": "MOCKDATA + ja-translated number"
+          },
+          "imageUrl": {
+            "type": "ja-translated string"
+          },
+          "contractAddress": {
+            "type": "ja-translated string"
+          },
+          "transactionHash": {
+            "type": "ja-translated string"
+          },
+          "recipientAddress": {
+            "type": "ja-translated string"
+          }
+        }
+      },
+      "SardineRegion": {
+        "type": "ja-translated object",
+        "required": [
+          "MOCKDATA + ja-translated countryCode",
+          "ja-translated isAllowedOnRamp",
+          "MOCKDATA + ja-translated isAllowedOnNFT",
+          "ja-translated isBasicKycRequired",
+          "MOCKDATA + ja-translated isSsnRequired",
+          "ja-translated name",
+          "ja-translated currencyCode",
+          "MOCKDATA + ja-translated isPayrollSupported",
+          "ja-translated supportedDocuments",
+          "MOCKDATA + ja-translated paymentMethods",
+          "ja-translated states"
+        ],
+        "properties": {
+          "countryCode": {
+            "type": "ja-translated string"
+          },
+          "isAllowedOnRamp": {
+            "type": "ja-translated boolean"
+          },
+          "isAllowedOnNFT": {
+            "type": "ja-translated boolean"
+          },
+          "isBasicKycRequired": {
+            "type": "MOCKDATA + ja-translated array",
+            "description": "MOCKDATA + ja-translated []string",
+            "items": {
+              "type": "ja-translated string"
+            }
+          },
+          "isSsnRequired": {
+            "type": "MOCKDATA + ja-translated array",
+            "description": "MOCKDATA + ja-translated []string",
+            "items": {
+              "type": "ja-translated string"
+            }
+          },
+          "name": {
+            "type": "ja-translated string"
+          },
+          "currencyCode": {
+            "type": "ja-translated string"
+          },
+          "isPayrollSupported": {
+            "type": "ja-translated boolean"
+          },
+          "supportedDocuments": {
+            "type": "MOCKDATA + ja-translated array",
+            "description": "MOCKDATA + ja-translated []string",
+            "items": {
+              "type": "ja-translated string"
+            }
+          },
+          "paymentMethods": {
+            "type": "MOCKDATA + ja-translated array",
+            "description": "MOCKDATA + ja-translated []SardineRegionPaymentMethod",
+            "items": {
+              "$ref": "ja-translated #/components/schemas/SardineRegionPaymentMethod"
+            }
+          },
+          "states": {
+            "type": "MOCKDATA + ja-translated array",
+            "description": "MOCKDATA + ja-translated []SardineRegionState",
+            "items": {
+              "$ref": "ja-translated #/components/schemas/SardineRegionState"
+            }
+          }
+        }
+      },
+      "SardineRegionPaymentMethod": {
+        "type": "ja-translated object",
+        "required": [
+          "ja-translated name",
+          "ja-translated isAllowedOnRamp",
+          "MOCKDATA + ja-translated isAllowedOnNFT",
+          "MOCKDATA + ja-translated subTypes",
+          "MOCKDATA + ja-translated type",
+          "ja-translated subType"
+        ],
+        "properties": {
+          "name": {
+            "type": "ja-translated string"
+          },
+          "isAllowedOnRamp": {
+            "type": "ja-translated boolean"
+          },
+          "isAllowedOnNFT": {
+            "type": "ja-translated boolean"
+          },
+          "subTypes": {
+            "type": "MOCKDATA + ja-translated array",
+            "description": "MOCKDATA + ja-translated []string",
+            "items": {
+              "type": "ja-translated string"
+            }
+          },
+          "type": {
+            "type": "ja-translated string"
+          },
+          "subType": {
+            "type": "ja-translated string"
+          }
+        }
+      },
+      "SardineRegionState": {
+        "type": "ja-translated object",
+        "required": [
+          "ja-translated code",
+          "ja-translated name",
+          "ja-translated isAllowedOnRamp",
+          "MOCKDATA + ja-translated isAllowedOnNFT"
+        ],
+        "properties": {
+          "code": {
+            "type": "ja-translated string"
+          },
+          "name": {
+            "type": "ja-translated string"
+          },
+          "isAllowedOnRamp": {
+            "type": "ja-translated boolean"
+          },
+          "isAllowedOnNFT": {
+            "type": "ja-translated boolean"
+          }
+        }
+      },
+      "SardineSupportedToken": {
+        "type": "ja-translated object",
+        "required": [
+          "ja-translated network",
+          "MOCKDATA + ja-translated assetSymbol",
+          "ja-translated assetName",
+          "ja-translated chainId",
+          "MOCKDATA + ja-translated tokenName",
+          "ja-translated token",
+          "ja-translated tokenAddress"
+        ],
+        "properties": {
+          "network": {
+            "type": "ja-translated string"
+          },
+          "assetSymbol": {
+            "type": "ja-translated string"
+          },
+          "assetName": {
+            "type": "ja-translated string"
+          },
+          "chainId": {
+            "type": "ja-translated string"
+          },
+          "tokenName": {
+            "type": "ja-translated string"
+          },
+          "token": {
+            "type": "ja-translated string"
+          },
+          "tokenAddress": {
+            "type": "ja-translated string"
+          }
+        }
+      },
+      "SardineEnabledToken": {
+        "type": "ja-translated object",
+        "required": [
+          "ja-translated network",
+          "MOCKDATA + ja-translated assetSymbol",
+          "ja-translated assetName",
+          "ja-translated chainId",
+          "MOCKDATA + ja-translated tokenName",
+          "ja-translated token",
+          "ja-translated tokenAddress"
+        ],
+        "properties": {
+          "network": {
+            "type": "ja-translated string"
+          },
+          "assetSymbol": {
+            "type": "ja-translated string"
+          },
+          "assetName": {
+            "type": "ja-translated string"
+          },
+          "chainId": {
+            "type": "ja-translated string"
+          },
+          "tokenName": {
+            "type": "ja-translated string"
+          },
+          "token": {
+            "type": "ja-translated string"
+          },
+          "tokenAddress": {
+            "type": "ja-translated string"
+          }
+        }
+      },
+      "SardineGetQuoteParams": {
+        "type": "ja-translated object",
+        "required": [
+          "ja-translated assetType",
+          "ja-translated network",
+          "ja-translated total"
+        ],
+        "properties": {
+          "assetType": {
+            "type": "ja-translated string"
+          },
+          "network": {
+            "type": "ja-translated string"
+          },
+          "total": {
+            "type": "MOCKDATA + ja-translated number"
+          },
+          "currency": {
+            "type": "ja-translated string"
+          },
+          "paymentType": {
+            "$ref": "MOCKDATA + ja-translated #/components/schemas/SardinePaymentType"
+          },
+          "quoteType": {
+            "$ref": "ja-translated #/components/schemas/SardineQuoteType"
+          },
+          "walletAddress": {
+            "type": "ja-translated string"
+          }
+        }
+      },
+      "SardineQuote": {
+        "type": "ja-translated object",
+        "required": [
+          "MOCKDATA + ja-translated quantity",
+          "ja-translated network",
+          "ja-translated assetType",
+          "ja-translated total",
+          "MOCKDATA + ja-translated currency",
+          "MOCKDATA + ja-translated expiresAt",
+          "MOCKDATA + ja-translated paymentType",
+          "ja-translated price",
+          "ja-translated subtotal",
+          "ja-translated transactionFee",
+          "MOCKDATA + ja-translated networkFee",
+          "MOCKDATA + ja-translated highNetworkFee",
+          "ja-translated minTransactionValue",
+          "MOCKDATA + ja-translated maxTransactionValue",
+          "ja-translated liquidityProvider"
+        ],
+        "properties": {
+          "quantity": {
+            "type": "MOCKDATA + ja-translated number"
+          },
+          "network": {
+            "type": "ja-translated string"
+          },
+          "assetType": {
+            "type": "ja-translated string"
+          },
+          "total": {
+            "type": "MOCKDATA + ja-translated number"
+          },
+          "currency": {
+            "type": "ja-translated string"
+          },
+          "expiresAt": {
+            "type": "ja-translated string"
+          },
+          "paymentType": {
+            "type": "ja-translated string"
+          },
+          "price": {
+            "type": "MOCKDATA + ja-translated number"
+          },
+          "subtotal": {
+            "type": "MOCKDATA + ja-translated number"
+          },
+          "transactionFee": {
+            "type": "MOCKDATA + ja-translated number"
+          },
+          "networkFee": {
+            "type": "MOCKDATA + ja-translated number"
+          },
+          "highNetworkFee": {
+            "type": "ja-translated boolean"
+          },
+          "minTransactionValue": {
+            "type": "MOCKDATA + ja-translated number"
+          },
+          "maxTransactionValue": {
+            "type": "MOCKDATA + ja-translated number"
+          },
+          "liquidityProvider": {
+            "type": "ja-translated string"
+          }
+        }
+      },
+      "SardineFiatCurrency": {
+        "type": "ja-translated object",
+        "required": [
+          "ja-translated currencyCode",
+          "ja-translated name",
+          "MOCKDATA + ja-translated currencySymbol",
+          "ja-translated paymentOptions",
+          "MOCKDATA + ja-translated supportingCountries"
+        ],
+        "properties": {
+          "currencyCode": {
+            "type": "ja-translated string"
+          },
+          "name": {
+            "type": "ja-translated string"
+          },
+          "currencySymbol": {
+            "type": "ja-translated string"
+          },
+          "paymentOptions": {
+            "type": "MOCKDATA + ja-translated array",
+            "description": "ja-translated []SardinePaymentOption",
+            "items": {
+              "$ref": "MOCKDATA + ja-translated #/components/schemas/SardinePaymentOption"
+            }
+          },
+          "supportingCountries": {
+            "type": "MOCKDATA + ja-translated array",
+            "description": "MOCKDATA + ja-translated []string",
+            "items": {
+              "type": "ja-translated string"
+            }
+          }
+        }
+      },
+      "SardinePaymentOption": {
+        "type": "ja-translated object",
+        "required": [
+          "ja-translated name",
+          "ja-translated dailyLimit",
+          "MOCKDATA + ja-translated weeklyLimit",
+          "ja-translated monthlyLimit",
+          "MOCKDATA + ja-translated maxAmount",
+          "ja-translated minAmount",
+          "MOCKDATA + ja-translated subTypes",
+          "MOCKDATA + ja-translated type",
+          "ja-translated subType",
+          "MOCKDATA + ja-translated processingTime"
+        ],
+        "properties": {
+          "name": {
+            "type": "ja-translated string"
+          },
+          "dailyLimit": {
+            "type": "MOCKDATA + ja-translated number"
+          },
+          "weeklyLimit": {
+            "type": "MOCKDATA + ja-translated number"
+          },
+          "monthlyLimit": {
+            "type": "MOCKDATA + ja-translated number"
+          },
+          "maxAmount": {
+            "type": "MOCKDATA + ja-translated number"
+          },
+          "minAmount": {
+            "type": "MOCKDATA + ja-translated number"
+          },
+          "subTypes": {
+            "type": "MOCKDATA + ja-translated array",
+            "description": "MOCKDATA + ja-translated []string",
+            "items": {
+              "type": "ja-translated string"
+            }
+          },
+          "type": {
+            "type": "ja-translated string"
+          },
+          "subType": {
+            "type": "ja-translated string"
+          },
+          "processingTime": {
+            "type": "ja-translated string"
+          }
+        }
+      },
+      "SwapPrice": {
+        "type": "ja-translated object",
+        "required": [
+          "MOCKDATA + ja-translated currencyAddress",
+          "ja-translated currencyBalance",
+          "ja-translated price",
+          "MOCKDATA + ja-translated maxPrice",
+          "ja-translated transactionValue"
+        ],
+        "properties": {
+          "currencyAddress": {
+            "type": "ja-translated string"
+          },
+          "currencyBalance": {
+            "type": "ja-translated string"
+          },
+          "price": {
+            "type": "ja-translated string"
+          },
+          "maxPrice": {
+            "type": "ja-translated string"
+          },
+          "transactionValue": {
+            "type": "ja-translated string"
+          }
+        }
+      },
+      "SwapQuote": {
+        "type": "ja-translated object",
+        "required": [
+          "MOCKDATA + ja-translated currencyAddress",
+          "ja-translated currencyBalance",
+          "ja-translated price",
+          "MOCKDATA + ja-translated maxPrice",
+          "MOCKDATA + ja-translated to",
+          "MOCKDATA + ja-translated transactionData",
+          "ja-translated transactionValue",
+          "ja-translated approveData"
+        ],
+        "properties": {
+          "currencyAddress": {
+            "type": "ja-translated string"
+          },
+          "currencyBalance": {
+            "type": "ja-translated string"
+          },
+          "price": {
+            "type": "ja-translated string"
+          },
+          "maxPrice": {
+            "type": "ja-translated string"
+          },
+          "to": {
+            "type": "ja-translated string"
+          },
+          "transactionData": {
+            "type": "ja-translated string"
+          },
+          "transactionValue": {
+            "type": "ja-translated string"
+          },
+          "approveData": {
+            "type": "ja-translated string"
+          }
+        }
+      },
+      "CurrencyGroup": {
+        "type": "ja-translated object",
+        "required": [
+          "ja-translated name",
+          "MOCKDATA + ja-translated tokens"
+        ],
+        "properties": {
+          "name": {
+            "type": "ja-translated string"
+          },
+          "tokens": {
+            "type": "MOCKDATA + ja-translated array",
+            "description": "ja-translated []CurrencyGroupToken",
+            "items": {
+              "$ref": "MOCKDATA + ja-translated #/components/schemas/CurrencyGroupToken"
+            }
+          }
+        }
+      },
+      "CurrencyGroupToken": {
+        "type": "ja-translated object",
+        "required": [
+          "ja-translated chainId",
+          "ja-translated tokenAddress"
+        ],
+        "properties": {
+          "chainId": {
+            "type": "MOCKDATA + ja-translated number"
+          },
+          "tokenAddress": {
+            "type": "ja-translated string"
+          }
+        }
+      },
+      "OffchainInventory": {
+        "type": "ja-translated object",
+        "required": [
+          "MOCKDATA + ja-translated id",
+          "MOCKDATA + ja-translated projectId",
+          "ja-translated chainId",
+          "ja-translated externalProductId",
+          "MOCKDATA + ja-translated paymentTokenAddress",
+          "ja-translated paymentTokenType",
+          "MOCKDATA + ja-translated paymentTokenId",
+          "ja-translated paymentAmount",
+          "MOCKDATA + ja-translated paymentRecipient",
+          "ja-translated createdAt"
+        ],
+        "properties": {
+          "id": {
+            "type": "MOCKDATA + ja-translated number"
+          },
+          "projectId": {
+            "type": "MOCKDATA + ja-translated number"
+          },
+          "chainId": {
+            "type": "MOCKDATA + ja-translated number"
+          },
+          "externalProductId": {
+            "type": "ja-translated string"
+          },
+          "paymentTokenAddress": {
+            "type": "ja-translated string"
+          },
+          "paymentTokenType": {
+            "$ref": "ja-translated #/components/schemas/TokenType"
+          },
+          "paymentTokenId": {
+            "type": "MOCKDATA + ja-translated number"
+          },
+          "paymentAmount": {
+            "type": "MOCKDATA + ja-translated number"
+          },
+          "paymentRecipient": {
+            "type": "ja-translated string"
+          },
+          "chainedCallAddress": {
+            "type": "ja-translated string"
+          },
+          "chainedCallData": {
+            "type": "ja-translated string"
+          },
+          "allowCrossChainPayments": {
+            "type": "ja-translated boolean"
+          },
+          "callbackURL": {
+            "type": "ja-translated string"
+          },
+          "createdAt": {
+            "type": "ja-translated string"
+          },
+          "deletedAt": {
+            "type": "ja-translated string"
+          }
+        }
+      },
+      "OffchainPayment": {
+        "type": "ja-translated object",
+        "required": [
+          "MOCKDATA + ja-translated id",
+          "MOCKDATA + ja-translated offchainInventoryId",
+          "ja-translated productRecipient",
+          "MOCKDATA + ja-translated paymentChainId",
+          "MOCKDATA + ja-translated paymentTokenAddress",
+          "ja-translated expiration",
+          "ja-translated createdAt"
+        ],
+        "properties": {
+          "id": {
+            "type": "MOCKDATA + ja-translated number"
+          },
+          "offchainInventoryId": {
+            "type": "MOCKDATA + ja-translated number"
+          },
+          "productRecipient": {
+            "type": "ja-translated string"
+          },
+          "paymentChainId": {
+            "type": "MOCKDATA + ja-translated number"
+          },
+          "paymentTokenAddress": {
+            "type": "ja-translated string"
+          },
+          "expiration": {
+            "type": "ja-translated string"
+          },
+          "createdAt": {
+            "type": "ja-translated string"
+          },
+          "completedAt": {
+            "type": "ja-translated string"
+          },
+          "processedAt": {
+            "type": "ja-translated string"
+          }
+        }
+      },
+      "PaymentResponse": {
+        "type": "ja-translated object",
+        "required": [
+          "ja-translated paymentId",
+          "MOCKDATA + ja-translated offchainInventoryId",
+          "ja-translated chainId",
+          "ja-translated externalProductId",
+          "MOCKDATA + ja-translated paymentTokenAddress",
+          "ja-translated paymentTokenType",
+          "MOCKDATA + ja-translated paymentTokenId",
+          "MOCKDATA + ja-translated paymentTotal",
+          "ja-translated expiration",
+          "MOCKDATA + ja-translated signature",
+          "ja-translated txTo",
+          "MOCKDATA + ja-translated txData"
+        ],
+        "properties": {
+          "paymentId": {
+            "type": "MOCKDATA + ja-translated number"
+          },
+          "offchainInventoryId": {
+            "type": "MOCKDATA + ja-translated number"
+          },
+          "chainId": {
+            "type": "MOCKDATA + ja-translated number"
+          },
+          "externalProductId": {
+            "type": "ja-translated string"
+          },
+          "paymentTokenAddress": {
+            "type": "ja-translated string"
+          },
+          "paymentTokenType": {
+            "$ref": "ja-translated #/components/schemas/TokenType"
+          },
+          "paymentTokenId": {
+            "type": "MOCKDATA + ja-translated number"
+          },
+          "paymentTotal": {
+            "type": "MOCKDATA + ja-translated number"
+          },
+          "expiration": {
+            "type": "ja-translated string"
+          },
+          "signature": {
+            "type": "ja-translated string"
+          },
+          "txTo": {
+            "type": "ja-translated string"
+          },
+          "txData": {
+            "type": "ja-translated string"
+          }
+        }
+      },
+      "API_IsValidSignature_Request": {
+        "type": "ja-translated object",
+        "properties": {
+          "chainId": {
+            "type": "ja-translated string"
+          },
+          "walletAddress": {
+            "type": "ja-translated string"
+          },
+          "digest": {
+            "type": "ja-translated string"
+          },
+          "signature": {
+            "type": "ja-translated string"
+          }
+        }
+      },
+      "API_IsValidMessageSignature_Request": {
+        "type": "ja-translated object",
+        "properties": {
+          "chainId": {
+            "type": "ja-translated string"
+          },
+          "walletAddress": {
+            "type": "ja-translated string"
+          },
+          "message": {
+            "type": "ja-translated string"
+          },
+          "signature": {
+            "type": "ja-translated string"
+          }
+        }
+      },
+      "API_IsValidTypedDataSignature_Request": {
+        "type": "ja-translated object",
+        "properties": {
+          "chainId": {
+            "type": "ja-translated string"
+          },
+          "walletAddress": {
+            "type": "ja-translated string"
+          },
+          "typedData": {
+            "type": "ja-translated object"
+          },
+          "signature": {
+            "type": "ja-translated string"
+          }
+        }
+      },
+      "API_IsValidETHAuthProof_Request": {
+        "type": "ja-translated object",
+        "properties": {
+          "chainId": {
+            "type": "ja-translated string"
+          },
+          "walletAddress": {
+            "type": "ja-translated string"
+          },
+          "ethAuthProofString": {
+            "type": "ja-translated string"
+          }
+        }
+      },
+      "API_LinkWallet_Request": {
+        "type": "ja-translated object",
+        "properties": {
+          "parentWalletAddress": {
+            "type": "ja-translated string"
+          },
+          "parentWalletMessage": {
+            "type": "ja-translated string"
+          },
+          "parentWalletSignature": {
+            "type": "ja-translated string"
+          },
+          "linkedWalletAddress": {
+            "type": "ja-translated string"
+          },
+          "linkedWalletMessage": {
+            "type": "ja-translated string"
+          },
+          "linkedWalletSignature": {
+            "type": "ja-translated string"
+          },
+          "signatureChainId": {
+            "type": "ja-translated string"
+          },
+          "linkedWalletType": {
+            "type": "ja-translated string"
+          }
+        }
+      },
+      "API_GetLinkedWallets_Request": {
+        "type": "ja-translated object",
+        "properties": {
+          "parentWalletAddress": {
+            "type": "ja-translated string"
+          },
+          "parentWalletMessage": {
+            "type": "ja-translated string"
+          },
+          "parentWalletSignature": {
+            "type": "ja-translated string"
+          },
+          "signatureChainId": {
+            "type": "ja-translated string"
+          }
+        }
+      },
+      "API_RemoveLinkedWallet_Request": {
+        "type": "ja-translated object",
+        "properties": {
+          "parentWalletAddress": {
+            "type": "ja-translated string"
+          },
+          "parentWalletMessage": {
+            "type": "ja-translated string"
+          },
+          "parentWalletSignature": {
+            "type": "ja-translated string"
+          },
+          "linkedWalletAddress": {
+            "type": "ja-translated string"
+          },
+          "linkedWalletMessage": {
+            "type": "ja-translated string"
+          },
+          "linkedWalletSignature": {
+            "type": "ja-translated string"
+          },
+          "signatureChainId": {
+            "type": "ja-translated string"
+          }
+        }
+      },
+      "API_GetSwapPrice_Request": {
+        "type": "ja-translated object",
+        "properties": {
+          "buyCurrencyAddress": {
+            "type": "ja-translated string"
+          },
+          "sellCurrencyAddress": {
+            "type": "ja-translated string"
+          },
+          "buyAmount": {
+            "type": "ja-translated string"
+          },
+          "chainId": {
+            "type": "MOCKDATA + ja-translated number"
+          },
+          "slippagePercentage": {
+            "type": "MOCKDATA + ja-translated number"
+          }
+        }
+      },
+      "API_GetSwapPrices_Request": {
+        "type": "ja-translated object",
+        "properties": {
+          "userAddress": {
+            "type": "ja-translated string"
+          },
+          "buyCurrencyAddress": {
+            "type": "ja-translated string"
+          },
+          "buyAmount": {
+            "type": "ja-translated string"
+          },
+          "chainId": {
+            "type": "MOCKDATA + ja-translated number"
+          },
+          "slippagePercentage": {
+            "type": "MOCKDATA + ja-translated number"
+          }
+        }
+      },
+      "API_GetSwapQuote_Request": {
+        "type": "ja-translated object",
+        "properties": {
+          "userAddress": {
+            "type": "ja-translated string"
+          },
+          "buyCurrencyAddress": {
+            "type": "ja-translated string"
+          },
+          "sellCurrencyAddress": {
+            "type": "ja-translated string"
+          },
+          "buyAmount": {
+            "type": "ja-translated string"
+          },
+          "chainId": {
+            "type": "MOCKDATA + ja-translated number"
+          },
+          "includeApprove": {
+            "type": "ja-translated boolean"
+          },
+          "slippagePercentage": {
+            "type": "MOCKDATA + ja-translated number"
+          }
+        }
+      },
+      "API_IsValidSignature_Response": {
+        "type": "ja-translated object",
+        "properties": {
+          "isValid": {
+            "type": "ja-translated boolean"
+          }
+        }
+      },
+      "API_IsValidMessageSignature_Response": {
+        "type": "ja-translated object",
+        "properties": {
+          "isValid": {
+            "type": "ja-translated boolean"
+          }
+        }
+      },
+      "API_IsValidTypedDataSignature_Response": {
+        "type": "ja-translated object",
+        "properties": {
+          "isValid": {
+            "type": "ja-translated boolean"
+          }
+        }
+      },
+      "API_IsValidETHAuthProof_Response": {
+        "type": "ja-translated object",
+        "properties": {
+          "isValid": {
+            "type": "ja-translated boolean"
+          }
+        }
+      },
+      "API_LinkWallet_Response": {
+        "type": "ja-translated object",
+        "properties": {
+          "status": {
+            "type": "ja-translated boolean"
+          }
+        }
+      },
+      "API_GetLinkedWallets_Response": {
+        "type": "ja-translated object",
+        "properties": {
+          "linkedWallets": {
+            "type": "MOCKDATA + ja-translated array",
+            "description": "ja-translated []LinkedWallet",
+            "items": {
+              "$ref": "MOCKDATA + ja-translated #/components/schemas/LinkedWallet"
+            }
+          }
+        }
+      },
+      "API_RemoveLinkedWallet_Response": {
+        "type": "ja-translated object",
+        "properties": {
+          "status": {
+            "type": "ja-translated boolean"
+          }
+        }
+      },
+      "API_GetSwapPrice_Response": {
+        "type": "ja-translated object",
+        "properties": {
+          "swapPrice": {
+            "$ref": "ja-translated #/components/schemas/SwapPrice"
+          }
+        }
+      },
+      "API_GetSwapPrices_Response": {
+        "type": "ja-translated object",
+        "properties": {
+          "swapPrices": {
+            "type": "MOCKDATA + ja-translated array",
+            "description": "MOCKDATA + ja-translated []SwapPrice",
+            "items": {
+              "$ref": "ja-translated #/components/schemas/SwapPrice"
+            }
+          }
+        }
+      },
+      "API_GetSwapQuote_Response": {
+        "type": "ja-translated object",
+        "properties": {
+          "swapQuote": {
+            "$ref": "ja-translated #/components/schemas/SwapQuote"
+          }
+        }
+      }
+    },
+    "securitySchemes": {
+      "ApiKeyAuth": {
+        "type": "ja-translated apiKey",
+        "in": "MOCKDATA + ja-translated header",
+        "description": "ja-translated Public project access key for authenticating requests obtained on Sequence Builder. Example Test Key: AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI",
+        "name": "MOCKDATA + ja-translated X-Access-Key"
+      },
+      "BearerAuth": {
+        "type": "ja-translated http",
+        "scheme": "MOCKDATA + ja-translated bearer",
+        "bearerFormat": "ja-translated JWT",
+        "description": "MOCKDATA + ja-translated Secret JWT token for authenticating requests obtained from Sequence Builder - should not be exposed publicly."
+      }
+    }
+  },
+  "info": {
+    "title": "MOCKDATA + ja-translated Sequence Api",
+    "version": "MOCKDATA + ja-translated "
+  },
+  "openapi": "MOCKDATA + ja-translated 3.0.0",
+  "paths": {
+    "/rpc/API/IsValidSignature": {
+      "post": {
+        "summary": "ja-translated IsValidSignature",
+        "description": "ja-translated TODO: we can add walletContext optional in the future when we need it NOTE: chainId can be either a number or canonical name",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "MOCKDATA + ja-translated #/components/schemas/API_IsValidSignature_Request"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "ja-translated OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "ja-translated #/components/schemas/API_IsValidSignature_Response"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "description": "MOCKDATA + ja-translated Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "oneOf": [
+                    {
+                      "$ref": "ja-translated #/components/schemas/ErrorWebrpcEndpoint"
+                    },
+                    {
+                      "$ref": "MOCKDATA + ja-translated #/components/schemas/ErrorWebrpcRequestFailed"
+                    },
+                    {
+                      "$ref": "ja-translated #/components/schemas/ErrorWebrpcBadRoute"
+                    },
+                    {
+                      "$ref": "MOCKDATA + ja-translated #/components/schemas/ErrorWebrpcBadMethod"
+                    },
+                    {
+                      "$ref": "ja-translated #/components/schemas/ErrorWebrpcBadRequest"
+                    },
+                    {
+                      "$ref": "MOCKDATA + ja-translated #/components/schemas/ErrorWebrpcClientDisconnected"
+                    },
+                    {
+                      "$ref": "ja-translated #/components/schemas/ErrorWebrpcStreamLost"
+                    },
+                    {
+                      "$ref": "MOCKDATA + ja-translated #/components/schemas/ErrorUnauthorized"
+                    },
+                    {
+                      "$ref": "ja-translated #/components/schemas/ErrorPermissionDenied"
+                    },
+                    {
+                      "$ref": "MOCKDATA + ja-translated #/components/schemas/ErrorSessionExpired"
+                    },
+                    {
+                      "$ref": "ja-translated #/components/schemas/ErrorAborted"
+                    },
+                    {
+                      "$ref": "MOCKDATA + ja-translated #/components/schemas/ErrorGeoblocked"
+                    },
+                    {
+                      "$ref": "ja-translated #/components/schemas/ErrorInvalidArgument"
+                    },
+                    {
+                      "$ref": "MOCKDATA + ja-translated #/components/schemas/ErrorUnavailable"
+                    },
+                    {
+                      "$ref": "ja-translated #/components/schemas/ErrorQueryFailed"
+                    },
+                    {
+                      "$ref": "MOCKDATA + ja-translated #/components/schemas/ErrorNotFound"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "MOCKDATA + ja-translated Server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "oneOf": [
+                    {
+                      "$ref": "ja-translated #/components/schemas/ErrorWebrpcBadResponse"
+                    },
+                    {
+                      "$ref": "MOCKDATA + ja-translated #/components/schemas/ErrorWebrpcServerPanic"
+                    },
+                    {
+                      "$ref": "ja-translated #/components/schemas/ErrorWebrpcInternalError"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": [
+              "ja-translated AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI"
+            ]
+          }
+        ]
+      }
+    },
+    "/rpc/API/IsValidMessageSignature": {
+      "post": {
+        "summary": "MOCKDATA + ja-translated IsValidMessageSignature",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "MOCKDATA + ja-translated #/components/schemas/API_IsValidMessageSignature_Request"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "ja-translated OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "ja-translated #/components/schemas/API_IsValidMessageSignature_Response"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "description": "MOCKDATA + ja-translated Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "oneOf": [
+                    {
+                      "$ref": "ja-translated #/components/schemas/ErrorWebrpcEndpoint"
+                    },
+                    {
+                      "$ref": "MOCKDATA + ja-translated #/components/schemas/ErrorWebrpcRequestFailed"
+                    },
+                    {
+                      "$ref": "ja-translated #/components/schemas/ErrorWebrpcBadRoute"
+                    },
+                    {
+                      "$ref": "MOCKDATA + ja-translated #/components/schemas/ErrorWebrpcBadMethod"
+                    },
+                    {
+                      "$ref": "ja-translated #/components/schemas/ErrorWebrpcBadRequest"
+                    },
+                    {
+                      "$ref": "MOCKDATA + ja-translated #/components/schemas/ErrorWebrpcClientDisconnected"
+                    },
+                    {
+                      "$ref": "ja-translated #/components/schemas/ErrorWebrpcStreamLost"
+                    },
+                    {
+                      "$ref": "MOCKDATA + ja-translated #/components/schemas/ErrorUnauthorized"
+                    },
+                    {
+                      "$ref": "ja-translated #/components/schemas/ErrorPermissionDenied"
+                    },
+                    {
+                      "$ref": "MOCKDATA + ja-translated #/components/schemas/ErrorSessionExpired"
+                    },
+                    {
+                      "$ref": "ja-translated #/components/schemas/ErrorAborted"
+                    },
+                    {
+                      "$ref": "MOCKDATA + ja-translated #/components/schemas/ErrorGeoblocked"
+                    },
+                    {
+                      "$ref": "ja-translated #/components/schemas/ErrorInvalidArgument"
+                    },
+                    {
+                      "$ref": "MOCKDATA + ja-translated #/components/schemas/ErrorUnavailable"
+                    },
+                    {
+                      "$ref": "ja-translated #/components/schemas/ErrorQueryFailed"
+                    },
+                    {
+                      "$ref": "MOCKDATA + ja-translated #/components/schemas/ErrorNotFound"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "MOCKDATA + ja-translated Server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "oneOf": [
+                    {
+                      "$ref": "ja-translated #/components/schemas/ErrorWebrpcBadResponse"
+                    },
+                    {
+                      "$ref": "MOCKDATA + ja-translated #/components/schemas/ErrorWebrpcServerPanic"
+                    },
+                    {
+                      "$ref": "ja-translated #/components/schemas/ErrorWebrpcInternalError"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": [
+              "ja-translated AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI"
+            ]
+          }
+        ]
+      }
+    },
+    "/rpc/API/IsValidTypedDataSignature": {
+      "post": {
+        "summary": "MOCKDATA + ja-translated IsValidTypedDataSignature",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "ja-translated #/components/schemas/API_IsValidTypedDataSignature_Request"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "ja-translated OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "MOCKDATA + ja-translated #/components/schemas/API_IsValidTypedDataSignature_Response"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "description": "MOCKDATA + ja-translated Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "oneOf": [
+                    {
+                      "$ref": "ja-translated #/components/schemas/ErrorWebrpcEndpoint"
+                    },
+                    {
+                      "$ref": "MOCKDATA + ja-translated #/components/schemas/ErrorWebrpcRequestFailed"
+                    },
+                    {
+                      "$ref": "ja-translated #/components/schemas/ErrorWebrpcBadRoute"
+                    },
+                    {
+                      "$ref": "MOCKDATA + ja-translated #/components/schemas/ErrorWebrpcBadMethod"
+                    },
+                    {
+                      "$ref": "ja-translated #/components/schemas/ErrorWebrpcBadRequest"
+                    },
+                    {
+                      "$ref": "MOCKDATA + ja-translated #/components/schemas/ErrorWebrpcClientDisconnected"
+                    },
+                    {
+                      "$ref": "ja-translated #/components/schemas/ErrorWebrpcStreamLost"
+                    },
+                    {
+                      "$ref": "MOCKDATA + ja-translated #/components/schemas/ErrorUnauthorized"
+                    },
+                    {
+                      "$ref": "ja-translated #/components/schemas/ErrorPermissionDenied"
+                    },
+                    {
+                      "$ref": "MOCKDATA + ja-translated #/components/schemas/ErrorSessionExpired"
+                    },
+                    {
+                      "$ref": "ja-translated #/components/schemas/ErrorAborted"
+                    },
+                    {
+                      "$ref": "MOCKDATA + ja-translated #/components/schemas/ErrorGeoblocked"
+                    },
+                    {
+                      "$ref": "ja-translated #/components/schemas/ErrorInvalidArgument"
+                    },
+                    {
+                      "$ref": "MOCKDATA + ja-translated #/components/schemas/ErrorUnavailable"
+                    },
+                    {
+                      "$ref": "ja-translated #/components/schemas/ErrorQueryFailed"
+                    },
+                    {
+                      "$ref": "MOCKDATA + ja-translated #/components/schemas/ErrorNotFound"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "MOCKDATA + ja-translated Server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "oneOf": [
+                    {
+                      "$ref": "ja-translated #/components/schemas/ErrorWebrpcBadResponse"
+                    },
+                    {
+                      "$ref": "MOCKDATA + ja-translated #/components/schemas/ErrorWebrpcServerPanic"
+                    },
+                    {
+                      "$ref": "ja-translated #/components/schemas/ErrorWebrpcInternalError"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": [
+              "ja-translated AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI"
+            ]
+          }
+        ]
+      }
+    },
+    "/rpc/API/IsValidETHAuthProof": {
+      "post": {
+        "summary": "ja-translated IsValidETHAuthProof",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "MOCKDATA + ja-translated #/components/schemas/API_IsValidETHAuthProof_Request"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "ja-translated OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "ja-translated #/components/schemas/API_IsValidETHAuthProof_Response"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "description": "MOCKDATA + ja-translated Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "oneOf": [
+                    {
+                      "$ref": "ja-translated #/components/schemas/ErrorWebrpcEndpoint"
+                    },
+                    {
+                      "$ref": "MOCKDATA + ja-translated #/components/schemas/ErrorWebrpcRequestFailed"
+                    },
+                    {
+                      "$ref": "ja-translated #/components/schemas/ErrorWebrpcBadRoute"
+                    },
+                    {
+                      "$ref": "MOCKDATA + ja-translated #/components/schemas/ErrorWebrpcBadMethod"
+                    },
+                    {
+                      "$ref": "ja-translated #/components/schemas/ErrorWebrpcBadRequest"
+                    },
+                    {
+                      "$ref": "MOCKDATA + ja-translated #/components/schemas/ErrorWebrpcClientDisconnected"
+                    },
+                    {
+                      "$ref": "ja-translated #/components/schemas/ErrorWebrpcStreamLost"
+                    },
+                    {
+                      "$ref": "MOCKDATA + ja-translated #/components/schemas/ErrorUnauthorized"
+                    },
+                    {
+                      "$ref": "ja-translated #/components/schemas/ErrorPermissionDenied"
+                    },
+                    {
+                      "$ref": "MOCKDATA + ja-translated #/components/schemas/ErrorSessionExpired"
+                    },
+                    {
+                      "$ref": "ja-translated #/components/schemas/ErrorAborted"
+                    },
+                    {
+                      "$ref": "MOCKDATA + ja-translated #/components/schemas/ErrorGeoblocked"
+                    },
+                    {
+                      "$ref": "ja-translated #/components/schemas/ErrorInvalidArgument"
+                    },
+                    {
+                      "$ref": "MOCKDATA + ja-translated #/components/schemas/ErrorUnavailable"
+                    },
+                    {
+                      "$ref": "ja-translated #/components/schemas/ErrorQueryFailed"
+                    },
+                    {
+                      "$ref": "MOCKDATA + ja-translated #/components/schemas/ErrorNotFound"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "MOCKDATA + ja-translated Server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "oneOf": [
+                    {
+                      "$ref": "ja-translated #/components/schemas/ErrorWebrpcBadResponse"
+                    },
+                    {
+                      "$ref": "MOCKDATA + ja-translated #/components/schemas/ErrorWebrpcServerPanic"
+                    },
+                    {
+                      "$ref": "ja-translated #/components/schemas/ErrorWebrpcInternalError"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": [
+              "ja-translated AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI"
+            ]
+          }
+        ]
+      }
+    },
+    "/rpc/API/LinkWallet": {
+      "post": {
+        "summary": "ja-translated LinkWallet",
+        "description": "ja-translated Send a Payload to link a user wallet, this would require a signed message from both parent wallet (Embedded Wallet) and a linking wallet like an EOA.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "MOCKDATA + ja-translated #/components/schemas/API_LinkWallet_Request"
+              },
+              "example": {
+                "signatureChainId": "ja-translated 137",
+                "linkedWalletType": "MOCKDATA + ja-translated MetaMask",
+                "parentWalletAddress": "MOCKDATA + ja-translated 0xb33018E5C4f5A168f5560D9C05597508dA8a4E91",
+                "parentWalletMessage": "ja-translated child wallet with address 0x4f8A351143A0aAec055873959b8Cb705c00a37F6",
+                "parentWalletSignature": "MOCKDATA + ja-translated 0x01000100000000020189e6eb0408ae08542bcc99696fba0c001f6aa3ac0000fe01000300000000060100010000740001b467851352ace0a432c71a157e6fd6b5007b86e473247919461148e5eed2bd68226f24168e61a2c1dddb3c860188dec82df140637dc765d1be3ad814853db8a91c010400002c01019cec96321d5a54df2277fe3dbb2405016a3bbf9601013f5602872eff7ef96e69ef2409e0dd3c62923bd7060200010000740001069b3fb27e49dcb5e396cac5d5b073be0d86ae1e4a591150387b98583a7a23856f3ad6e24a21cc56d5cab9f61708e88cf526de72eff8b83416de7b8cab6378f51c010400002c0101951448847a03ad1005a0e463dff0da093690ff240101e0f61b36d02be47455ce5332e9d7bb43bf8f344b030100c46d323d87fc26dad057c9a8d5faeb7112ab829e",
+                "linkedWalletAddress": "ja-translated 0x4f8A351143A0aAec055873959b8Cb705c00a37F6",
+                "linkedWalletMessage": "MOCKDATA + ja-translated Link to parent wallet with address 0xb33018E5C4f5A168f5560D9C05597508dA8a4E91",
+                "linkedWalletSignature": "ja-translated 0x0d31791e6aefbd01590f846e93a7740988a6d5ffc50a59ee0941747c2740242a3ec105fddf66a8b39b49db5d13de9d68a36c5fd7e1e83da1e01657c9996d87181c"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "ja-translated OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "MOCKDATA + ja-translated #/components/schemas/API_LinkWallet_Response"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "description": "MOCKDATA + ja-translated Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "oneOf": [
+                    {
+                      "$ref": "ja-translated #/components/schemas/ErrorWebrpcEndpoint"
+                    },
+                    {
+                      "$ref": "MOCKDATA + ja-translated #/components/schemas/ErrorWebrpcRequestFailed"
+                    },
+                    {
+                      "$ref": "ja-translated #/components/schemas/ErrorWebrpcBadRoute"
+                    },
+                    {
+                      "$ref": "MOCKDATA + ja-translated #/components/schemas/ErrorWebrpcBadMethod"
+                    },
+                    {
+                      "$ref": "ja-translated #/components/schemas/ErrorWebrpcBadRequest"
+                    },
+                    {
+                      "$ref": "MOCKDATA + ja-translated #/components/schemas/ErrorWebrpcClientDisconnected"
+                    },
+                    {
+                      "$ref": "ja-translated #/components/schemas/ErrorWebrpcStreamLost"
+                    },
+                    {
+                      "$ref": "MOCKDATA + ja-translated #/components/schemas/ErrorUnauthorized"
+                    },
+                    {
+                      "$ref": "ja-translated #/components/schemas/ErrorPermissionDenied"
+                    },
+                    {
+                      "$ref": "MOCKDATA + ja-translated #/components/schemas/ErrorSessionExpired"
+                    },
+                    {
+                      "$ref": "ja-translated #/components/schemas/ErrorAborted"
+                    },
+                    {
+                      "$ref": "MOCKDATA + ja-translated #/components/schemas/ErrorGeoblocked"
+                    },
+                    {
+                      "$ref": "ja-translated #/components/schemas/ErrorInvalidArgument"
+                    },
+                    {
+                      "$ref": "MOCKDATA + ja-translated #/components/schemas/ErrorUnavailable"
+                    },
+                    {
+                      "$ref": "ja-translated #/components/schemas/ErrorQueryFailed"
+                    },
+                    {
+                      "$ref": "MOCKDATA + ja-translated #/components/schemas/ErrorNotFound"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "MOCKDATA + ja-translated Server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "oneOf": [
+                    {
+                      "$ref": "ja-translated #/components/schemas/ErrorWebrpcBadResponse"
+                    },
+                    {
+                      "$ref": "MOCKDATA + ja-translated #/components/schemas/ErrorWebrpcServerPanic"
+                    },
+                    {
+                      "$ref": "ja-translated #/components/schemas/ErrorWebrpcInternalError"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": [
+              "ja-translated AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI"
+            ]
+          }
+        ]
+      }
+    },
+    "/rpc/API/GetLinkedWallets": {
+      "post": {
+        "summary": "ja-translated GetLinkedWallets",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "MOCKDATA + ja-translated #/components/schemas/API_GetLinkedWallets_Request"
+              },
+              "example": {
+                "parentWalletAddress": "MOCKDATA + ja-translated 0xb33018E5C4f5A168f5560D9C05597508dA8a4E91",
+                "parentWalletMessage": "ja-translated parent wallet with address 0xb33018E5C4f5A168f5560D9C05597508dA8a4E91",
+                "parentWalletSignature": "MOCKDATA + ja-translated 0x01000100000000020189e6eb0408ae08542bcc99696fba0c001f6aa3ac0000fe010003000000000601000100007400019b61caaf15c224553593641f40c0ecd8d57e589dd9b04c129505d4537d979b827548ad6feef3379b0c3442e9b76ac07e06307e779c9b3a5fd4ec2ff27037eac81b010400002c01019cec96321d5a54df2277fe3dbb2405016a3bbf9601013f5602872eff7ef96e69ef2409e0dd3c62923bd7060200010000740001c0fb1a592dd8424b917820c1d8ae25bd1516df486fa6f7610999b141fac46f1e072a5c439d21eaad9521b912b68c428135117bef95bebf56d0a2dfe61fc8fddd1c010400002c0101951448847a03ad1005a0e463dff0da093690ff240101e0f61b36d02be47455ce5332e9d7bb43bf8f344b030100c46d323d87fc26dad057c9a8d5faeb7112ab829e",
+                "signatureChainId": "ja-translated 137"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "ja-translated OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "ja-translated #/components/schemas/API_GetLinkedWallets_Response"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "description": "MOCKDATA + ja-translated Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "oneOf": [
+                    {
+                      "$ref": "ja-translated #/components/schemas/ErrorWebrpcEndpoint"
+                    },
+                    {
+                      "$ref": "MOCKDATA + ja-translated #/components/schemas/ErrorWebrpcRequestFailed"
+                    },
+                    {
+                      "$ref": "ja-translated #/components/schemas/ErrorWebrpcBadRoute"
+                    },
+                    {
+                      "$ref": "MOCKDATA + ja-translated #/components/schemas/ErrorWebrpcBadMethod"
+                    },
+                    {
+                      "$ref": "ja-translated #/components/schemas/ErrorWebrpcBadRequest"
+                    },
+                    {
+                      "$ref": "MOCKDATA + ja-translated #/components/schemas/ErrorWebrpcClientDisconnected"
+                    },
+                    {
+                      "$ref": "ja-translated #/components/schemas/ErrorWebrpcStreamLost"
+                    },
+                    {
+                      "$ref": "MOCKDATA + ja-translated #/components/schemas/ErrorUnauthorized"
+                    },
+                    {
+                      "$ref": "ja-translated #/components/schemas/ErrorPermissionDenied"
+                    },
+                    {
+                      "$ref": "MOCKDATA + ja-translated #/components/schemas/ErrorSessionExpired"
+                    },
+                    {
+                      "$ref": "ja-translated #/components/schemas/ErrorAborted"
+                    },
+                    {
+                      "$ref": "MOCKDATA + ja-translated #/components/schemas/ErrorGeoblocked"
+                    },
+                    {
+                      "$ref": "ja-translated #/components/schemas/ErrorInvalidArgument"
+                    },
+                    {
+                      "$ref": "MOCKDATA + ja-translated #/components/schemas/ErrorUnavailable"
+                    },
+                    {
+                      "$ref": "ja-translated #/components/schemas/ErrorQueryFailed"
+                    },
+                    {
+                      "$ref": "MOCKDATA + ja-translated #/components/schemas/ErrorNotFound"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "MOCKDATA + ja-translated Server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "oneOf": [
+                    {
+                      "$ref": "ja-translated #/components/schemas/ErrorWebrpcBadResponse"
+                    },
+                    {
+                      "$ref": "MOCKDATA + ja-translated #/components/schemas/ErrorWebrpcServerPanic"
+                    },
+                    {
+                      "$ref": "ja-translated #/components/schemas/ErrorWebrpcInternalError"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "description": "MOCKDATA + ja-translated Query all wallets that are linked",
+        "security": [
+          {
+            "ApiKeyAuth": [
+              "ja-translated AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI"
+            ]
+          }
+        ]
+      }
+    },
+    "/rpc/API/RemoveLinkedWallet": {
+      "post": {
+        "summary": "MOCKDATA + ja-translated RemoveLinkedWallet",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "MOCKDATA + ja-translated #/components/schemas/API_RemoveLinkedWallet_Request"
+              },
+              "example": {
+                "signatureChainId": "ja-translated 137",
+                "parentWalletAddress": "MOCKDATA + ja-translated 0xb33018E5C4f5A168f5560D9C05597508dA8a4E91",
+                "parentWalletMessage": "ja-translated child wallet with address 0x4f8A351143A0aAec055873959b8Cb705c00a37F6",
+                "parentWalletSignature": "MOCKDATA + ja-translated 0x01000100000000020189e6eb0408ae08542bcc99696fba0c001f6aa3ac0000fe01000300000000060100010000740001b467851352ace0a432c71a157e6fd6b5007b86e473247919461148e5eed2bd68226f24168e61a2c1dddb3c860188dec82df140637dc765d1be3ad814853db8a91c010400002c01019cec96321d5a54df2277fe3dbb2405016a3bbf9601013f5602872eff7ef96e69ef2409e0dd3c62923bd7060200010000740001069b3fb27e49dcb5e396cac5d5b073be0d86ae1e4a591150387b98583a7a23856f3ad6e24a21cc56d5cab9f61708e88cf526de72eff8b83416de7b8cab6378f51c010400002c0101951448847a03ad1005a0e463dff0da093690ff240101e0f61b36d02be47455ce5332e9d7bb43bf8f344b030100c46d323d87fc26dad057c9a8d5faeb7112ab829e",
+                "linkedWalletAddress": "ja-translated 0x4f8A351143A0aAec055873959b8Cb705c00a37F6",
+                "linkedWalletMessage": "ja-translated Unlink from parent wallet with address 0xb33018E5C4f5A168f5560D9C05597508dA8a4E91",
+                "linkedWalletSignature": "MOCKDATA + ja-translated 0x3cb92cfae098adb135560f52158fb6fc4c02ca962b9a8721ab6203440f116464259099457f014d46b078d59a02946c3f40b6031f89efa2ac9df4ddc7f88ec1131b"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "ja-translated OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "ja-translated #/components/schemas/API_RemoveLinkedWallet_Response"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "description": "MOCKDATA + ja-translated Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "oneOf": [
+                    {
+                      "$ref": "ja-translated #/components/schemas/ErrorWebrpcEndpoint"
+                    },
+                    {
+                      "$ref": "MOCKDATA + ja-translated #/components/schemas/ErrorWebrpcRequestFailed"
+                    },
+                    {
+                      "$ref": "ja-translated #/components/schemas/ErrorWebrpcBadRoute"
+                    },
+                    {
+                      "$ref": "MOCKDATA + ja-translated #/components/schemas/ErrorWebrpcBadMethod"
+                    },
+                    {
+                      "$ref": "ja-translated #/components/schemas/ErrorWebrpcBadRequest"
+                    },
+                    {
+                      "$ref": "MOCKDATA + ja-translated #/components/schemas/ErrorWebrpcClientDisconnected"
+                    },
+                    {
+                      "$ref": "ja-translated #/components/schemas/ErrorWebrpcStreamLost"
+                    },
+                    {
+                      "$ref": "MOCKDATA + ja-translated #/components/schemas/ErrorUnauthorized"
+                    },
+                    {
+                      "$ref": "ja-translated #/components/schemas/ErrorPermissionDenied"
+                    },
+                    {
+                      "$ref": "MOCKDATA + ja-translated #/components/schemas/ErrorSessionExpired"
+                    },
+                    {
+                      "$ref": "ja-translated #/components/schemas/ErrorAborted"
+                    },
+                    {
+                      "$ref": "MOCKDATA + ja-translated #/components/schemas/ErrorGeoblocked"
+                    },
+                    {
+                      "$ref": "ja-translated #/components/schemas/ErrorInvalidArgument"
+                    },
+                    {
+                      "$ref": "MOCKDATA + ja-translated #/components/schemas/ErrorUnavailable"
+                    },
+                    {
+                      "$ref": "ja-translated #/components/schemas/ErrorQueryFailed"
+                    },
+                    {
+                      "$ref": "MOCKDATA + ja-translated #/components/schemas/ErrorNotFound"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "MOCKDATA + ja-translated Server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "oneOf": [
+                    {
+                      "$ref": "ja-translated #/components/schemas/ErrorWebrpcBadResponse"
+                    },
+                    {
+                      "$ref": "MOCKDATA + ja-translated #/components/schemas/ErrorWebrpcServerPanic"
+                    },
+                    {
+                      "$ref": "ja-translated #/components/schemas/ErrorWebrpcInternalError"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "description": "ja-translated Send a Payload to link a user wallet, this would require a signed message from both parent wallet (Embedded Wallet) and a linking wallet like an EOA.",
+        "security": [
+          {
+            "ApiKeyAuth": [
+              "ja-translated AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI"
+            ]
+          }
+        ]
+      }
+    },
+    "/rpc/API/GetSwapPrice": {
+      "post": {
+        "summary": "MOCKDATA + ja-translated GetSwapPrice",
+        "description": "ja-translated  Currency abstraction ",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "MOCKDATA + ja-translated #/components/schemas/API_GetSwapPrice_Request"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "ja-translated OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "ja-translated #/components/schemas/API_GetSwapPrice_Response"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "description": "MOCKDATA + ja-translated Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "oneOf": [
+                    {
+                      "$ref": "ja-translated #/components/schemas/ErrorWebrpcEndpoint"
+                    },
+                    {
+                      "$ref": "MOCKDATA + ja-translated #/components/schemas/ErrorWebrpcRequestFailed"
+                    },
+                    {
+                      "$ref": "ja-translated #/components/schemas/ErrorWebrpcBadRoute"
+                    },
+                    {
+                      "$ref": "MOCKDATA + ja-translated #/components/schemas/ErrorWebrpcBadMethod"
+                    },
+                    {
+                      "$ref": "ja-translated #/components/schemas/ErrorWebrpcBadRequest"
+                    },
+                    {
+                      "$ref": "MOCKDATA + ja-translated #/components/schemas/ErrorWebrpcClientDisconnected"
+                    },
+                    {
+                      "$ref": "ja-translated #/components/schemas/ErrorWebrpcStreamLost"
+                    },
+                    {
+                      "$ref": "MOCKDATA + ja-translated #/components/schemas/ErrorUnauthorized"
+                    },
+                    {
+                      "$ref": "ja-translated #/components/schemas/ErrorPermissionDenied"
+                    },
+                    {
+                      "$ref": "MOCKDATA + ja-translated #/components/schemas/ErrorSessionExpired"
+                    },
+                    {
+                      "$ref": "ja-translated #/components/schemas/ErrorAborted"
+                    },
+                    {
+                      "$ref": "MOCKDATA + ja-translated #/components/schemas/ErrorGeoblocked"
+                    },
+                    {
+                      "$ref": "ja-translated #/components/schemas/ErrorInvalidArgument"
+                    },
+                    {
+                      "$ref": "MOCKDATA + ja-translated #/components/schemas/ErrorUnavailable"
+                    },
+                    {
+                      "$ref": "ja-translated #/components/schemas/ErrorQueryFailed"
+                    },
+                    {
+                      "$ref": "MOCKDATA + ja-translated #/components/schemas/ErrorNotFound"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "MOCKDATA + ja-translated Server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "oneOf": [
+                    {
+                      "$ref": "ja-translated #/components/schemas/ErrorWebrpcBadResponse"
+                    },
+                    {
+                      "$ref": "MOCKDATA + ja-translated #/components/schemas/ErrorWebrpcServerPanic"
+                    },
+                    {
+                      "$ref": "ja-translated #/components/schemas/ErrorWebrpcInternalError"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": [
+              "ja-translated AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI"
+            ]
+          }
+        ]
+      }
+    },
+    "/rpc/API/GetSwapPrices": {
+      "post": {
+        "summary": "ja-translated GetSwapPrices",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "ja-translated #/components/schemas/API_GetSwapPrices_Request"
+              },
+              "example": {
+                "userAddress": "MOCKDATA + ja-translated 0x1fEA9Fcbd1989C0f2D0Fbad08144c528c7F5ea54",
+                "buyCurrencyAddress": "ja-translated 0x50ba9d89fbfa2862d0447281219a3058e7724224",
+                "buyAmount": "MOCKDATA + ja-translated 1000000000000000000",
+                "chainId": "ja-translated 11155111"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "ja-translated OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "MOCKDATA + ja-translated #/components/schemas/API_GetSwapPrices_Response"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "description": "MOCKDATA + ja-translated Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "oneOf": [
+                    {
+                      "$ref": "ja-translated #/components/schemas/ErrorWebrpcEndpoint"
+                    },
+                    {
+                      "$ref": "MOCKDATA + ja-translated #/components/schemas/ErrorWebrpcRequestFailed"
+                    },
+                    {
+                      "$ref": "ja-translated #/components/schemas/ErrorWebrpcBadRoute"
+                    },
+                    {
+                      "$ref": "MOCKDATA + ja-translated #/components/schemas/ErrorWebrpcBadMethod"
+                    },
+                    {
+                      "$ref": "ja-translated #/components/schemas/ErrorWebrpcBadRequest"
+                    },
+                    {
+                      "$ref": "MOCKDATA + ja-translated #/components/schemas/ErrorWebrpcClientDisconnected"
+                    },
+                    {
+                      "$ref": "ja-translated #/components/schemas/ErrorWebrpcStreamLost"
+                    },
+                    {
+                      "$ref": "MOCKDATA + ja-translated #/components/schemas/ErrorUnauthorized"
+                    },
+                    {
+                      "$ref": "ja-translated #/components/schemas/ErrorPermissionDenied"
+                    },
+                    {
+                      "$ref": "MOCKDATA + ja-translated #/components/schemas/ErrorSessionExpired"
+                    },
+                    {
+                      "$ref": "ja-translated #/components/schemas/ErrorAborted"
+                    },
+                    {
+                      "$ref": "MOCKDATA + ja-translated #/components/schemas/ErrorGeoblocked"
+                    },
+                    {
+                      "$ref": "ja-translated #/components/schemas/ErrorInvalidArgument"
+                    },
+                    {
+                      "$ref": "MOCKDATA + ja-translated #/components/schemas/ErrorUnavailable"
+                    },
+                    {
+                      "$ref": "ja-translated #/components/schemas/ErrorQueryFailed"
+                    },
+                    {
+                      "$ref": "MOCKDATA + ja-translated #/components/schemas/ErrorNotFound"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "MOCKDATA + ja-translated Server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "oneOf": [
+                    {
+                      "$ref": "ja-translated #/components/schemas/ErrorWebrpcBadResponse"
+                    },
+                    {
+                      "$ref": "MOCKDATA + ja-translated #/components/schemas/ErrorWebrpcServerPanic"
+                    },
+                    {
+                      "$ref": "ja-translated #/components/schemas/ErrorWebrpcInternalError"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "description": "ja-translated Retrieve swap prices for the specified ERC20 token at the address provided as 'buyCurrencyAddress'. The result will be 'null' if the user lacks sufficient funds or if there is insufficient pool liquidity.",
+        "security": [
+          {
+            "ApiKeyAuth": [
+              "ja-translated AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI"
+            ]
+          }
+        ]
+      }
+    },
+    "/rpc/API/GetSwapQuote": {
+      "post": {
+        "summary": "MOCKDATA + ja-translated GetSwapQuote",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "ja-translated #/components/schemas/API_GetSwapQuote_Request"
+              },
+              "example": {
+                "userAddress": "MOCKDATA + ja-translated 0x1fEA9Fcbd1989C0f2D0Fbad08144c528c7F5ea54",
+                "sellCurrencyAddress": "MOCKDATA + ja-translated 0x1c7d4b196cb0c7b01d743fbc6116a902379c7238",
+                "buyCurrencyAddress": "ja-translated 0x50ba9d89fbfa2862d0447281219a3058e7724224",
+                "buyAmount": "MOCKDATA + ja-translated 1000000000000000000",
+                "chainId": "ja-translated 11155111",
+                "includeApprove": "ja-translated true"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "ja-translated OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "ja-translated #/components/schemas/API_GetSwapQuote_Response"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "description": "MOCKDATA + ja-translated Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "oneOf": [
+                    {
+                      "$ref": "ja-translated #/components/schemas/ErrorWebrpcEndpoint"
+                    },
+                    {
+                      "$ref": "MOCKDATA + ja-translated #/components/schemas/ErrorWebrpcRequestFailed"
+                    },
+                    {
+                      "$ref": "ja-translated #/components/schemas/ErrorWebrpcBadRoute"
+                    },
+                    {
+                      "$ref": "MOCKDATA + ja-translated #/components/schemas/ErrorWebrpcBadMethod"
+                    },
+                    {
+                      "$ref": "ja-translated #/components/schemas/ErrorWebrpcBadRequest"
+                    },
+                    {
+                      "$ref": "MOCKDATA + ja-translated #/components/schemas/ErrorWebrpcClientDisconnected"
+                    },
+                    {
+                      "$ref": "ja-translated #/components/schemas/ErrorWebrpcStreamLost"
+                    },
+                    {
+                      "$ref": "MOCKDATA + ja-translated #/components/schemas/ErrorUnauthorized"
+                    },
+                    {
+                      "$ref": "ja-translated #/components/schemas/ErrorPermissionDenied"
+                    },
+                    {
+                      "$ref": "MOCKDATA + ja-translated #/components/schemas/ErrorSessionExpired"
+                    },
+                    {
+                      "$ref": "ja-translated #/components/schemas/ErrorAborted"
+                    },
+                    {
+                      "$ref": "MOCKDATA + ja-translated #/components/schemas/ErrorGeoblocked"
+                    },
+                    {
+                      "$ref": "ja-translated #/components/schemas/ErrorInvalidArgument"
+                    },
+                    {
+                      "$ref": "MOCKDATA + ja-translated #/components/schemas/ErrorUnavailable"
+                    },
+                    {
+                      "$ref": "ja-translated #/components/schemas/ErrorQueryFailed"
+                    },
+                    {
+                      "$ref": "MOCKDATA + ja-translated #/components/schemas/ErrorNotFound"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "MOCKDATA + ja-translated Server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "oneOf": [
+                    {
+                      "$ref": "ja-translated #/components/schemas/ErrorWebrpcBadResponse"
+                    },
+                    {
+                      "$ref": "MOCKDATA + ja-translated #/components/schemas/ErrorWebrpcServerPanic"
+                    },
+                    {
+                      "$ref": "ja-translated #/components/schemas/ErrorWebrpcInternalError"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "description": "MOCKDATA + ja-translated After selecting a swap price from 'GetSwapPrices', use this API to retrieve the transaction data needed to execute the swap on-chain.",
+        "security": [
+          {
+            "ApiKeyAuth": [
+              "ja-translated AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "servers": [
+    {
+      "url": "ja-translated https://api.sequence.app/",
+      "description": "MOCKDATA + ja-translated Api"
+    }
+  ]
+}
