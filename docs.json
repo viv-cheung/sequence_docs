@@ -1,19 +1,26 @@
 {
   "$schema": "https://mintlify.com/docs.json",
-  "theme": "mint",
-  "name": "Sequence Docs",
+  "appearance": {
+    "default": "dark",
+    "strict": true
+  },
+  "background": {
+    "decoration": "gradient"
+  },
   "colors": {
     "primary": "#111111",
     "light": "#B1A9FF",
     "dark": "#111111"
   },
-  "background": {
-    "decoration": "gradient"
+  "contextual": {
+    "options": [
+      "copy",
+      "view",
+      "chatgpt",
+      "claude"
+    ]
   },
-  "appearance": {
-    "default": "dark",
-    "strict": true
-  },
+  "favicon": "/favicon.png",
   "fonts": {
     "body": {
       "family": "Inter"
@@ -22,7 +29,25 @@
       "family": "Inter"
     }
   },
-  "favicon": "/favicon.png",
+  "footer": {
+    "socials": {
+      "x": "https://twitter.com/0xsequence",
+      "github": "https://github.com/0xsequence",
+      "discord": "https://discord.gg/sequence"
+    }
+  },
+  "logo": {
+    "light": "/logo/sequence-composite-light.svg",
+    "dark": "/logo/sequence-composite-dark.svg"
+  },
+  "name": "Sequence Docs",
+  "navbar": {
+    "primary": {
+      "type": "button",
+      "label": "Sign In",
+      "href": "https://sequence.build"
+    }
+  },
   "navigation": {
     "languages": [
       {
@@ -2524,32 +2549,6 @@
       ]
     }
   },
-  "logo": {
-    "light": "/logo/sequence-composite-light.svg",
-    "dark": "/logo/sequence-composite-dark.svg"
-  },
-  "navbar": {
-    "primary": {
-      "type": "button",
-      "label": "Sign In",
-      "href": "https://sequence.build"
-    }
-  },
-  "footer": {
-    "socials": {
-      "x": "https://twitter.com/0xsequence",
-      "github": "https://github.com/0xsequence",
-      "discord": "https://discord.gg/sequence"
-    }
-  },
-  "contextual": {
-    "options": [
-      "copy",
-      "view",
-      "chatgpt",
-      "claude"
-    ]
-  },
   "redirects": [
     {
       "source": "/404",
@@ -2635,5 +2634,6 @@
       "source": "/solutions/builder/overview",
       "destination": "/solutions/getting-started"
     }
-  ]
+  ],
+  "theme": "mint"
 }
