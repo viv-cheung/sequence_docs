@@ -7,10 +7,10 @@ const path = require('path');
 // ============================================================
 
 // Path to your original language files (e.g., English source content)
-const ORIGIN_LANGUAGE_DIR = path.resolve('./src/locales/en'); 
+const ORIGIN_LANGUAGE_DIR = path.resolve('.'); 
 
 // Path where translated files will be saved (Base directory)
-const TRANSLATION_OUTPUT_DIR = path.resolve('./src/locales');
+const TRANSLATION_OUTPUT_DIR = path.resolve('.');
 
 // List of files or directories to exclude from processing
 const EXCLUDED_FILES = ['package.json', 'package-lock.json', 'node_modules'];
@@ -35,27 +35,17 @@ const EXCLUDED_FILES = ['package.json', 'package-lock.json', 'node_modules'];
 
     async function getDefaultBranch() {
         try {
-            const repo = process.env.GITHUB_REPOSITORY;
-            const token = process.env.GITHUB_TOKEN;
-            if (!repo || !token) {
-                console.warn('GITHUB_REPOSITORY or GITHUB_TOKEN not set. Defaulting branch to "main".');
-                return 'main';
-            }
-            const response = await fetch(`https://api.github.com/repos/${repo}`, {
+            const response = await fetch(`https://api.github.com/repos/${process.env.GITHUB_REPOSITORY}`, {
                 headers: {
-                    'Authorization': `token ${token}`,
+                    'Authorization': `token ${process.env.GITHUB_TOKEN}`,
                     'Accept': 'application/vnd.github.v3+json'
                 }
             });
-            if (!response.ok) {
-                throw new Error(`GitHub API request failed: ${response.statusText}`);
-            }
             const data = await response.json();
-            return data.default_branch || 'main';
+            return data.default_branch;
         } catch (error) {
-            console.error('Error getting default branch:', error.message);
-            console.warn('Defaulting branch to "main".');
-            return 'main'; // Fallback
+            console.log('Error getting default branch:', error.message);
+            return 'main';
         }
     }
 
@@ -64,7 +54,6 @@ const EXCLUDED_FILES = ['package.json', 'package-lock.json', 'node_modules'];
             // Ensure the file is within the intended source directory structure for relative path logic
             const relativeToOrigin = path.relative(ORIGIN_LANGUAGE_DIR, path.resolve(filePath));
             if (relativeToOrigin.startsWith('..') || relativeToOrigin === '') {
-                 // console.log(`Skipping file outside ORIGIN_LANGUAGE_DIR or the directory itself: ${filePath}`);
                  return false;
             }
 
@@ -92,55 +81,27 @@ const EXCLUDED_FILES = ['package.json', 'package-lock.json', 'node_modules'];
     async function getChangedFiles() {
         try {
             const defaultBranch = await getDefaultBranch();
-            const currentBranch = process.env.GITHUB_HEAD_REF || process.env.GITHUB_REF_NAME; // GITHUB_REF_NAME is better for non-PR pushes
-            
-            if (!currentBranch) {
-                console.error("Could not determine the current branch name.");
-                return [];
-            }
-
-            console.log(`Default branch: ${defaultBranch}`);
-            console.log(`Current branch: ${currentBranch}`);
-
-            // Fetch necessary refs without fetching everything
-            xecSync(`git fetch --no-tags --prune origin +refs/heads/<span class="math-inline">\{defaultBranch\}\:refs/remotes/origin/</span>{defaultBranch}`);
-execSync(`git fetch --no-tags --prune origin +refs/heads/<span class="math-inline">\{currentBranchClean\}\:refs/remotes/origin/</span>{currentBranchClean}`);
-
-            console.log(`Getting changed files between origin/${defaultBranch} and origin/${currentBranch}...`);
-            // Use the three-dot diff which compares the tip of the current branch with the merge base
-            const diffCommand = `git diff --name-only --diff-filter=ACM origin/${defaultBranch}...origin/${currentBranch}`;
-            console.log(`Running diff: ${diffCommand}`);
-            const output = execSync(diffCommand).toString().trim();
-            
-            const changedFiles = output ? output.split('\n') : [];
-            console.log('All changed files in diff:', changedFiles);
-
-            // Filter only files within the ORIGIN_LANGUAGE_DIR
-            const relevantFiles = changedFiles.filter(file => {
-                 const resolvedFile = path.resolve(file);
-                 const resolvedOriginDir = path.resolve(ORIGIN_LANGUAGE_DIR);
-                 return resolvedFile.startsWith(resolvedOriginDir + path.sep);
-            });
-            console.log(`Files within ORIGIN_LANGUAGE_DIR (${ORIGIN_LANGUAGE_DIR}):`, relevantFiles);
-
+            console.log('Default branch:', defaultBranch);
+            const currentBranch = process.env.GITHUB_HEAD_REF || process.env.GITHUB_REF?.replace('refs/heads/', '');
+            console.log('Current branch:', currentBranch);
+            execSync(`git fetch origin ${defaultBranch}:refs/remotes/origin/${defaultBranch}`);
+            execSync(`git fetch origin ${currentBranch}:refs/remotes/origin/${currentBranch}`);
+            console.log(`Getting changed files between ${defaultBranch} and ${currentBranch}...`);
+            const output = execSync(`git diff --diff-filter=ACM --name-only origin/${defaultBranch}...origin/${currentBranch}`).toString().trim();
+            const changedFiles = output.split('\n');
+            console.log('All changed files:', changedFiles);
             const supportedFiles = [];
-            for (const file of relevantFiles) {
-                if (await isSupportedFile(file)) {
+            for (const file of changedFiles) {
+                const isSupported = await isSupportedFile(file);
+                if (isSupported) {
                     supportedFiles.push(file);
                 }
             }
-            console.log('Supported changed files in origin language dir:', supportedFiles);
+            console.log('Supported changed files:', supportedFiles);
             return supportedFiles;
         } catch (error) {
-            console.error('Error getting changed files:', error.message);
-            // Attempt to log stderr for more context if execSync failed
-             if (error.stderr) {
-                console.error('Git stderr:', error.stderr.toString());
-            }
-             if (error.stdout) {
-                console.error('Git stdout:', error.stdout.toString());
-            }
-            return []; // Return empty on error
+            console.log('Error getting changed files:', error.message);
+            return [];
         }
     }
 
