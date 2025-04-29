@@ -43,10 +43,14 @@
       console.log(`Source Language Determined: ${originLanguage}`);
       console.log(`Target Languages Determined: ${targetLangsString}`);
 
-      // Set outputs for subsequent steps using GitHub Actions command syntax
-      // Ensure no extra characters are logged before/after these lines
-      console.log(`::set-output name=source_lang::${originLanguage}`);
-      console.log(`::set-output name=target_langs::${targetLangsString}`);
+      // Set outputs using the new GitHub Actions output syntax
+      console.log(`source_lang<<EOF
+${originLanguage}
+EOF`);
+
+      console.log(`target_langs<<EOF
+${targetLangsString}
+EOF`);
 
     } catch (error) {
       // Log error details using GitHub Actions format

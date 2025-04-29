@@ -103,8 +103,8 @@ const EXCLUDED_FILES = ['package.json', 'package-lock.json', 'node_modules'];
             console.log(`Current branch: ${currentBranch}`);
 
             // Fetch necessary refs without fetching everything
-            execSync(`git fetch --no-tags --prune --depth=1 origin +refs/heads/${defaultBranch}:refs/remotes/origin/${defaultBranch}`);
-            execSync(`git fetch --no-tags --prune --depth=1 origin +refs/heads/${currentBranch}:refs/remotes/origin/${currentBranch}`);
+            xecSync(`git fetch --no-tags --prune origin +refs/heads/<span class="math-inline">\{defaultBranch\}\:refs/remotes/origin/</span>{defaultBranch}`);
+execSync(`git fetch --no-tags --prune origin +refs/heads/<span class="math-inline">\{currentBranchClean\}\:refs/remotes/origin/</span>{currentBranchClean}`);
 
             console.log(`Getting changed files between origin/${defaultBranch} and origin/${currentBranch}...`);
             // Use the three-dot diff which compares the tip of the current branch with the merge base
