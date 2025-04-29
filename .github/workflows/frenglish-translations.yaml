@@ -39,7 +39,7 @@ jobs:
       - name: Get Language Configuration
         id: get_lang_config
         # --- CORRECTED SCRIPT NAME ---
-        run: node .github/scripts/fetch-frenglish-translation.js
+        run: node .github/scripts/fetch-frenglish-configuration.js
         env:
           FRENGLISH_API_KEY: ${{ secrets.FRENGLISH_API_KEY }}
 
