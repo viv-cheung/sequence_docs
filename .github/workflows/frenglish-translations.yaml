@@ -44,6 +44,7 @@ jobs:
         run: node .github/scripts/fetch-frenglish-configuration.js
         env:
           FRENGLISH_API_KEY: ${{ secrets.FRENGLISH_API_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       # --- Step to Handle Renamed/Deleted Files ---
       - name: Handle Renamed and Deleted Source Files
@@ -146,8 +147,7 @@ jobs:
       - name: Run translation script (Writes/Updates files)
         env:
           FRENGLISH_API_KEY: ${{ secrets.FRENGLISH_API_KEY }}
-          # GITHUB_TOKEN is not typically needed by a translate script unless it interacts with GH API
-          # GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: node .github/scripts/translate.js # Assumes this script exists and works
 
       - name: Run formatting script
