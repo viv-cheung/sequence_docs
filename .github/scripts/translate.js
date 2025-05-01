@@ -7,7 +7,7 @@ const path = require('path');
 // ============================================================
 
 // Path to your original language files (e.g., English source content)
-const ORIGIN_LANGUAGE_DIR = path.resolve('.'); 
+const ORIGIN_LANGUAGE_DIR = path.resolve('essentials'); 
 
 // Path where translated files will be saved (Base directory)
 const TRANSLATION_OUTPUT_DIR = path.resolve('.');
