@@ -1,5 +1,15 @@
-name: Frenglish Translation
+# ------------------------------------------------------------------------------
+# Frenglish Translation GitHub Action
+#
+# Core Workflow:
+# - Triggered on branch push, skipping merge commits.
+# - Fetches translation configuration (source/target languages).
+# - Detects renamed/deleted source files and mirrors these changes in target language directories.
+# - Runs scripts to translate and format files.
+# - Stages, commits, and pushes updates only if changes exist.
+# ------------------------------------------------------------------------------
 
+name: Frenglish Translation
 on:
   push:
     branches:
@@ -14,7 +24,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
-      pull-requests: write # Keep if needed, otherwise can remove
+      pull-requests: write
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -40,7 +50,6 @@ jobs:
 
       - name: Get Language Configuration
         id: get_lang_config
-        # --- CORRECTED SCRIPT NAME ---
         run: node .github/scripts/fetch-frenglish-configuration.js
         env:
           FRENGLISH_API_KEY: ${{ secrets.FRENGLISH_API_KEY }}
@@ -176,10 +185,10 @@ jobs:
         env:
           FRENGLISH_API_KEY: ${{ secrets.FRENGLISH_API_KEY }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: node .github/scripts/translate.js # Assumes this script exists and works
+        run: node .github/scripts/translate.js
 
       - name: Run formatting script
-        run: node .github/scripts/format-locales.js # Assumes this script exists and works
+        run: node .github/scripts/format-locales.js
 
       - name: Stage ALL changes (new, modified, deleted, renamed)
         run: |
