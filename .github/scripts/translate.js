@@ -101,27 +101,55 @@ const EXCLUDED_FILES = ['package.json', 'package-lock.json', 'node_modules'];
             const currentBranch = process.env.GITHUB_HEAD_REF || process.env.GITHUB_REF?.replace('refs/heads/', '');
             console.log('Current branch:', currentBranch);
 
+            // First fetch all remote branches
+            execSync('git fetch --prune origin');
+            
             // Get the parent branch using git rev-parse
             let parentBranch;
             try {
-                // First try to get the merge base
-                const mergeBase = execSync('git merge-base HEAD origin/main').toString().trim();
-                // Then find which branch contains this commit
-                const branchOutput = execSync(`git branch -r --contains ${mergeBase}`).toString();
-                // Get the first remote branch that's not the current branch
-                parentBranch = branchOutput.split('\n')
+                // Get all remote branches
+                const remoteBranches = execSync('git branch -r').toString()
+                    .split('\n')
                     .map(b => b.trim())
                     .filter(b => b && !b.includes(currentBranch))
-                    .map(b => b.replace('origin/', ''))
-                    .find(b => b);
-                
+                    .map(b => b.replace('origin/', ''));
+
+                console.log('Available remote branches:', remoteBranches);
+
+                // Try to find the parent branch by looking at the merge base with each remote branch
+                for (const branch of remoteBranches) {
+                    try {
+                        const mergeBase = execSync(`git merge-base HEAD origin/${branch}`).toString().trim();
+                        if (mergeBase) {
+                            parentBranch = branch;
+                            break;
+                        }
+                    } catch (e) {
+                        // Skip this branch if merge-base fails
+                        continue;
+                    }
+                }
+
                 if (!parentBranch) {
-                    // Fallback to main if we can't determine the parent
-                    parentBranch = 'main';
+                    // If we still can't find a parent, try to get it from the pull request
+                    if (process.env.GITHUB_BASE_REF) {
+                        parentBranch = process.env.GITHUB_BASE_REF;
+                    } else {
+                        // Last resort: try to get the default branch
+                        const defaultBranch = await getDefaultBranch();
+                        parentBranch = defaultBranch;
+                    }
                 }
             } catch (error) {
-                console.log('Could not determine parent branch, defaulting to main:', error.message);
-                parentBranch = 'main';
+                console.log('Could not determine parent branch, trying GITHUB_BASE_REF:', error.message);
+                // Try to get the base ref from GitHub environment
+                if (process.env.GITHUB_BASE_REF) {
+                    parentBranch = process.env.GITHUB_BASE_REF;
+                } else {
+                    // Last resort: try to get the default branch
+                    const defaultBranch = await getDefaultBranch();
+                    parentBranch = defaultBranch;
+                }
             }
             
             console.log('Parent branch:', parentBranch);
