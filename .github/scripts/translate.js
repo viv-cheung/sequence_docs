@@ -63,6 +63,24 @@ const EXCLUDED_FILES = ['package.json', 'package-lock.json', 'node_modules'];
                 return false;
             }
 
+            // Get the configuration to check origin language
+            const config = await frenglish.getDefaultConfiguration();
+            const languageCodes = await frenglish.getSupportedLanguages();
+            const originLanguage = config.originLanguage.toLowerCase();
+
+            // Check if the file is in a translated language directory
+            const pathParts = filePath.split(path.sep);
+            const languageDirIndex = pathParts.findIndex(part => 
+                part.toLowerCase() === originLanguage || 
+                languageCodes.some(lang => lang.toLowerCase() === part.toLowerCase())
+            );
+
+            // If the file is in a language directory and it's not the origin language, exclude it
+            if (languageDirIndex !== -1 && pathParts[languageDirIndex].toLowerCase() !== originLanguage) {
+                console.log(`File ${filePath} is in a translated language directory. Excluding.`);
+                return false;
+            }
+
             // Check extension against Frenglish supported types
             const supportedFileTypes = await frenglish.getSupportedFileTypes();
             const validFileTypes = supportedFileTypes.filter(type => type && type.length > 0);
