@@ -98,14 +98,19 @@ const EXCLUDED_FILES = ['package.json', 'package-lock.json', 'node_modules'];
 
     async function getChangedFiles() {
         try {
-            const defaultBranch = await getDefaultBranch();
-            console.log('Default branch:', defaultBranch);
             const currentBranch = process.env.GITHUB_HEAD_REF || process.env.GITHUB_REF?.replace('refs/heads/', '');
             console.log('Current branch:', currentBranch);
-            execSync(`git fetch origin ${defaultBranch}:refs/remotes/origin/${defaultBranch}`);
+
+            // Get the parent branch (the branch this branch was created from)
+            const parentBranch = execSync(`git show-branch | grep '*' | grep -v "${currentBranch}" | head -n1 | sed 's/.*\\[\\(.*\\)\\].*/\\1/' | sed 's/[\^~].*//'`).toString().trim();
+            console.log('Parent branch:', parentBranch);
+
+            // Fetch both branches
+            execSync(`git fetch origin ${parentBranch}:refs/remotes/origin/${parentBranch}`);
             execSync(`git fetch origin ${currentBranch}:refs/remotes/origin/${currentBranch}`);
-            console.log(`Getting changed files between ${defaultBranch} and ${currentBranch}...`);
-            const output = execSync(`git diff --diff-filter=ACM --name-only origin/${defaultBranch}...origin/${currentBranch}`).toString().trim();
+            
+            console.log(`Getting changed files between ${parentBranch} and ${currentBranch}...`);
+            const output = execSync(`git diff --diff-filter=ACM --name-only origin/${parentBranch}...origin/${currentBranch}`).toString().trim();
             const changedFiles = output.split('\n');
             console.log('All changed files:', changedFiles);
             const supportedFiles = [];
