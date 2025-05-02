@@ -101,8 +101,29 @@ const EXCLUDED_FILES = ['package.json', 'package-lock.json', 'node_modules'];
             const currentBranch = process.env.GITHUB_HEAD_REF || process.env.GITHUB_REF?.replace('refs/heads/', '');
             console.log('Current branch:', currentBranch);
 
-            // Get the parent branch (the branch this branch was created from)
-            const parentBranch = execSync(`git show-branch | grep '*' | grep -v "${currentBranch}" | head -n1 | sed 's/.*\\[\\(.*\\)\\].*/\\1/' | sed 's/[\^~].*//'`).toString().trim();
+            // Get the parent branch using git rev-parse
+            let parentBranch;
+            try {
+                // First try to get the merge base
+                const mergeBase = execSync('git merge-base HEAD origin/main').toString().trim();
+                // Then find which branch contains this commit
+                const branchOutput = execSync(`git branch -r --contains ${mergeBase}`).toString();
+                // Get the first remote branch that's not the current branch
+                parentBranch = branchOutput.split('\n')
+                    .map(b => b.trim())
+                    .filter(b => b && !b.includes(currentBranch))
+                    .map(b => b.replace('origin/', ''))
+                    .find(b => b);
+                
+                if (!parentBranch) {
+                    // Fallback to main if we can't determine the parent
+                    parentBranch = 'main';
+                }
+            } catch (error) {
+                console.log('Could not determine parent branch, defaulting to main:', error.message);
+                parentBranch = 'main';
+            }
+            
             console.log('Parent branch:', parentBranch);
 
             // Fetch both branches
