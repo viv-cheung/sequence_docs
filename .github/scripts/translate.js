@@ -161,7 +161,6 @@ const EXCLUDED_FILES = ['package.json', 'package-lock.json', 'node_modules'];
             console.log(`Getting changed files between ${parentBranch} and ${currentBranch}...`);
             const output = execSync(`git diff --diff-filter=ACM --name-only origin/${parentBranch}...origin/${currentBranch}`).toString().trim();
             const changedFiles = output.split('\n');
-            console.log('All changed files:', changedFiles);
             const supportedFiles = [];
             for (const file of changedFiles) {
                 const isSupported = await isSupportedFile(file);
@@ -169,7 +168,7 @@ const EXCLUDED_FILES = ['package.json', 'package-lock.json', 'node_modules'];
                     supportedFiles.push(file);
                 }
             }
-            console.log('Supported changed files:', supportedFiles);
+            console.log('Files sent for translation:', supportedFiles);
             return supportedFiles;
         } catch (error) {
             console.log('Error getting changed files:', error.message);
