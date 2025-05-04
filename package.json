@@ -4,13 +4,13 @@
     "url": "https://github.com/0xsequence/docs-v3/issues"
   },
   "dependencies": {
-    "@frenglish/sdk": "latest",
+    "@frenglish/sdk": "workspace:*",
     "mintlify": "4.0.445"
   },
   "description": "Docs for Sequence, built with mintlify",
   "devDependencies": {
-    "@frenglish/utils": "latest",
-    "@frenglish/cli": "latest"
+    "@frenglish/utils": "workspace:*",
+    "@frenglish/cli": "workspace:*"
   },
   "engines": {
     "node": ">=16.0.0"
