@@ -1,0 +1,2042 @@
+{
+  "components": {
+    "schemas": {
+      "ErrorWebrpcEndpoint": {
+        "type": "ja-translated object",
+        "required": [
+          "ja-translated error",
+          "ja-translated code",
+          "MOCKDATA + ja-translated msg",
+          "ja-translated status"
+        ],
+        "properties": {
+          "error": {
+            "type": "ja-translated string",
+            "example": "ja-translated WebrpcEndpoint"
+          },
+          "code": {
+            "type": "MOCKDATA + ja-translated number",
+            "example": "ja-translated 0"
+          },
+          "msg": {
+            "type": "ja-translated string",
+            "example": "MOCKDATA + ja-translated endpoint error"
+          },
+          "cause": {
+            "type": "ja-translated string"
+          },
+          "status": {
+            "type": "MOCKDATA + ja-translated number",
+            "example": "ja-translated 400"
+          }
+        }
+      },
+      "ErrorWebrpcRequestFailed": {
+        "type": "ja-translated object",
+        "required": [
+          "ja-translated error",
+          "ja-translated code",
+          "MOCKDATA + ja-translated msg",
+          "ja-translated status"
+        ],
+        "properties": {
+          "error": {
+            "type": "ja-translated string",
+            "example": "MOCKDATA + ja-translated WebrpcRequestFailed"
+          },
+          "code": {
+            "type": "MOCKDATA + ja-translated number",
+            "example": "ja-translated -1"
+          },
+          "msg": {
+            "type": "ja-translated string",
+            "example": "MOCKDATA + ja-translated request failed"
+          },
+          "cause": {
+            "type": "ja-translated string"
+          },
+          "status": {
+            "type": "MOCKDATA + ja-translated number",
+            "example": "ja-translated 400"
+          }
+        }
+      },
+      "ErrorWebrpcBadRoute": {
+        "type": "ja-translated object",
+        "required": [
+          "ja-translated error",
+          "ja-translated code",
+          "MOCKDATA + ja-translated msg",
+          "ja-translated status"
+        ],
+        "properties": {
+          "error": {
+            "type": "ja-translated string",
+            "example": "ja-translated WebrpcBadRoute"
+          },
+          "code": {
+            "type": "MOCKDATA + ja-translated number",
+            "example": "MOCKDATA + ja-translated -2"
+          },
+          "msg": {
+            "type": "ja-translated string",
+            "example": "ja-translated bad route"
+          },
+          "cause": {
+            "type": "ja-translated string"
+          },
+          "status": {
+            "type": "MOCKDATA + ja-translated number",
+            "example": "MOCKDATA + ja-translated 404"
+          }
+        }
+      },
+      "ErrorWebrpcBadMethod": {
+        "type": "ja-translated object",
+        "required": [
+          "ja-translated error",
+          "ja-translated code",
+          "MOCKDATA + ja-translated msg",
+          "ja-translated status"
+        ],
+        "properties": {
+          "error": {
+            "type": "ja-translated string",
+            "example": "ja-translated WebrpcBadMethod"
+          },
+          "code": {
+            "type": "MOCKDATA + ja-translated number",
+            "example": "MOCKDATA + ja-translated -3"
+          },
+          "msg": {
+            "type": "ja-translated string",
+            "example": "ja-translated bad method"
+          },
+          "cause": {
+            "type": "ja-translated string"
+          },
+          "status": {
+            "type": "MOCKDATA + ja-translated number",
+            "example": "MOCKDATA + ja-translated 405"
+          }
+        }
+      },
+      "ErrorWebrpcBadRequest": {
+        "type": "ja-translated object",
+        "required": [
+          "ja-translated error",
+          "ja-translated code",
+          "MOCKDATA + ja-translated msg",
+          "ja-translated status"
+        ],
+        "properties": {
+          "error": {
+            "type": "ja-translated string",
+            "example": "ja-translated WebrpcBadRequest"
+          },
+          "code": {
+            "type": "MOCKDATA + ja-translated number",
+            "example": "MOCKDATA + ja-translated -4"
+          },
+          "msg": {
+            "type": "ja-translated string",
+            "example": "ja-translated bad request"
+          },
+          "cause": {
+            "type": "ja-translated string"
+          },
+          "status": {
+            "type": "MOCKDATA + ja-translated number",
+            "example": "ja-translated 400"
+          }
+        }
+      },
+      "ErrorWebrpcBadResponse": {
+        "type": "ja-translated object",
+        "required": [
+          "ja-translated error",
+          "ja-translated code",
+          "MOCKDATA + ja-translated msg",
+          "ja-translated status"
+        ],
+        "properties": {
+          "error": {
+            "type": "ja-translated string",
+            "example": "MOCKDATA + ja-translated WebrpcBadResponse"
+          },
+          "code": {
+            "type": "MOCKDATA + ja-translated number",
+            "example": "ja-translated -5"
+          },
+          "msg": {
+            "type": "ja-translated string",
+            "example": "MOCKDATA + ja-translated bad response"
+          },
+          "cause": {
+            "type": "ja-translated string"
+          },
+          "status": {
+            "type": "MOCKDATA + ja-translated number",
+            "example": "ja-translated 500"
+          }
+        }
+      },
+      "ErrorWebrpcServerPanic": {
+        "type": "ja-translated object",
+        "required": [
+          "ja-translated error",
+          "ja-translated code",
+          "MOCKDATA + ja-translated msg",
+          "ja-translated status"
+        ],
+        "properties": {
+          "error": {
+            "type": "ja-translated string",
+            "example": "MOCKDATA + ja-translated WebrpcServerPanic"
+          },
+          "code": {
+            "type": "MOCKDATA + ja-translated number",
+            "example": "ja-translated -6"
+          },
+          "msg": {
+            "type": "ja-translated string",
+            "example": "MOCKDATA + ja-translated server panic"
+          },
+          "cause": {
+            "type": "ja-translated string"
+          },
+          "status": {
+            "type": "MOCKDATA + ja-translated number",
+            "example": "ja-translated 500"
+          }
+        }
+      },
+      "ErrorWebrpcInternalError": {
+        "type": "ja-translated object",
+        "required": [
+          "ja-translated error",
+          "ja-translated code",
+          "MOCKDATA + ja-translated msg",
+          "ja-translated status"
+        ],
+        "properties": {
+          "error": {
+            "type": "ja-translated string",
+            "example": "ja-translated WebrpcInternalError"
+          },
+          "code": {
+            "type": "MOCKDATA + ja-translated number",
+            "example": "MOCKDATA + ja-translated -7"
+          },
+          "msg": {
+            "type": "ja-translated string",
+            "example": "ja-translated internal error"
+          },
+          "cause": {
+            "type": "ja-translated string"
+          },
+          "status": {
+            "type": "MOCKDATA + ja-translated number",
+            "example": "ja-translated 500"
+          }
+        }
+      },
+      "ErrorWebrpcClientDisconnected": {
+        "type": "ja-translated object",
+        "required": [
+          "ja-translated error",
+          "ja-translated code",
+          "MOCKDATA + ja-translated msg",
+          "ja-translated status"
+        ],
+        "properties": {
+          "error": {
+            "type": "ja-translated string",
+            "example": "MOCKDATA + ja-translated WebrpcClientDisconnected"
+          },
+          "code": {
+            "type": "MOCKDATA + ja-translated number",
+            "example": "ja-translated -8"
+          },
+          "msg": {
+            "type": "ja-translated string",
+            "example": "MOCKDATA + ja-translated client disconnected"
+          },
+          "cause": {
+            "type": "ja-translated string"
+          },
+          "status": {
+            "type": "MOCKDATA + ja-translated number",
+            "example": "ja-translated 400"
+          }
+        }
+      },
+      "ErrorWebrpcStreamLost": {
+        "type": "ja-translated object",
+        "required": [
+          "ja-translated error",
+          "ja-translated code",
+          "MOCKDATA + ja-translated msg",
+          "ja-translated status"
+        ],
+        "properties": {
+          "error": {
+            "type": "ja-translated string",
+            "example": "ja-translated WebrpcStreamLost"
+          },
+          "code": {
+            "type": "MOCKDATA + ja-translated number",
+            "example": "MOCKDATA + ja-translated -9"
+          },
+          "msg": {
+            "type": "ja-translated string",
+            "example": "ja-translated stream lost"
+          },
+          "cause": {
+            "type": "ja-translated string"
+          },
+          "status": {
+            "type": "MOCKDATA + ja-translated number",
+            "example": "ja-translated 400"
+          }
+        }
+      },
+      "ErrorWebrpcStreamFinished": {
+        "type": "ja-translated object",
+        "required": [
+          "ja-translated error",
+          "ja-translated code",
+          "MOCKDATA + ja-translated msg",
+          "ja-translated status"
+        ],
+        "properties": {
+          "error": {
+            "type": "ja-translated string",
+            "example": "MOCKDATA + ja-translated WebrpcStreamFinished"
+          },
+          "code": {
+            "type": "MOCKDATA + ja-translated number",
+            "example": "ja-translated -10"
+          },
+          "msg": {
+            "type": "ja-translated string",
+            "example": "MOCKDATA + ja-translated stream finished"
+          },
+          "cause": {
+            "type": "ja-translated string"
+          },
+          "status": {
+            "type": "MOCKDATA + ja-translated number",
+            "example": "ja-translated 200"
+          }
+        }
+      },
+      "ErrorUnauthorized": {
+        "type": "ja-translated object",
+        "required": [
+          "ja-translated error",
+          "ja-translated code",
+          "MOCKDATA + ja-translated msg",
+          "ja-translated status"
+        ],
+        "properties": {
+          "error": {
+            "type": "ja-translated string",
+            "example": "MOCKDATA + ja-translated Unauthorized"
+          },
+          "code": {
+            "type": "MOCKDATA + ja-translated number",
+            "example": "ja-translated 1000"
+          },
+          "msg": {
+            "type": "ja-translated string",
+            "example": "MOCKDATA + ja-translated Unauthorized access"
+          },
+          "cause": {
+            "type": "ja-translated string"
+          },
+          "status": {
+            "type": "MOCKDATA + ja-translated number",
+            "example": "ja-translated 401"
+          }
+        }
+      },
+      "ErrorPermissionDenied": {
+        "type": "ja-translated object",
+        "required": [
+          "ja-translated error",
+          "ja-translated code",
+          "MOCKDATA + ja-translated msg",
+          "ja-translated status"
+        ],
+        "properties": {
+          "error": {
+            "type": "ja-translated string",
+            "example": "MOCKDATA + ja-translated PermissionDenied"
+          },
+          "code": {
+            "type": "MOCKDATA + ja-translated number",
+            "example": "ja-translated 1001"
+          },
+          "msg": {
+            "type": "ja-translated string",
+            "example": "MOCKDATA + ja-translated Permission denied"
+          },
+          "cause": {
+            "type": "ja-translated string"
+          },
+          "status": {
+            "type": "MOCKDATA + ja-translated number",
+            "example": "ja-translated 403"
+          }
+        }
+      },
+      "ErrorMethodNotFound": {
+        "type": "ja-translated object",
+        "required": [
+          "ja-translated error",
+          "ja-translated code",
+          "MOCKDATA + ja-translated msg",
+          "ja-translated status"
+        ],
+        "properties": {
+          "error": {
+            "type": "ja-translated string",
+            "example": "ja-translated MethodNotFound"
+          },
+          "code": {
+            "type": "MOCKDATA + ja-translated number",
+            "example": "MOCKDATA + ja-translated 1003"
+          },
+          "msg": {
+            "type": "ja-translated string",
+            "example": "ja-translated Method not found"
+          },
+          "cause": {
+            "type": "ja-translated string"
+          },
+          "status": {
+            "type": "MOCKDATA + ja-translated number",
+            "example": "MOCKDATA + ja-translated 404"
+          }
+        }
+      },
+      "ErrorRequestConflict": {
+        "type": "ja-translated object",
+        "required": [
+          "ja-translated error",
+          "ja-translated code",
+          "MOCKDATA + ja-translated msg",
+          "ja-translated status"
+        ],
+        "properties": {
+          "error": {
+            "type": "ja-translated string",
+            "example": "MOCKDATA + ja-translated RequestConflict"
+          },
+          "code": {
+            "type": "MOCKDATA + ja-translated number",
+            "example": "ja-translated 1004"
+          },
+          "msg": {
+            "type": "ja-translated string",
+            "example": "MOCKDATA + ja-translated Conflict with target resource"
+          },
+          "cause": {
+            "type": "ja-translated string"
+          },
+          "status": {
+            "type": "MOCKDATA + ja-translated number",
+            "example": "ja-translated 409"
+          }
+        }
+      },
+      "ErrorAborted": {
+        "type": "ja-translated object",
+        "required": [
+          "ja-translated error",
+          "ja-translated code",
+          "MOCKDATA + ja-translated msg",
+          "ja-translated status"
+        ],
+        "properties": {
+          "error": {
+            "type": "ja-translated string",
+            "example": "MOCKDATA + ja-translated Aborted"
+          },
+          "code": {
+            "type": "MOCKDATA + ja-translated number",
+            "example": "ja-translated 1005"
+          },
+          "msg": {
+            "type": "ja-translated string",
+            "example": "ja-translated Request aborted"
+          },
+          "cause": {
+            "type": "ja-translated string"
+          },
+          "status": {
+            "type": "MOCKDATA + ja-translated number",
+            "example": "ja-translated 400"
+          }
+        }
+      },
+      "ErrorGeoblocked": {
+        "type": "ja-translated object",
+        "required": [
+          "ja-translated error",
+          "ja-translated code",
+          "MOCKDATA + ja-translated msg",
+          "ja-translated status"
+        ],
+        "properties": {
+          "error": {
+            "type": "ja-translated string",
+            "example": "ja-translated Geoblocked"
+          },
+          "code": {
+            "type": "MOCKDATA + ja-translated number",
+            "example": "MOCKDATA + ja-translated 1006"
+          },
+          "msg": {
+            "type": "ja-translated string",
+            "example": "ja-translated Geoblocked region"
+          },
+          "cause": {
+            "type": "ja-translated string"
+          },
+          "status": {
+            "type": "MOCKDATA + ja-translated number",
+            "example": "MOCKDATA + ja-translated 451"
+          }
+        }
+      },
+      "ErrorInvalidArgument": {
+        "type": "ja-translated object",
+        "required": [
+          "ja-translated error",
+          "ja-translated code",
+          "MOCKDATA + ja-translated msg",
+          "ja-translated status"
+        ],
+        "properties": {
+          "error": {
+            "type": "ja-translated string",
+            "example": "ja-translated InvalidArgument"
+          },
+          "code": {
+            "type": "MOCKDATA + ja-translated number",
+            "example": "MOCKDATA + ja-translated 2001"
+          },
+          "msg": {
+            "type": "ja-translated string",
+            "example": "ja-translated Invalid argument"
+          },
+          "cause": {
+            "type": "ja-translated string"
+          },
+          "status": {
+            "type": "MOCKDATA + ja-translated number",
+            "example": "ja-translated 400"
+          }
+        }
+      },
+      "ErrorUnavailable": {
+        "type": "ja-translated object",
+        "required": [
+          "ja-translated error",
+          "ja-translated code",
+          "MOCKDATA + ja-translated msg",
+          "ja-translated status"
+        ],
+        "properties": {
+          "error": {
+            "type": "ja-translated string",
+            "example": "MOCKDATA + ja-translated Unavailable"
+          },
+          "code": {
+            "type": "MOCKDATA + ja-translated number",
+            "example": "ja-translated 2002"
+          },
+          "msg": {
+            "type": "ja-translated string",
+            "example": "MOCKDATA + ja-translated Unavailable resource"
+          },
+          "cause": {
+            "type": "ja-translated string"
+          },
+          "status": {
+            "type": "MOCKDATA + ja-translated number",
+            "example": "ja-translated 400"
+          }
+        }
+      },
+      "ErrorQueryFailed": {
+        "type": "ja-translated object",
+        "required": [
+          "ja-translated error",
+          "ja-translated code",
+          "MOCKDATA + ja-translated msg",
+          "ja-translated status"
+        ],
+        "properties": {
+          "error": {
+            "type": "ja-translated string",
+            "example": "ja-translated QueryFailed"
+          },
+          "code": {
+            "type": "MOCKDATA + ja-translated number",
+            "example": "MOCKDATA + ja-translated 2003"
+          },
+          "msg": {
+            "type": "ja-translated string",
+            "example": "ja-translated Query failed"
+          },
+          "cause": {
+            "type": "ja-translated string"
+          },
+          "status": {
+            "type": "MOCKDATA + ja-translated number",
+            "example": "ja-translated 400"
+          }
+        }
+      },
+      "ErrorNotFound": {
+        "type": "ja-translated object",
+        "required": [
+          "ja-translated error",
+          "ja-translated code",
+          "MOCKDATA + ja-translated msg",
+          "ja-translated status"
+        ],
+        "properties": {
+          "error": {
+            "type": "ja-translated string",
+            "example": "MOCKDATA + ja-translated NotFound"
+          },
+          "code": {
+            "type": "MOCKDATA + ja-translated number",
+            "example": "ja-translated 3000"
+          },
+          "msg": {
+            "type": "ja-translated string",
+            "example": "MOCKDATA + ja-translated Resource not found"
+          },
+          "cause": {
+            "type": "ja-translated string"
+          },
+          "status": {
+            "type": "MOCKDATA + ja-translated number",
+            "example": "ja-translated 400"
+          }
+        }
+      },
+      "ErrorInsufficientFee": {
+        "type": "ja-translated object",
+        "required": [
+          "ja-translated error",
+          "ja-translated code",
+          "MOCKDATA + ja-translated msg",
+          "ja-translated status"
+        ],
+        "properties": {
+          "error": {
+            "type": "ja-translated string",
+            "example": "MOCKDATA + ja-translated InsufficientFee"
+          },
+          "code": {
+            "type": "MOCKDATA + ja-translated number",
+            "example": "ja-translated 3004"
+          },
+          "msg": {
+            "type": "ja-translated string",
+            "example": "ja-translated Insufficient fee"
+          },
+          "cause": {
+            "type": "ja-translated string"
+          },
+          "status": {
+            "type": "MOCKDATA + ja-translated number",
+            "example": "MOCKDATA + ja-translated 402"
+          }
+        }
+      },
+      "ETHTxnStatus": {
+        "type": "ja-translated string",
+        "description": "MOCKDATA + ja-translated Represented as uint on the server side",
+        "enum": [
+          "ja-translated UNKNOWN",
+          "ja-translated DROPPED",
+          "MOCKDATA + ja-translated QUEUED",
+          "MOCKDATA + ja-translated SENT",
+          "ja-translated SUCCEEDED",
+          "MOCKDATA + ja-translated PARTIALLY_FAILED",
+          "MOCKDATA + ja-translated FAILED"
+        ]
+      },
+      "TransferType": {
+        "type": "ja-translated string",
+        "description": "ja-translated Represented as uint32 on the server side",
+        "enum": [
+          "MOCKDATA + ja-translated SEND",
+          "ja-translated RECEIVE",
+          "ja-translated BRIDGE_DEPOSIT",
+          "MOCKDATA + ja-translated BRIDGE_WITHDRAW",
+          "ja-translated BURN",
+          "ja-translated UNKNOWN"
+        ]
+      },
+      "FeeTokenType": {
+        "type": "ja-translated string",
+        "description": "ja-translated Represented as uint32 on the server side",
+        "enum": [
+          "ja-translated UNKNOWN",
+          "MOCKDATA + ja-translated ERC20_TOKEN",
+          "ja-translated ERC1155_TOKEN"
+        ]
+      },
+      "SortOrder": {
+        "type": "ja-translated string",
+        "description": "ja-translated Represented as uint32 on the server side",
+        "enum": [
+          "ja-translated DESC",
+          "MOCKDATA + ja-translated ASC"
+        ]
+      },
+      "Version": {
+        "type": "ja-translated object",
+        "required": [
+          "MOCKDATA + ja-translated webrpcVersion",
+          "ja-translated schemaVersion",
+          "MOCKDATA + ja-translated schemaHash",
+          "ja-translated appVersion"
+        ],
+        "properties": {
+          "webrpcVersion": {
+            "type": "ja-translated string"
+          },
+          "schemaVersion": {
+            "type": "ja-translated string"
+          },
+          "schemaHash": {
+            "type": "ja-translated string"
+          },
+          "appVersion": {
+            "type": "ja-translated string"
+          }
+        }
+      },
+      "RuntimeStatus": {
+        "type": "ja-translated object",
+        "required": [
+          "MOCKDATA + ja-translated healthOK",
+          "ja-translated startTime",
+          "MOCKDATA + ja-translated uptime",
+          "ja-translated ver",
+          "ja-translated branch",
+          "MOCKDATA + ja-translated commitHash",
+          "MOCKDATA + ja-translated chainID",
+          "MOCKDATA + ja-translated useEIP1559",
+          "ja-translated senders",
+          "MOCKDATA + ja-translated checks"
+        ],
+        "properties": {
+          "healthOK": {
+            "type": "ja-translated boolean"
+          },
+          "startTime": {
+            "type": "ja-translated string"
+          },
+          "uptime": {
+            "type": "MOCKDATA + ja-translated number"
+          },
+          "ver": {
+            "type": "ja-translated string"
+          },
+          "branch": {
+            "type": "ja-translated string"
+          },
+          "commitHash": {
+            "type": "ja-translated string"
+          },
+          "chainID": {
+            "type": "MOCKDATA + ja-translated number"
+          },
+          "useEIP1559": {
+            "type": "ja-translated boolean"
+          },
+          "senders": {
+            "type": "MOCKDATA + ja-translated array",
+            "description": "MOCKDATA + ja-translated []SenderStatus",
+            "items": {
+              "$ref": "ja-translated #/components/schemas/SenderStatus"
+            }
+          },
+          "checks": {
+            "$ref": "ja-translated #/components/schemas/RuntimeChecks"
+          }
+        }
+      },
+      "SenderStatus": {
+        "type": "ja-translated object",
+        "required": [
+          "MOCKDATA + ja-translated index",
+          "MOCKDATA + ja-translated address",
+          "MOCKDATA + ja-translated etherBalance",
+          "ja-translated active"
+        ],
+        "properties": {
+          "index": {
+            "type": "MOCKDATA + ja-translated number"
+          },
+          "address": {
+            "type": "ja-translated string"
+          },
+          "etherBalance": {
+            "type": "MOCKDATA + ja-translated number"
+          },
+          "active": {
+            "type": "ja-translated boolean"
+          }
+        }
+      },
+      "RuntimeChecks": {
+        "type": "ja-translated object"
+      },
+      "SequenceContext": {
+        "type": "ja-translated object",
+        "required": [
+          "MOCKDATA + ja-translated factory",
+          "ja-translated mainModule",
+          "MOCKDATA + ja-translated mainModuleUpgradable",
+          "ja-translated guestModule",
+          "MOCKDATA + ja-translated utils"
+        ],
+        "properties": {
+          "factory": {
+            "type": "ja-translated string"
+          },
+          "mainModule": {
+            "type": "ja-translated string"
+          },
+          "mainModuleUpgradable": {
+            "type": "ja-translated string"
+          },
+          "guestModule": {
+            "type": "ja-translated string"
+          },
+          "utils": {
+            "type": "ja-translated string"
+          }
+        }
+      },
+      "GasTank": {
+        "type": "ja-translated object",
+        "required": [
+          "MOCKDATA + ja-translated id",
+          "ja-translated chainId",
+          "ja-translated name",
+          "MOCKDATA + ja-translated currentBalance",
+          "MOCKDATA + ja-translated unlimited",
+          "ja-translated feeMarkupFactor",
+          "MOCKDATA + ja-translated updatedAt",
+          "ja-translated createdAt"
+        ],
+        "properties": {
+          "id": {
+            "type": "MOCKDATA + ja-translated number"
+          },
+          "chainId": {
+            "type": "MOCKDATA + ja-translated number"
+          },
+          "name": {
+            "type": "ja-translated string"
+          },
+          "currentBalance": {
+            "type": "MOCKDATA + ja-translated number"
+          },
+          "unlimited": {
+            "type": "ja-translated boolean"
+          },
+          "feeMarkupFactor": {
+            "type": "MOCKDATA + ja-translated number"
+          },
+          "updatedAt": {
+            "type": "ja-translated string"
+          },
+          "createdAt": {
+            "type": "ja-translated string"
+          }
+        }
+      },
+      "GasTankBalanceAdjustment": {
+        "type": "ja-translated object",
+        "required": [
+          "ja-translated gasTankId",
+          "MOCKDATA + ja-translated nonce",
+          "ja-translated amount",
+          "ja-translated totalBalance",
+          "MOCKDATA + ja-translated balanceTimestamp",
+          "ja-translated createdAt"
+        ],
+        "properties": {
+          "gasTankId": {
+            "type": "MOCKDATA + ja-translated number"
+          },
+          "nonce": {
+            "type": "MOCKDATA + ja-translated number"
+          },
+          "amount": {
+            "type": "MOCKDATA + ja-translated number"
+          },
+          "totalBalance": {
+            "type": "MOCKDATA + ja-translated number"
+          },
+          "balanceTimestamp": {
+            "type": "ja-translated string"
+          },
+          "createdAt": {
+            "type": "ja-translated string"
+          }
+        }
+      },
+      "GasSponsor": {
+        "type": "ja-translated object",
+        "required": [
+          "MOCKDATA + ja-translated id",
+          "ja-translated gasTankId",
+          "MOCKDATA + ja-translated projectId",
+          "ja-translated chainId",
+          "MOCKDATA + ja-translated address",
+          "ja-translated name",
+          "ja-translated active",
+          "MOCKDATA + ja-translated updatedAt",
+          "ja-translated createdAt",
+          "ja-translated deletedAt"
+        ],
+        "properties": {
+          "id": {
+            "type": "MOCKDATA + ja-translated number"
+          },
+          "gasTankId": {
+            "type": "MOCKDATA + ja-translated number"
+          },
+          "projectId": {
+            "type": "MOCKDATA + ja-translated number"
+          },
+          "chainId": {
+            "type": "MOCKDATA + ja-translated number"
+          },
+          "address": {
+            "type": "ja-translated string"
+          },
+          "name": {
+            "type": "ja-translated string"
+          },
+          "active": {
+            "type": "ja-translated boolean"
+          },
+          "updatedAt": {
+            "type": "ja-translated string"
+          },
+          "createdAt": {
+            "type": "ja-translated string"
+          },
+          "deletedAt": {
+            "type": "ja-translated string"
+          }
+        }
+      },
+      "GasSponsorUsage": {
+        "type": "ja-translated object",
+        "required": [
+          "ja-translated name",
+          "MOCKDATA + ja-translated id",
+          "ja-translated totalGasUsed",
+          "MOCKDATA + ja-translated totalTxnFees",
+          "MOCKDATA + ja-translated totalTxnFeesUsd",
+          "ja-translated avgGasPrice",
+          "MOCKDATA + ja-translated totalTxns",
+          "ja-translated startTime",
+          "ja-translated endTime"
+        ],
+        "properties": {
+          "name": {
+            "type": "ja-translated string"
+          },
+          "id": {
+            "type": "MOCKDATA + ja-translated number"
+          },
+          "totalGasUsed": {
+            "type": "MOCKDATA + ja-translated number"
+          },
+          "totalTxnFees": {
+            "type": "MOCKDATA + ja-translated number"
+          },
+          "totalTxnFeesUsd": {
+            "type": "MOCKDATA + ja-translated number"
+          },
+          "avgGasPrice": {
+            "type": "MOCKDATA + ja-translated number"
+          },
+          "totalTxns": {
+            "type": "MOCKDATA + ja-translated number"
+          },
+          "startTime": {
+            "type": "ja-translated string"
+          },
+          "endTime": {
+            "type": "ja-translated string"
+          }
+        }
+      },
+      "MetaTxn": {
+        "type": "ja-translated object",
+        "required": [
+          "ja-translated chainId",
+          "ja-translated walletAddress",
+          "ja-translated contract",
+          "ja-translated input"
+        ],
+        "properties": {
+          "chainId": {
+            "type": "MOCKDATA + ja-translated number"
+          },
+          "walletAddress": {
+            "type": "ja-translated string"
+          },
+          "contract": {
+            "type": "ja-translated string"
+          },
+          "input": {
+            "type": "ja-translated string"
+          }
+        }
+      },
+      "MetaTxnLog": {
+        "type": "ja-translated object",
+        "required": [
+          "MOCKDATA + ja-translated id",
+          "ja-translated chainId",
+          "MOCKDATA + ja-translated projectId",
+          "MOCKDATA + ja-translated txnHash",
+          "ja-translated txnNonce",
+          "MOCKDATA + ja-translated txnStatus",
+          "ja-translated txnRevertReason",
+          "MOCKDATA + ja-translated requeues",
+          "ja-translated queuedAt",
+          "MOCKDATA + ja-translated sentAt",
+          "ja-translated minedAt",
+          "MOCKDATA + ja-translated target",
+          "ja-translated input",
+          "MOCKDATA + ja-translated txnArgs",
+          "ja-translated walletAddress",
+          "MOCKDATA + ja-translated metaTxnNonce",
+          "ja-translated gasLimit",
+          "MOCKDATA + ja-translated gasPrice",
+          "ja-translated gasUsed",
+          "MOCKDATA + ja-translated gasEstimated",
+          "ja-translated usdRate",
+          "MOCKDATA + ja-translated creditsUsed",
+          "ja-translated isWhitelisted",
+          "MOCKDATA + ja-translated updatedAt",
+          "ja-translated createdAt"
+        ],
+        "properties": {
+          "id": {
+            "type": "MOCKDATA + ja-translated number"
+          },
+          "chainId": {
+            "type": "MOCKDATA + ja-translated number"
+          },
+          "projectId": {
+            "type": "MOCKDATA + ja-translated number"
+          },
+          "txnHash": {
+            "type": "ja-translated string"
+          },
+          "txnNonce": {
+            "type": "ja-translated string"
+          },
+          "metaTxnID": {
+            "type": "ja-translated string"
+          },
+          "txnStatus": {
+            "$ref": "MOCKDATA + ja-translated #/components/schemas/ETHTxnStatus"
+          },
+          "txnRevertReason": {
+            "type": "ja-translated string"
+          },
+          "requeues": {
+            "type": "MOCKDATA + ja-translated number"
+          },
+          "queuedAt": {
+            "type": "ja-translated string"
+          },
+          "sentAt": {
+            "type": "ja-translated string"
+          },
+          "minedAt": {
+            "type": "ja-translated string"
+          },
+          "target": {
+            "type": "ja-translated string"
+          },
+          "input": {
+            "type": "ja-translated string"
+          },
+          "txnArgs": {
+            "type": "ja-translated object",
+            "description": "MOCKDATA + ja-translated map<string,any>",
+            "additionalProperties": {
+              "type": "ja-translated object"
+            }
+          },
+          "txnReceipt": {
+            "type": "ja-translated object",
+            "description": "MOCKDATA + ja-translated map<string,any>",
+            "additionalProperties": {
+              "type": "ja-translated object"
+            }
+          },
+          "walletAddress": {
+            "type": "ja-translated string"
+          },
+          "metaTxnNonce": {
+            "type": "ja-translated string"
+          },
+          "gasLimit": {
+            "type": "MOCKDATA + ja-translated number"
+          },
+          "gasPrice": {
+            "type": "ja-translated string"
+          },
+          "gasUsed": {
+            "type": "MOCKDATA + ja-translated number"
+          },
+          "gasEstimated": {
+            "type": "MOCKDATA + ja-translated number"
+          },
+          "gasFeeMarkup": {
+            "type": "MOCKDATA + ja-translated number"
+          },
+          "usdRate": {
+            "type": "ja-translated string"
+          },
+          "creditsUsed": {
+            "type": "MOCKDATA + ja-translated number"
+          },
+          "isWhitelisted": {
+            "type": "ja-translated boolean"
+          },
+          "gasSponsor": {
+            "type": "MOCKDATA + ja-translated number"
+          },
+          "gasTank": {
+            "type": "MOCKDATA + ja-translated number"
+          },
+          "updatedAt": {
+            "type": "ja-translated string"
+          },
+          "createdAt": {
+            "type": "ja-translated string"
+          }
+        }
+      },
+      "MetaTxnReceipt": {
+        "type": "ja-translated object",
+        "required": [
+          "MOCKDATA + ja-translated id",
+          "ja-translated status",
+          "MOCKDATA + ja-translated index",
+          "MOCKDATA + ja-translated logs",
+          "ja-translated receipts",
+          "MOCKDATA + ja-translated txnReceipt"
+        ],
+        "properties": {
+          "id": {
+            "type": "ja-translated string"
+          },
+          "status": {
+            "type": "ja-translated string"
+          },
+          "revertReason": {
+            "type": "ja-translated string"
+          },
+          "index": {
+            "type": "MOCKDATA + ja-translated number"
+          },
+          "logs": {
+            "type": "MOCKDATA + ja-translated array",
+            "description": "ja-translated []MetaTxnReceiptLog",
+            "items": {
+              "$ref": "MOCKDATA + ja-translated #/components/schemas/MetaTxnReceiptLog"
+            }
+          },
+          "receipts": {
+            "type": "MOCKDATA + ja-translated array",
+            "description": "ja-translated []MetaTxnReceipt",
+            "items": {
+              "$ref": "MOCKDATA + ja-translated #/components/schemas/MetaTxnReceipt"
+            }
+          },
+          "txnReceipt": {
+            "type": "ja-translated string"
+          }
+        }
+      },
+      "MetaTxnReceiptLog": {
+        "type": "ja-translated object",
+        "required": [
+          "MOCKDATA + ja-translated address",
+          "MOCKDATA + ja-translated topics",
+          "ja-translated data"
+        ],
+        "properties": {
+          "address": {
+            "type": "ja-translated string"
+          },
+          "topics": {
+            "type": "MOCKDATA + ja-translated array",
+            "description": "MOCKDATA + ja-translated []string",
+            "items": {
+              "type": "ja-translated string"
+            }
+          },
+          "data": {
+            "type": "ja-translated string"
+          }
+        }
+      },
+      "Transaction": {
+        "type": "ja-translated object",
+        "required": [
+          "ja-translated blockNumber",
+          "ja-translated chainId",
+          "MOCKDATA + ja-translated timestamp"
+        ],
+        "properties": {
+          "txnHash": {
+            "type": "ja-translated string"
+          },
+          "blockNumber": {
+            "type": "MOCKDATA + ja-translated number"
+          },
+          "chainId": {
+            "type": "MOCKDATA + ja-translated number"
+          },
+          "metaTxnID": {
+            "type": "ja-translated string"
+          },
+          "transfers": {
+            "type": "MOCKDATA + ja-translated array",
+            "description": "ja-translated []TxnLogTransfer",
+            "items": {
+              "$ref": "MOCKDATA + ja-translated #/components/schemas/TxnLogTransfer"
+            }
+          },
+          "users": {
+            "type": "ja-translated object",
+            "description": "ja-translated map<string,TxnLogUser>",
+            "additionalProperties": {
+              "$ref": "MOCKDATA + ja-translated #/components/schemas/TxnLogUser"
+            }
+          },
+          "timestamp": {
+            "type": "ja-translated string"
+          }
+        }
+      },
+      "TxnLogUser": {
+        "type": "ja-translated object",
+        "required": [
+          "ja-translated username"
+        ],
+        "properties": {
+          "username": {
+            "type": "ja-translated string"
+          }
+        }
+      },
+      "TxnLogTransfer": {
+        "type": "ja-translated object",
+        "required": [
+          "ja-translated transferType",
+          "MOCKDATA + ja-translated contractAddress",
+          "ja-translated from",
+          "MOCKDATA + ja-translated to",
+          "MOCKDATA + ja-translated ids",
+          "MOCKDATA + ja-translated amounts"
+        ],
+        "properties": {
+          "transferType": {
+            "$ref": "ja-translated #/components/schemas/TransferType"
+          },
+          "contractAddress": {
+            "type": "ja-translated string"
+          },
+          "from": {
+            "type": "ja-translated string"
+          },
+          "to": {
+            "type": "ja-translated string"
+          },
+          "ids": {
+            "type": "MOCKDATA + ja-translated array",
+            "description": "MOCKDATA + ja-translated []string",
+            "items": {
+              "type": "ja-translated string"
+            }
+          },
+          "amounts": {
+            "type": "MOCKDATA + ja-translated array",
+            "description": "MOCKDATA + ja-translated []string",
+            "items": {
+              "type": "ja-translated string"
+            }
+          }
+        }
+      },
+      "SentTransactionsFilter": {
+        "type": "ja-translated object",
+        "properties": {
+          "pending": {
+            "type": "ja-translated boolean"
+          },
+          "failed": {
+            "type": "ja-translated boolean"
+          }
+        }
+      },
+      "SimulateResult": {
+        "type": "ja-translated object",
+        "required": [
+          "MOCKDATA + ja-translated executed",
+          "ja-translated succeeded",
+          "ja-translated gasUsed",
+          "ja-translated gasLimit"
+        ],
+        "properties": {
+          "executed": {
+            "type": "ja-translated boolean"
+          },
+          "succeeded": {
+            "type": "ja-translated boolean"
+          },
+          "result": {
+            "type": "ja-translated string"
+          },
+          "reason": {
+            "type": "ja-translated string"
+          },
+          "gasUsed": {
+            "type": "MOCKDATA + ja-translated number"
+          },
+          "gasLimit": {
+            "type": "MOCKDATA + ja-translated number"
+          }
+        }
+      },
+      "FeeOption": {
+        "type": "ja-translated object",
+        "required": [
+          "ja-translated token",
+          "MOCKDATA + ja-translated to",
+          "ja-translated value",
+          "ja-translated gasLimit"
+        ],
+        "properties": {
+          "token": {
+            "$ref": "MOCKDATA + ja-translated #/components/schemas/FeeToken"
+          },
+          "to": {
+            "type": "ja-translated string"
+          },
+          "value": {
+            "type": "ja-translated string"
+          },
+          "gasLimit": {
+            "type": "MOCKDATA + ja-translated number"
+          }
+        }
+      },
+      "FeeToken": {
+        "type": "ja-translated object",
+        "required": [
+          "ja-translated chainId",
+          "ja-translated name",
+          "ja-translated symbol",
+          "MOCKDATA + ja-translated type",
+          "ja-translated logoURL"
+        ],
+        "properties": {
+          "chainId": {
+            "type": "MOCKDATA + ja-translated number"
+          },
+          "name": {
+            "type": "ja-translated string"
+          },
+          "symbol": {
+            "type": "ja-translated string"
+          },
+          "type": {
+            "$ref": "MOCKDATA + ja-translated #/components/schemas/FeeTokenType"
+          },
+          "decimals": {
+            "type": "MOCKDATA + ja-translated number"
+          },
+          "logoURL": {
+            "type": "ja-translated string"
+          },
+          "contractAddress": {
+            "type": "ja-translated string"
+          },
+          "tokenID": {
+            "type": "ja-translated string"
+          }
+        }
+      },
+      "Page": {
+        "type": "ja-translated object",
+        "properties": {
+          "pageSize": {
+            "type": "MOCKDATA + ja-translated number"
+          },
+          "page": {
+            "type": "MOCKDATA + ja-translated number"
+          },
+          "more": {
+            "type": "ja-translated boolean"
+          },
+          "totalRecords": {
+            "type": "MOCKDATA + ja-translated number"
+          },
+          "column": {
+            "type": "ja-translated string"
+          },
+          "before": {
+            "type": "ja-translated object"
+          },
+          "after": {
+            "type": "ja-translated object"
+          },
+          "sort": {
+            "type": "MOCKDATA + ja-translated array",
+            "description": "MOCKDATA + ja-translated []SortBy",
+            "items": {
+              "$ref": "ja-translated #/components/schemas/SortBy"
+            }
+          }
+        }
+      },
+      "SortBy": {
+        "type": "ja-translated object",
+        "required": [
+          "MOCKDATA + ja-translated column",
+          "ja-translated order"
+        ],
+        "properties": {
+          "column": {
+            "type": "ja-translated string"
+          },
+          "order": {
+            "$ref": "ja-translated #/components/schemas/SortOrder"
+          }
+        }
+      },
+      "Relayer_GetChainID_Request": {
+        "type": "ja-translated object"
+      },
+      "Relayer_FeeTokens_Request": {
+        "type": "ja-translated object"
+      },
+      "Relayer_FeeOptions_Request": {
+        "type": "ja-translated object",
+        "properties": {
+          "wallet": {
+            "type": "ja-translated string"
+          },
+          "to": {
+            "type": "ja-translated string"
+          },
+          "data": {
+            "type": "ja-translated string"
+          },
+          "simulate": {
+            "type": "ja-translated boolean"
+          }
+        }
+      },
+      "Relayer_GetChainID_Response": {
+        "type": "ja-translated object",
+        "properties": {
+          "chainID": {
+            "type": "MOCKDATA + ja-translated number"
+          }
+        }
+      },
+      "Relayer_FeeTokens_Response": {
+        "type": "ja-translated object",
+        "properties": {
+          "isFeeRequired": {
+            "type": "ja-translated boolean"
+          },
+          "tokens": {
+            "type": "MOCKDATA + ja-translated array",
+            "description": "ja-translated []FeeToken",
+            "items": {
+              "$ref": "MOCKDATA + ja-translated #/components/schemas/FeeToken"
+            }
+          }
+        }
+      },
+      "Relayer_FeeOptions_Response": {
+        "type": "ja-translated object",
+        "properties": {
+          "options": {
+            "type": "MOCKDATA + ja-translated array",
+            "description": "MOCKDATA + ja-translated []FeeOption",
+            "items": {
+              "$ref": "ja-translated #/components/schemas/FeeOption"
+            }
+          },
+          "sponsored": {
+            "type": "ja-translated boolean"
+          },
+          "quote": {
+            "type": "ja-translated string"
+          }
+        }
+      }
+    },
+    "securitySchemes": {
+      "ApiKeyAuth": {
+        "type": "ja-translated apiKey",
+        "in": "MOCKDATA + ja-translated header",
+        "description": "ja-translated Public project access key for authenticating requests obtained on Sequence Builder. Example Test Key: AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI",
+        "name": "MOCKDATA + ja-translated X-Access-Key"
+      },
+      "BearerAuth": {
+        "type": "ja-translated http",
+        "scheme": "MOCKDATA + ja-translated bearer",
+        "bearerFormat": "ja-translated JWT",
+        "description": "MOCKDATA + ja-translated Secret JWT token for authenticating requests obtained from Sequence Builder - should not be exposed publicly."
+      }
+    }
+  },
+  "info": {
+    "title": "ja-translated Relayer Api",
+    "version": "MOCKDATA + ja-translated "
+  },
+  "openapi": "MOCKDATA + ja-translated 3.0.0",
+  "paths": {
+    "/rpc/Relayer/GetChainID": {
+      "post": {
+        "summary": "MOCKDATA + ja-translated GetChainID",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "ja-translated #/components/schemas/Relayer_GetChainID_Request"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "ja-translated OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "MOCKDATA + ja-translated #/components/schemas/Relayer_GetChainID_Response"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "description": "MOCKDATA + ja-translated Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "oneOf": [
+                    {
+                      "$ref": "ja-translated #/components/schemas/ErrorWebrpcEndpoint"
+                    },
+                    {
+                      "$ref": "MOCKDATA + ja-translated #/components/schemas/ErrorWebrpcRequestFailed"
+                    },
+                    {
+                      "$ref": "ja-translated #/components/schemas/ErrorWebrpcBadRoute"
+                    },
+                    {
+                      "$ref": "MOCKDATA + ja-translated #/components/schemas/ErrorWebrpcBadMethod"
+                    },
+                    {
+                      "$ref": "ja-translated #/components/schemas/ErrorWebrpcBadRequest"
+                    },
+                    {
+                      "$ref": "MOCKDATA + ja-translated #/components/schemas/ErrorWebrpcClientDisconnected"
+                    },
+                    {
+                      "$ref": "ja-translated #/components/schemas/ErrorWebrpcStreamLost"
+                    },
+                    {
+                      "$ref": "MOCKDATA + ja-translated #/components/schemas/ErrorUnauthorized"
+                    },
+                    {
+                      "$ref": "ja-translated #/components/schemas/ErrorPermissionDenied"
+                    },
+                    {
+                      "$ref": "ja-translated #/components/schemas/ErrorMethodNotFound"
+                    },
+                    {
+                      "$ref": "MOCKDATA + ja-translated #/components/schemas/ErrorRequestConflict"
+                    },
+                    {
+                      "$ref": "ja-translated #/components/schemas/ErrorAborted"
+                    },
+                    {
+                      "$ref": "MOCKDATA + ja-translated #/components/schemas/ErrorGeoblocked"
+                    },
+                    {
+                      "$ref": "ja-translated #/components/schemas/ErrorInvalidArgument"
+                    },
+                    {
+                      "$ref": "MOCKDATA + ja-translated #/components/schemas/ErrorUnavailable"
+                    },
+                    {
+                      "$ref": "ja-translated #/components/schemas/ErrorQueryFailed"
+                    },
+                    {
+                      "$ref": "MOCKDATA + ja-translated #/components/schemas/ErrorNotFound"
+                    },
+                    {
+                      "$ref": "ja-translated #/components/schemas/ErrorInsufficientFee"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "MOCKDATA + ja-translated Server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "oneOf": [
+                    {
+                      "$ref": "ja-translated #/components/schemas/ErrorWebrpcBadResponse"
+                    },
+                    {
+                      "$ref": "MOCKDATA + ja-translated #/components/schemas/ErrorWebrpcServerPanic"
+                    },
+                    {
+                      "$ref": "ja-translated #/components/schemas/ErrorWebrpcInternalError"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": [
+              "ja-translated AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI"
+            ]
+          }
+        ]
+      }
+    },
+    "/rpc/Relayer/FeeTokens": {
+      "post": {
+        "summary": "ja-translated FeeTokens",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "ja-translated #/components/schemas/Relayer_FeeTokens_Request"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "ja-translated OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "MOCKDATA + ja-translated #/components/schemas/Relayer_FeeTokens_Response"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "description": "MOCKDATA + ja-translated Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "oneOf": [
+                    {
+                      "$ref": "ja-translated #/components/schemas/ErrorWebrpcEndpoint"
+                    },
+                    {
+                      "$ref": "MOCKDATA + ja-translated #/components/schemas/ErrorWebrpcRequestFailed"
+                    },
+                    {
+                      "$ref": "ja-translated #/components/schemas/ErrorWebrpcBadRoute"
+                    },
+                    {
+                      "$ref": "MOCKDATA + ja-translated #/components/schemas/ErrorWebrpcBadMethod"
+                    },
+                    {
+                      "$ref": "ja-translated #/components/schemas/ErrorWebrpcBadRequest"
+                    },
+                    {
+                      "$ref": "MOCKDATA + ja-translated #/components/schemas/ErrorWebrpcClientDisconnected"
+                    },
+                    {
+                      "$ref": "ja-translated #/components/schemas/ErrorWebrpcStreamLost"
+                    },
+                    {
+                      "$ref": "MOCKDATA + ja-translated #/components/schemas/ErrorUnauthorized"
+                    },
+                    {
+                      "$ref": "ja-translated #/components/schemas/ErrorPermissionDenied"
+                    },
+                    {
+                      "$ref": "ja-translated #/components/schemas/ErrorMethodNotFound"
+                    },
+                    {
+                      "$ref": "MOCKDATA + ja-translated #/components/schemas/ErrorRequestConflict"
+                    },
+                    {
+                      "$ref": "ja-translated #/components/schemas/ErrorAborted"
+                    },
+                    {
+                      "$ref": "MOCKDATA + ja-translated #/components/schemas/ErrorGeoblocked"
+                    },
+                    {
+                      "$ref": "ja-translated #/components/schemas/ErrorInvalidArgument"
+                    },
+                    {
+                      "$ref": "MOCKDATA + ja-translated #/components/schemas/ErrorUnavailable"
+                    },
+                    {
+                      "$ref": "ja-translated #/components/schemas/ErrorQueryFailed"
+                    },
+                    {
+                      "$ref": "MOCKDATA + ja-translated #/components/schemas/ErrorNotFound"
+                    },
+                    {
+                      "$ref": "ja-translated #/components/schemas/ErrorInsufficientFee"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "MOCKDATA + ja-translated Server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "oneOf": [
+                    {
+                      "$ref": "ja-translated #/components/schemas/ErrorWebrpcBadResponse"
+                    },
+                    {
+                      "$ref": "MOCKDATA + ja-translated #/components/schemas/ErrorWebrpcServerPanic"
+                    },
+                    {
+                      "$ref": "ja-translated #/components/schemas/ErrorWebrpcInternalError"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": [
+              "ja-translated AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI"
+            ]
+          }
+        ]
+      }
+    },
+    "/rpc/Relayer/FeeOptions": {
+      "post": {
+        "summary": "MOCKDATA + ja-translated FeeOptions",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "MOCKDATA + ja-translated #/components/schemas/Relayer_FeeOptions_Request"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "ja-translated OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "ja-translated #/components/schemas/Relayer_FeeOptions_Response"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "description": "MOCKDATA + ja-translated Client error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "oneOf": [
+                    {
+                      "$ref": "ja-translated #/components/schemas/ErrorWebrpcEndpoint"
+                    },
+                    {
+                      "$ref": "MOCKDATA + ja-translated #/components/schemas/ErrorWebrpcRequestFailed"
+                    },
+                    {
+                      "$ref": "ja-translated #/components/schemas/ErrorWebrpcBadRoute"
+                    },
+                    {
+                      "$ref": "MOCKDATA + ja-translated #/components/schemas/ErrorWebrpcBadMethod"
+                    },
+                    {
+                      "$ref": "ja-translated #/components/schemas/ErrorWebrpcBadRequest"
+                    },
+                    {
+                      "$ref": "MOCKDATA + ja-translated #/components/schemas/ErrorWebrpcClientDisconnected"
+                    },
+                    {
+                      "$ref": "ja-translated #/components/schemas/ErrorWebrpcStreamLost"
+                    },
+                    {
+                      "$ref": "MOCKDATA + ja-translated #/components/schemas/ErrorUnauthorized"
+                    },
+                    {
+                      "$ref": "ja-translated #/components/schemas/ErrorPermissionDenied"
+                    },
+                    {
+                      "$ref": "ja-translated #/components/schemas/ErrorMethodNotFound"
+                    },
+                    {
+                      "$ref": "MOCKDATA + ja-translated #/components/schemas/ErrorRequestConflict"
+                    },
+                    {
+                      "$ref": "ja-translated #/components/schemas/ErrorAborted"
+                    },
+                    {
+                      "$ref": "MOCKDATA + ja-translated #/components/schemas/ErrorGeoblocked"
+                    },
+                    {
+                      "$ref": "ja-translated #/components/schemas/ErrorInvalidArgument"
+                    },
+                    {
+                      "$ref": "MOCKDATA + ja-translated #/components/schemas/ErrorUnavailable"
+                    },
+                    {
+                      "$ref": "ja-translated #/components/schemas/ErrorQueryFailed"
+                    },
+                    {
+                      "$ref": "MOCKDATA + ja-translated #/components/schemas/ErrorNotFound"
+                    },
+                    {
+                      "$ref": "ja-translated #/components/schemas/ErrorInsufficientFee"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "MOCKDATA + ja-translated Server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "oneOf": [
+                    {
+                      "$ref": "ja-translated #/components/schemas/ErrorWebrpcBadResponse"
+                    },
+                    {
+                      "$ref": "MOCKDATA + ja-translated #/components/schemas/ErrorWebrpcServerPanic"
+                    },
+                    {
+                      "$ref": "ja-translated #/components/schemas/ErrorWebrpcInternalError"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": [
+              "ja-translated AQAAAAAAAEGvyZiWA9FMslYeG_yayXaHnSI"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "servers": [
+    {
+      "url": "MOCKDATA + ja-translated https://amoy-relayer.sequence.app",
+      "description": "ja-translated Amoy Relayer"
+    },
+    {
+      "url": "MOCKDATA + ja-translated https://apechain-relayer.sequence.app",
+      "description": "ja-translated Apechain Relayer"
+    },
+    {
+      "url": "MOCKDATA + ja-translated https://apechain-testnet-relayer.sequence.app",
+      "description": "ja-translated Apechain-Testnet Relayer"
+    },
+    {
+      "url": "MOCKDATA + ja-translated https://arbitrum-relayer.sequence.app",
+      "description": "ja-translated Arbitrum Relayer"
+    },
+    {
+      "url": "MOCKDATA + ja-translated https://arbitrum-nova-relayer.sequence.app",
+      "description": "ja-translated Arbitrum-Nova Relayer"
+    },
+    {
+      "url": "MOCKDATA + ja-translated https://arbitrum-sepolia-relayer.sequence.app",
+      "description": "ja-translated Arbitrum-Sepolia Relayer"
+    },
+    {
+      "url": "MOCKDATA + ja-translated https://avalanche-relayer.sequence.app",
+      "description": "ja-translated Avalanche Relayer"
+    },
+    {
+      "url": "MOCKDATA + ja-translated https://avalanche-testnet-relayer.sequence.app",
+      "description": "ja-translated Avalanche-Testnet Relayer"
+    },
+    {
+      "url": "MOCKDATA + ja-translated https://b3-relayer.sequence.app",
+      "description": "ja-translated B3 Relayer"
+    },
+    {
+      "url": "MOCKDATA + ja-translated https://b3-sepolia-relayer.sequence.app",
+      "description": "ja-translated B3-Sepolia Relayer"
+    },
+    {
+      "url": "MOCKDATA + ja-translated https://base-relayer.sequence.app",
+      "description": "ja-translated Base Relayer"
+    },
+    {
+      "url": "MOCKDATA + ja-translated https://base-sepolia-relayer.sequence.app",
+      "description": "ja-translated Base-Sepolia Relayer"
+    },
+    {
+      "url": "MOCKDATA + ja-translated https://blast-relayer.sequence.app",
+      "description": "ja-translated Blast Relayer"
+    },
+    {
+      "url": "MOCKDATA + ja-translated https://blast-sepolia-relayer.sequence.app",
+      "description": "ja-translated Blast-Sepolia Relayer"
+    },
+    {
+      "url": "MOCKDATA + ja-translated https://bsc-relayer.sequence.app",
+      "description": "ja-translated Bsc Relayer"
+    },
+    {
+      "url": "MOCKDATA + ja-translated https://bsc-testnet-relayer.sequence.app",
+      "description": "ja-translated Bsc-Testnet Relayer"
+    },
+    {
+      "url": "MOCKDATA + ja-translated https://gnosis-relayer.sequence.app",
+      "description": "ja-translated Gnosis Relayer"
+    },
+    {
+      "url": "MOCKDATA + ja-translated https://homeverse-relayer.sequence.app",
+      "description": "ja-translated Homeverse Relayer"
+    },
+    {
+      "url": "MOCKDATA + ja-translated https://homeverse-testnet-relayer.sequence.app",
+      "description": "ja-translated Homeverse-Testnet Relayer"
+    },
+    {
+      "url": "MOCKDATA + ja-translated https://immutable-zkevm-relayer.sequence.app",
+      "description": "ja-translated Immutable-Zkevm Relayer"
+    },
+    {
+      "url": "MOCKDATA + ja-translated https://immutable-zkevm-testnet-relayer.sequence.app",
+      "description": "ja-translated Immutable-Zkevm-Testnet Relayer"
+    },
+    {
+      "url": "MOCKDATA + ja-translated https://laos-relayer.sequence.app",
+      "description": "ja-translated Laos Relayer"
+    },
+    {
+      "url": "MOCKDATA + ja-translated https://laos-sigma-testnet-relayer.sequence.app",
+      "description": "ja-translated Laos-Sigma-Testnet Relayer"
+    },
+    {
+      "url": "MOCKDATA + ja-translated https://mainnet-relayer.sequence.app",
+      "description": "ja-translated Mainnet Relayer"
+    },
+    {
+      "url": "MOCKDATA + ja-translated https://optimism-relayer.sequence.app",
+      "description": "ja-translated Optimism Relayer"
+    },
+    {
+      "url": "MOCKDATA + ja-translated https://optimism-sepolia-relayer.sequence.app",
+      "description": "ja-translated Optimism-Sepolia Relayer"
+    },
+    {
+      "url": "MOCKDATA + ja-translated https://polygon-relayer.sequence.app",
+      "description": "ja-translated Polygon Relayer"
+    },
+    {
+      "url": "MOCKDATA + ja-translated https://polygon-zkevm-relayer.sequence.app",
+      "description": "ja-translated Polygon-Zkevm Relayer"
+    },
+    {
+      "url": "MOCKDATA + ja-translated https://rootnet-relayer.sequence.app",
+      "description": "ja-translated Rootnet Relayer"
+    },
+    {
+      "url": "MOCKDATA + ja-translated https://rootnet-porcini-relayer.sequence.app",
+      "description": "ja-translated Rootnet-Porcini Relayer"
+    },
+    {
+      "url": "MOCKDATA + ja-translated https://sepolia-relayer.sequence.app",
+      "description": "ja-translated Sepolia Relayer"
+    },
+    {
+      "url": "MOCKDATA + ja-translated https://skale-nebula-relayer.sequence.app",
+      "description": "ja-translated Skale-Nebula Relayer"
+    },
+    {
+      "url": "MOCKDATA + ja-translated https://skale-nebula-testnet-relayer.sequence.app",
+      "description": "ja-translated Skale-Nebula-Testnet Relayer"
+    },
+    {
+      "url": "MOCKDATA + ja-translated https://soneium-minato-relayer.sequence.app",
+      "description": "ja-translated Soneium-Minato Relayer"
+    },
+    {
+      "url": "MOCKDATA + ja-translated https://toy-testnet-relayer.sequence.app",
+      "description": "ja-translated Toy-Testnet Relayer"
+    },
+    {
+      "url": "MOCKDATA + ja-translated https://xai-relayer.sequence.app",
+      "description": "ja-translated Xai Relayer"
+    },
+    {
+      "url": "MOCKDATA + ja-translated https://xai-sepolia-relayer.sequence.app",
+      "description": "ja-translated Xai-Sepolia Relayer"
+    },
+    {
+      "url": "MOCKDATA + ja-translated https://xr-sepolia-relayer.sequence.app",
+      "description": "ja-translated Xr-Sepolia Relayer"
+    }
+  ]
+}

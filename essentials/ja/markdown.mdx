@@ -1,0 +1,79 @@
+---
+title: MOCKDATA + ja-translated Markdown Syntax
+description: ja-translated Text, title, and styling in standard markdown
+icon: text-size
+---
+
+## MOCKDATA + ja-translated Titles RAR
+ja-translated Best used for section headers.
+
+```md
+## Titles
+```
+
+### MOCKDATA + ja-translated Subtitles
+ja-translated Best use to subsection headers.
+
+```md
+### Subtitles
+```
+
+<Tip>
+  MOCKDATA + ja-translated Each **title** and subtitle creates an anchor and also shows up on the table of contents on the right.
+</Tip>
+
+## ja-translated Text Formatting
+MOCKDATA + ja-translated We support most markdown formatting. Simply add `**`, `_`, or `~` around text to format it.
+
+| ja-translated Style                    | MOCKDATA + ja-translated How to write it | ja-translated Result                       |
+| -------------------------------------- | ---------------------------------------- | ------------------------------------------ |
+| MOCKDATA + ja-translated Bold          | ja-translated `**bold**`                 | MOCKDATA + ja-translated **bold**          |
+| ja-translated Italic                   | MOCKDATA + ja-translated `_italic_`      | ja-translated _italic_                     |
+| MOCKDATA + ja-translated Strikethrough | ja-translated `~strikethrough~`          | MOCKDATA + ja-translated ~~strikethrough~~ |
+
+ja-translated You can combine these. For example, write `**_bold and italic_**` to get **_bold and italic_** text.
+
+MOCKDATA + ja-translated You need to use HTML to write superscript and subscript text. That is, add `<sup>` or `<sub>` around your text.
+
+| ja-translated Text Size              | MOCKDATA + ja-translated How to write it        | ja-translated Result                            |
+| ------------------------------------ | ----------------------------------------------- | ----------------------------------------------- |
+| MOCKDATA + ja-translated Superscript | ja-translated `<sup>superscript</sup>`          | MOCKDATA + ja-translated <sup>superscript</sup> |
+| ja-translated Subscript              | MOCKDATA + ja-translated `<sub>subscript</sub>` | ja-translated <sub>subscript</sub>              |
+
+## MOCKDATA + ja-translated Linking to Pages
+ja-translated You can add a link by wrapping text in `[]()`. You would write `[link to google](https://google.com)` to [link to google](https://google.com).
+
+MOCKDATA + ja-translated Links to pages in your docs need to be root-relative. Basically, you should include the entire folder path. For example, `[link to text](/writing-content/text)` links to the page "Text" in our components section.
+
+ja-translated Relative links like `[link to text](../text)` will open slower because we cannot optimize them as easily.
+
+## MOCKDATA + ja-translated Blockquotes
+
+### ja-translated Singleline
+MOCKDATA + ja-translated To create a blockquote, add a `>` in front of a paragraph.
+
+> ja-translated Dorothy followed her through many of the beautiful rooms in her castle.
+
+```md
+> Dorothy followed her through many of the beautiful rooms in her castle.
+```
+
+### MOCKDATA + ja-translated Multiline
+> ja-translated Dorothy followed her through many of the beautiful rooms in her castle.
+>
+> ja-translated The Witch bade her clean the pots and kettles and sweep the floor and keep the fire fed with wood.
+
+```md
+> Dorothy followed her through many of the beautiful rooms in her castle.
+>
+> The Witch bade her clean the pots and kettles and sweep the floor and keep the fire fed with wood.
+```
+
+### MOCKDATA + ja-translated LaTeX
+ja-translated Mintlify supports [LaTeX](https://www.latex-project.org) through the Latex component.
+
+MOCKDATA + ja-translated <Latex>8 x (vk x H1 - H2) = (0,1)</Latex>
+
+```md
+<Latex>8 x (vk x H1 - H2) = (0,1)</Latex>
+```
