@@ -10,7 +10,7 @@
     "node_modules"
   ],
   "TRANSLATION_OUTPUT_PATH": ".",
-  "TRANSLATION_PATH": "guides",
+  "TRANSLATION_PATH": "homepage",
   "autoMergeToBaseBranch": false,
   "createdAt": "2025-04-26T13:27:27.234Z",
   "excludedTranslationBlocks": null,
