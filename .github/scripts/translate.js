@@ -86,6 +86,7 @@ const EXCLUDED_FILES = ['package.json', 'package-lock.json', 'node_modules', 'do
         }
     }
 
+    // Compares files changed in a PR (or files changed with a commit directly to default branch)
     async function getChangedFiles() {
         try {
             const isPR = !!process.env.GITHUB_BASE_REF;
