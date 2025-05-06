@@ -110,12 +110,12 @@ const EXCLUDED_FILES = ['package.json', 'package-lock.json', 'node_modules'];
       
             // Figure out what we’re diffing against
             const baseBranch = isPR ? process.env.GITHUB_BASE_REF : defaultBranch;
-        
-            // Always fetch the two refs we’ll compare
-            execSync(`git fetch --depth=1 origin ${baseBranch}:${baseBranch} ${currentBranch}:${currentBranch}`);
-      
+
             let baseSha;
             if (isPR) {
+                // bring in the base branch so we can diff against it
+                execSync(`git fetch --depth=1 origin ${baseBranch}:${baseBranch}`);
+
                 // Find fork point to have correct diff
                 baseSha = execSync(`git merge-base origin/${baseBranch} ${currentBranch}`).toString().trim();
             } else {
