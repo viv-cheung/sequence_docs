@@ -230,10 +230,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: node .github/scripts/translate.js
 
-      - name: Run formatting script
-        if: steps.detect.outputs.skip != 'true'
-        run: node .github/scripts/format-locales.js
-
       - name: Stage ALL changes (new, modified, deleted, renamed)
         if: steps.detect.outputs.skip != 'true'
         run: |
