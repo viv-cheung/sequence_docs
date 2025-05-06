@@ -113,11 +113,11 @@ const EXCLUDED_FILES = ['package.json', 'package-lock.json', 'node_modules', 'do
 
             let baseSha;
             if (isPR) {
-                // bring in the base branch so we can diff against it
+                // bring in the base branch locally
                 execSync(`git fetch --depth=1 origin ${baseBranch}:${baseBranch}`);
-
-                // Find fork point to have correct diff
-                baseSha = execSync(`git merge-base origin/${baseBranch} ${currentBranch}`).toString().trim();
+                
+                // HEAD is already at the PR tip
+                baseSha = execSync(`git merge-base ${baseBranch} HEAD`).toString().trim();
             } else {
                 // push on default branch: compare to the previous commit on that branch
                 baseSha = process.env.GITHUB_EVENT_BEFORE || execSync('git rev-parse HEAD^').toString().trim();
