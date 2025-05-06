@@ -95,82 +95,51 @@ const EXCLUDED_FILES = ['package.json', 'package-lock.json', 'node_modules'];
         }
     }
 
+    // Compares files changed in a PR (or files changed with a commit directly to default branch)
     async function getChangedFiles() {
         try {
-            const currentBranch = process.env.GITHUB_HEAD_REF || process.env.GITHUB_REF?.replace('refs/heads/', '');
-            console.log('Current branch:', currentBranch);
-
-            // First fetch all remote branches
-            execSync('git fetch --prune origin');
-            
-            // Get the parent branch using git rev-parse
-            let parentBranch;
-            try {
-                // Get all remote branches
-                const remoteBranches = execSync('git branch -r').toString()
-                    .split('\n')
-                    .map(b => b.trim())
-                    .filter(b => b && !b.includes(currentBranch))
-                    .map(b => b.replace('origin/', ''));
-
-                console.log('Available remote branches:', remoteBranches);
-
-                // Try to find the parent branch by looking at the merge base with each remote branch
-                for (const branch of remoteBranches) {
-                    try {
-                        const mergeBase = execSync(`git merge-base HEAD origin/${branch}`).toString().trim();
-                        if (mergeBase) {
-                            parentBranch = branch;
-                            break;
-                        }
-                    } catch (e) {
-                        // Skip this branch if merge-base fails
-                        continue;
-                    }
-                }
-
-                if (!parentBranch) {
-                    // If we still can't find a parent, try to get it from the pull request
-                    if (process.env.GITHUB_BASE_REF) {
-                        parentBranch = process.env.GITHUB_BASE_REF;
-                    } else {
-                        // Last resort: try to get the default branch
-                        const defaultBranch = await getDefaultBranch();
-                        parentBranch = defaultBranch;
-                    }
-                }
-            } catch (error) {
-                console.log('Could not determine parent branch, trying GITHUB_BASE_REF:', error.message);
-                // Try to get the base ref from GitHub environment
-                if (process.env.GITHUB_BASE_REF) {
-                    parentBranch = process.env.GITHUB_BASE_REF;
-                } else {
-                    // Last resort: try to get the default branch
-                    const defaultBranch = await getDefaultBranch();
-                    parentBranch = defaultBranch;
-                }
+            const isPR = !!process.env.GITHUB_BASE_REF;
+            const currentBranch = process.env.GITHUB_HEAD_REF // PR
+                || process.env.GITHUB_REF.replace('refs/heads/', ''); // Push to default branch
+            const defaultBranch = await getDefaultBranch();
+      
+            // Skip non‑PR pushes that are NOT on default branch
+            if (!isPR && currentBranch !== defaultBranch) {
+              return [];
             }
-            
-            console.log('Parent branch:', parentBranch);
-
-            // Fetch both branches
-            execSync(`git fetch origin ${parentBranch}:refs/remotes/origin/${parentBranch}`);
-            execSync(`git fetch origin ${currentBranch}:refs/remotes/origin/${currentBranch}`);
-            
-            console.log(`Getting changed files between ${parentBranch} and ${currentBranch}...`);
-            const output = execSync(`git diff --diff-filter=ACM --name-only origin/${parentBranch}...origin/${currentBranch}`).toString().trim();
-            const changedFiles = output.split('\n');
+      
+            // Figure out what we’re diffing against
+            const baseBranch = isPR ? process.env.GITHUB_BASE_REF : defaultBranch;
+        
+            // Always fetch the two refs we’ll compare
+            execSync(`git fetch --depth=1 origin ${baseBranch}:${baseBranch} ${currentBranch}:${currentBranch}`);
+      
+            let baseSha;
+            if (isPR) {
+                // Find fork point to have correct diff
+                baseSha = execSync(`git merge-base origin/${baseBranch} ${currentBranch}`).toString().trim();
+            } else {
+                // push on default branch: compare to the previous commit on that branch
+                baseSha = process.env.GITHUB_EVENT_BEFORE || execSync('git rev-parse HEAD^').toString().trim();
+            }
+        
+            console.log(`Diff base: ${baseBranch} @ ${baseSha}`);
+            console.log(`Head : ${currentBranch} @ HEAD`);
+        
+            const output = execSync(
+                `git diff --diff-filter=ACM --name-only ${baseSha} HEAD`
+            ).toString().trim();
+        
+            const changedFiles   = output ? output.split('\n') : [];
             const supportedFiles = [];
+        
             for (const file of changedFiles) {
-                const isSupported = await isSupportedFile(file);
-                if (isSupported) {
-                    supportedFiles.push(file);
-                }
+                if (await isSupportedFile(file)) supportedFiles.push(file);
             }
             console.log('Files sent for translation:', supportedFiles);
             return supportedFiles;
         } catch (error) {
-            console.log('Error getting changed files:', error.message);
+            console.error('Error getting changed files:', error.message);
             return [];
         }
     }
