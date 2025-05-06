@@ -1,12 +1,22 @@
 # ------------------------------------------------------------------------------
 # Frenglish Translation GitHub Action
 #
-# Core Workflow:
-# - Triggered on branch push, skipping merge commits.
-# - Fetches translation configuration (source/target languages).
-# - Detects renamed/deleted source files and mirrors these changes in target language directories.
-# - Runs scripts to translate and format files.
-# - Stages, commits, and pushes updates only if changes exist.
+# Workflow summary
+# - PRs - Internal: always translate the diff to the PR base.
+#     • Example 1: Open PR => feature_1 → main
+#     • Example 2: Open PR => feature_1_fix → feature_1
+#
+# - PRs - External: Only translate when external PR is merged
+#     • Example: merge PR => fork → main (from a contributor fork)
+#
+# - Default‑branch pushes: translate unless
+#     a) author is github‑actions[bot], or
+#     b) the push includes a commit with “chore(i18n): update translations”
+#     • Example: Hotfix push → main
+#
+# - Diff logic: compares to fork-point for PRs, or previous commit on main for direct pushes.
+# - If changes are found: handles file renames/deletes, runs translation and formatting,
+#   then commits and pushes a single update from the bot.
 # ------------------------------------------------------------------------------
 
 name: Frenglish Translation

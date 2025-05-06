@@ -3,7 +3,7 @@ const fs = require('fs').promises;
 const path = require('path');
 
 // ==================================================================================================
-// 🔧 REQUIRED CONFIGURATION – USERS MUST MODIFY THESE VALUES TO CONFIGURE THEIR TRANSLATION PATHS 🔧
+// 🔧 REQUIRED CONFIGURATION – YOU MUST MODIFY THESE VALUES TO CONFIGURE THEIR TRANSLATION PATHS 🔧
 // ==================================================================================================
 
 // Path to your original language files (e.g., English source content)
