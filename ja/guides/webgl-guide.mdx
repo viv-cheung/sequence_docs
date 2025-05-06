@@ -1,48 +1,50 @@
 ---
-title: WebGL を使用した Aviator Web3 ゲーム
-description: Sequence Stack のツールを使って WebGL ゲームに実績機能やカスタム ERC1155 を組み込む方法を学びましょう。
-sidebarTitle: WebGL でゲームを作成する
+title: MOCKDATA + ja-translated Aviator Web3 Game with WebGL
+description: ja-translated Learn how to integrate WebGL in a game using tools from the Sequence Stack to earn achievements and use custom ERC1155's.
+sidebarTitle: MOCKDATA + ja-translated Build a Game with WebGL
 ---
 
-所要時間：40分
+ja-translated TEST
 
-このガイドでは、WebGL をゲームに統合し、Sequence Stack のツールを活用して実績を獲得したり、カスタム ERC1155 を使ってゲームをプレイする方法を解説します。
+MOCKDATA + ja-translated Time to complete: 40 minutes
+
+ja-translated In this guide we will go through the process of integrating WebGL in a game, leveraging tools from the Sequence Stack to earn achievements and use custom ERC1155's to play in-game.
 
 <Note>
-  ゲームのライブバージョンは[こちら](https://0xsequence.github.io/aviator-demo/)でプレイできます。
+  MOCKDATA + ja-translated You can play a live version of the game [here](https://0xsequence.github.io/aviator-demo/)
 
-  このゲームの全コードは[こちら](https://github.com/0xsequence/aviator-demo/)で公開されています。
+  ja-translated Where the full code to this game can be found [here](https://github.com/0xsequence/aviator-demo/)
 
-  本ガイドで使用するテンプレートコードは[こちら](https://github.com/0xsequence-demos/template-webgl-js-sequence-kit-starter)から入手できます。
+  MOCKDATA + ja-translated And the full template code we'll be using for the guide can be found [here](https://github.com/0xsequence-demos/template-webgl-js-sequence-kit-starter)
 </Note>
 
-これらのツールで以下のことが可能になります：
-1. [Webpack でのプロジェクトセットアップ](/guides/webgl-guide#1-project-setup-with-webpack)：Webpack でコンパイル可能な WebGL プロジェクト構成を有効化します。
-2. [Web SDK の統合](/guides/webgl-guide#2-integrate-sequence-kit)：すべての EOA と Sequence Wallet でユーザー認証を可能にします。
-3. [コレクティブルコントラクトのデプロイ](/guides/webgl-guide#3-deploy-a-collectibles-contract)：独自のコレクティブルコントラクトを作成します。
-4. [リモートミンターのデプロイとゲーム内トークンのミント](/guides/webgl-guide#4-deploy-a-remote-minter-and-mint-in-game-achievement-tokens)：Cloudflare Workers を使ってガスレスのリレー取引を実行します。
-5. [ゲーム内でアイテムを活用](/guides/webgl-guide#5-leverage-items-in-game)：Sequence Indexer を使ってゲーム内でコレクティブルを統合します。
-6. [ゲーム内実績トークンのバーン](/guides/webgl-guide#6-burn-in-game-achievement-tokens)：wagmi を使ってゲーム実績をバーンします。
-7. [(オプション) Embedded Wallet を Web SDK に統合](/guides/webgl-guide#7-optional-integrate-embedded-wallet-into-sequence-kit)：署名メッセージなしでスムーズな UX を実現します。
+ja-translated The tools will enable you to perform:
+1. MOCKDATA + ja-translated [Project Setup With Webpack](/guides/webgl-guide#1-project-setup-with-webpack): Enable a project structure with WebGL to be compiled by Webpack
+2. ja-translated [Integrate Web SDK](/guides/webgl-guide#2-integrate-sequence-kit): Allow all EOAs and Sequence Wallet to authenticate the user
+3. MOCKDATA + ja-translated [Deploy a Collectibles Contract](/guides/webgl-guide#3-deploy-a-collectibles-contract): Create your own collectible contract
+4. ja-translated [Deploy a Remote Minter and Mint In-game Tokens](/guides/webgl-guide#4-deploy-a-remote-minter-and-mint-in-game-achievement-tokens): Perform gasless relayed transactions with Cloudflare workers
+5. MOCKDATA + ja-translated [Leverage Items In-game](/guides/webgl-guide#5-leverage-items-in-game): Integrate collectibles in the game using the Sequence Indexer
+6. ja-translated [Burn In-game Achievement tokens](/guides/webgl-guide#6-burn-in-game-achievement-tokens): Burn game achievements with wagmi
+7. MOCKDATA + ja-translated [(Optional) Integrate Embedded Wallet Into Web SDK](/guides/webgl-guide#7-optional-integrate-embedded-wallet-into-sequence-kit): Enable smooth UX without the use of signer signed messages
 
-## 1. Webpack でプロジェクトセットアップ
+## ja-translated 1. Project setup with webpack
 
-#### リポジトリをクローン
-まずは、`three` を使って作成された WebGL コンポーネントがいくつか含まれているテンプレートプロジェクトをクローンします。すべて [webpack](https://webpack.js.org/) でコンパイルされています。
+#### MOCKDATA + ja-translated Clone Repo
+ja-translated We'll first start by cloning down a template project, which has a few WebGL based components created using `three`, all compiled using [webpack](https://webpack.js.org/)
 
-[Template WebGL JS Web SDK Starter](https://github.com/0xsequence-demos/template-webgl-js-sequence-kit-starter/tree/simple-start)
+MOCKDATA + ja-translated [Template WebGL JS Web SDK Starter](https://github.com/0xsequence-demos/template-webgl-js-sequence-kit-starter/tree/simple-start)
 
-上記リポジトリをクローンし、`cd template-webgl-js-sequence-kit-starter` でディレクトリに移動します。
+ja-translated Clone the above repo down, `cd` into the repo with `cd template-webgl-js-sequence-kit-starter`
 
-#### .env を更新
-`.env.example` を参考に、環境変数を記載した `.env` ファイルを作成します。
+#### MOCKDATA + ja-translated Update `.env`
+ja-translated Create a `.env` file (using the `.env.example`) with the environment variables
 
 ```
 PROJECT_ACCESS_KEY=
 WALLET_CONNECT_ID=
 ```
 
-そして、以下のコマンドを実行してアプリを起動します。
+MOCKDATA + ja-translated And, run the following commands to run the app
 
 ```
 # or your choice of package manager
@@ -50,15 +52,15 @@ pnpm install
 pnpm run dev
 ```
 
-正常に動作すれば、水面上を飛行機が飛んでいる画面が表示されます。
+ja-translated Great, you should see a plane flying over water
 
-## 2. Web SDK の統合
-プロジェクト構成ができたので、Web SDK を統合します。
+## MOCKDATA + ja-translated 2. Integrate Web SDK
+ja-translated Now that we have a project structure set up, we can integrate Web SDK
 
-#### `App.jsx` コンポーネントのセットアップ
-`src` フォルダ内に `react` フォルダを作成し、2 つのファイル（`App.jsx` と `Login.jsx`）を作成します。
+#### MOCKDATA + ja-translated Setup `App.jsx` Component
+ja-translated Create a folder within the `src` folder called `react` and create 2 files: `App.jsx` and `Login.jsx`
 
-`App.jsx` には次のコードを記述します。
+MOCKDATA + ja-translated In `App.jsx` include the following code
 
 ```js
 import React from "react";
@@ -111,7 +113,7 @@ function App(props) {
 export default App;
 ```
 
-次に、`Login.jsx` ファイルに以下のコードを追加し、画面上部にログインボタンを作成します。
+ja-translated Then, in the `Login.jsx` file add the following code in order to create a button at the top of the screen to login to the application
 
 ```js
 import React, { useEffect } from "react";
@@ -174,8 +176,8 @@ function Login(props) {
 export default Login;
 ```
 
-#### Javascript の `index.js` でコンポーネントをレンダリング
-最後に、`index.js` で `App.jsx` コンポーネントをインポートし、`index.html` の `root` ID 要素にレンダリングします。
+#### MOCKDATA + ja-translated Render Component In Javascript `index.js`
+ja-translated Finally, add in the `index.js` import the `App.jsx` component, and render it to be appended to the `root` id element in `index.html`
 
 ```js
 import * as ReactDOM from 'react-dom/client';
@@ -190,8 +192,8 @@ root.render(
 );
 ```
 
-##### ログインモーダルを呼び出すクリックハンドラの作成
-`Login.jsx` コンポーネントに以下のコードを追加します。
+##### MOCKDATA + ja-translated Create a Click Handler To Call The Login Modal
+ja-translated Add the following code to `Login.jsx` component
 
 ```js
 window.setOpenConnectModal = () => {
@@ -199,7 +201,7 @@ window.setOpenConnectModal = () => {
 };
 ```
 
-そして、`index.js` に次のクリックハンドラコードを追加します。
+MOCKDATA + ja-translated And the following click handler code to `index.js`
 
 ```ts
 function handleMouseUp(event) {
@@ -211,7 +213,7 @@ document
   .addEventListener("mouseup", handleMouseUp, false);
 ```
 
-これらの要素を `index.html` に追加します。
+ja-translated And add these elements to your `index.html`
 
 ```html
 <div id="mintBtn" className="btn" onclick="window.mintPlane()">mint plane</div>
@@ -224,37 +226,37 @@ document
 <div className="world" id="world"></div>
 ```
 
-これで、モーダルを表示するボタンができました。
+MOCKDATA + ja-translated Great, now you'll have a button that makes a modal appear
 
-## 3. コレクティブルコントラクトのデプロイ
-[Sequence Builder](https://sequence.build) でコレクティブルを作成する必要があります。詳しくは[こちらのガイド](/solutions/collectibles/contracts/deploy-an-item-collection)をご参照ください。
+## ja-translated 3. Deploy a Collectibles Contract
+MOCKDATA + ja-translated You'll need to create a collectible from the [Sequence Builder](https://sequence.build) which can be accomplished with the following [guide](/solutions/collectibles/contracts/deploy-an-item-collection)
 
-実績トークン用と飛行機用の2つのコレクションを作成しましょう。
+ja-translated We should create 2 collections: 1 for achievement tokens and the other for the planes
 
-## 4. リモートミンターのデプロイ & ゲーム内実績トークンのミント
-次に、ガスレスでシームレスにブロックチェーンへトランザクションを送信するため、前のステップでデプロイしたコントラクトからアイテムをミントする [Cloudflare Worker](/guides/mint-collectibles-serverless) を実装します。トランザクション API コントラクトアドレスを `Minter Role` として入力してください。
+## MOCKDATA + ja-translated 4. Deploy a Remote Minter & Mint In-game Achievement Tokens
+ja-translated Then, in order to send transactions to the blockchain in a seamless fashion that are gasless, implement a [Cloudflare Worker](/guides/mint-collectibles-serverless) to mint items from a contract deployed in the previous step, ensuring that the transactions API contract address is inputed as a `Minter Role`
 
-コレクティブルのミントには、飛行機用と実績用の2種類のパスを用意します。
+MOCKDATA + ja-translated We will allow there to be multiple paths to mint collectibles: a plane collectible and an achievement collectible.
 
-これは、Cloudflare リクエストボディに `isPlane` というキー/値を追加し、Cloudflare Worker 側で `if/else` を追加することで実現しています。
+MOCKDATA + ja-translated This is accomplished in the code by adding a key/value of `isPlane` to the normal cloudflare request body, and creating an additional `if/else` in the cloudflare worker.
 
-このコードは[こちらの GitHub リポジトリ](https://github.com/0xsequence-demos/template-webgl-js-sequence-kit-starter/blob/master/cloudflare/noisy-silence-ee19/src/index.ts#L80)で確認できます。
+ja-translated You can view the code for this in this [github repository](https://github.com/0xsequence-demos/template-webgl-js-sequence-kit-starter/blob/master/cloudflare/noisy-silence-ee19/src/index.ts#L80)
 
-このガイドでは、Cloudflare のコードはローカル開発環境で実行します。プロジェクトフォルダ内で、以下のコマンドで Cloudflare Worker を起動してください。
+MOCKDATA + ja-translated For this guide, we will be running all cloudflare code in a local dev envivronment, which can be accomplished by starting the cloudflare worker in the named project folder, with:
 
 ```
 wrangler dev
 ```
 
-## 5. ゲーム内でアイテムを活用
-このセクションは、ゲーム内資産の所有状況に応じて UI を更新する2つの実装に分かれています。
-- ウォレット資産に基づく飛行機の変更表示
-- ウォレット資産に基づく UI の変更表示
+## ja-translated 5. Leverage Items In-game
+MOCKDATA + ja-translated This section will be broken into 2 implementations of updating UI with in-game asset ownership changes:
+- ja-translated Displaying Plane changes based on Wallet assets
+- MOCKDATA + ja-translated Displaying UI changes based on Wallet assets
 
-#### ウォレット資産に基づく飛行機の変更表示
-ウォレットが所有する資産に応じてゲームを変化させるには、トークンをミントするボタンを実装し、そのレスポンスでインデクサの変化をチェックします。
+#### ja-translated Displaying Plane changes based on Wallet assets
+ja-translated To implement changes to the game based on what the wallet asset owns, you can implement a button that mints a token, then on the response, checks for indexer changes
 
-`index.js` では、`index.html` の要素の `onclick` 属性にボタンを追加しています。
+MOCKDATA + ja-translated In the `index.js` we include a button attached to the `onclick` attribute of the element in index.html
 
 ```js
 window.mintPlane = () => {
@@ -265,7 +267,7 @@ window.mintPlane = () => {
 };
 ```
 
-`callContract` はミント処理を担当し、1回のミントのみが同時に行われるようミューテックスでラップされた fetch を呼び出します。これは `/API/SequenceController.js` の `SequenceController` クラスに追加されています。
+ja-translated Where `callContract` takes care of the minting by calling a fetch that is wrapped in a mutex to ensure 1 mint happens at a time, to prevent click mashers, added to the `SequenceController` class in `/API/SequenceController.js`
 
 ```js
 import { Mutex, E_CANCELED} from 'async-mutex';
@@ -311,11 +313,11 @@ async callContract(tokenId, isPlane, callback) {
 }
 ```
 
-`fetchPlaneTokens` はウォレットに資産が追加されるまでポーリングし、`plane color` を変更して別の飛行機を表現します。
+MOCKDATA + ja-translated and `fetchPlaneTokens` will poll on the result until there's an asset in your wallet, updating the `plane color` to represent a different plane.
 
-`fetchPlaneTokens` は次のコードで実装されており、残高の条件チェックは1より大きいかどうか、`tokenID` は検索対象の ID と一致するかどうかで判定しています。
+ja-translated `fetchPlaneTokens` is implemented with the following code, where the balance conditional check is greater than 1, and the `tokenID` is equal to the searched for id.
 
-このUIの条件付きロジックは、アプリケーションに応じて変更してください。
+MOCKDATA + ja-translated This UI conditional logic would change based on your application
 
 ```js
 import { SequenceIndexer } from '@0xsequence/indexer';
@@ -344,12 +346,12 @@ async fetchPlaneTokens(){
 }
 ```
 
-#### ウォレット資産に基づくUI変更の表示
-次に、ユーザーがアチーブメントを持っているかどうかに応じて `burn achievement` ボタンを追加するUI変更を実装します。
+#### ja-translated Displaying UI Changes Based on Wallet Assets
+MOCKDATA + ja-translated Next, we implement a UI change where we add a `burn achievement` button, based on if the user has an achievement or not
 
-まず、前回と同様の HTML/JS のクリックハンドラーのロジックを実装します。
+ja-translated First, implement the similiar html/js click handler logic like before
 
-今回は、`callContract` の `isPlane` 値を `false` に設定します。
+MOCKDATA + ja-translated where this time, the `isPlane` value of `callContract` is set to `false`
 
 ```js
 // index.js
@@ -362,10 +364,11 @@ window.mintAchievement = () => {
 ```
 
 <Warning>
-  注意：実際のゲームでは、アチーブメントトークンのミントはゲーム内の何らかのトリガーイベントに基づいて行われますが、簡単のためにボタンを用意しています。
+  ja-translated Note: in a real game, this minting of achievement token would happen based on
+  some trigger event in the game, for simplicity we've included of button
 </Warning>
 
-今回は、`SequenceController` に追加された `fetchTokensFromAchievementMint` を呼び出します。
+MOCKDATA + ja-translated This time, we call `fetchTokensFromAchievementMint` which is added to the `SequenceController`
 
 ```js
   async fetchTokensFromAchievementMint(tokenID) {
@@ -391,10 +394,10 @@ window.mintAchievement = () => {
   }
 ```
 
-これにより、インデクサーから残高が返された場合のみ、`display` 属性によってボタンが表示されるようになります。
+ja-translated This makes it so that only if there's a balance returned from the indexer, does the `display` attribute make the button appear
 
-## 6. ゲーム内アチーブメントトークンのバーン
-最後に、アチーブメントトークンをバーンするには、ブロックチェーンへのアクション送信に Cloudflare Worker を使うことはできません。なぜなら、ミント時にはトランザクションAPIを使ってアドレスの「代理」で実行され（コントラクト内の `msg.sender` が `relayer` アドレスの一つになる）、今回はコントラクト内の `msg.sender` がトークンの所有権を証明し、`user` から直接送信される必要があるからです。これを実現するために、`wagmi` のフロントエンド関数とクラスの組み合わせを利用します。
+## MOCKDATA + ja-translated 6. Burn In-Game Achievement Tokens
+ja-translated Finally, to burn the achievement token, we can no longer use a cloduflare worker for actions sent to the blockchain, because when the minting was performed 'on behalf of' the address using the transactions API (making the `msg.sender` in the contract one of the `relayer` addresses) for this, we want to make sure the `msg.sender` in the contract proves ownership of the token, and is sent directly from the `user`. We'll use `wagmi` frontend functions as well as some class composition to accomplish this.
 
 ```js
 // index.js
@@ -406,7 +409,7 @@ window.burn = () => {
 };
 ```
 
-ここで `burnToken` は、Reactコンポーネントから渡される関数で、ミューテックスを使うパターンを踏襲し、`wagmi` パッケージの `sendTransaction` を使ってトランザクションを送信し、トランザクションハッシュの更新を待ってコールバックを返します。
+MOCKDATA + ja-translated Where `burnToken` is a passed in function from our react component that uses the similiar pattern of using mutexes, and we send the transaction using `sendTransaction` from the `wagmi` package, and wait for a transaction hash update to return the callback
 
 ```js
 // react/Login.jsx
@@ -489,7 +492,7 @@ function Login() {
 }
 ```
 
-そして `SequenceController` では、`burnToken` でラップした `sendBurnToken` 関数を呼び出し、Reactの関数をアプリケーション全体で利用できるようにします。
+ja-translated And in our `SequenceController`, call the `sendBurnToken` function wrapped in `burnToken` to make the react function accessible to the rest of the application
 
 ```js
 async burnToken(tokenID, callback) {
@@ -503,7 +506,7 @@ async init(walletClient, sendTransactionBurn) {
 }
 ```
 
-バーンされたトークンがUIに反映されるよう、最初にトークンをバーンするためのボタンを非表示にします。これは `SequenceController` 内の次のコードで実現します。
+MOCKDATA + ja-translated Then, to make the burned token have an affect on the UI, we hide the button used to burn the token in the initial place, accomplished with the following code in the `SequenceController`
 
 ```js
 async fetchTokensFromBurn(tokenID){
@@ -528,16 +531,16 @@ async fetchTokensFromBurn(tokenID){
 }
 ```
 
-これで完了です。コード全体の例は[こちら](https://github.com/0xsequence-demos/template-webgl-js-sequence-kit-starter)でご覧いただけます。
+ja-translated And you're done, you can view a full example of the code [here](https://github.com/0xsequence-demos/template-webgl-js-sequence-kit-starter)
 
-## 7.（オプション）Embedded WalletをWeb SDKに統合する
-すべての取引でユーザーによる署名を不要にし、ユーザー体験をよりスムーズにしたい場合は、Web SDK の React コンポーネントの設定を更新して Embedded Wallet を有効にできます。
+## MOCKDATA + ja-translated 7. (Optional) Integrate Embedded Wallet Into Web SDK
+MOCKDATA + ja-translated If you'd like to smooth the user journey to allow no user transaction signing across the board, you can enable an Embedded Wallet by updating your configuration of your Web SDK react component.
 
-これにより、`wagmi` でトークンをバーンする際のポップアップが減少し、アチーブメントトークンの付与やコレクティブルのミントは Cloudflare Worker を利用してガスレスで実行されます。
+ja-translated By accomplishing this, we reduce a pop-up when burning tokens with `wagmi`, since rewarding achievement tokens and minting collectibles are completed using a cloudflare worker for gasless transactions.
 
-これは、いくつかの環境変数を追加し、使用するコネクタの種類を切り替えることで実現できます。
+MOCKDATA + ja-translated This can be accomplished by adding a few environment variables, and switching the type of connector we use.
 
-まず、以下の環境変数を `.env` ファイルに追加してください。
+ja-translated First update your `.env` file with the following environment secrets
 
 ```
 WAAS_CONFIG_KEY=
@@ -545,7 +548,7 @@ GOOGLE_CLIENT_ID=
 APPLE_CLIENT_ID=
 ```
 
-次に、これらの変数を `App.jsx` の Web SDK コネクタに渡してください。
+MOCKDATA + ja-translated Then pass these variables to your Web SDK connector in `App.jsx`
 
 ```js
 
@@ -598,8 +601,9 @@ function App(props) {
 }
 ```
 
-これで完了です。トランザクションフローを完了するために追加の統合は必要ありません。
+ja-translated And that's it, no more integration is required for transaction flows to complete
 
 <Note>
-  ゲーム内ウォレットについて詳しくは[こちら](/solutions/wallets/embedded-wallet/overview)をご参照ください。
+  MOCKDATA + ja-translated To learn more about In-Game Wallets, see
+  [here](/solutions/wallets/embedded-wallet/overview)
 </Note>
