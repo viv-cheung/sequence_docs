@@ -1,21 +1,16 @@
 ---
-
-title: "Using your Embedded Wallet"
-description: The content provides detailed instructions on using the Sequence WaaS SDK for wallet management and transactions.
-sidebarTitle: Use Wallets
+title: MOCKDATA + ja-translated Using your Embedded Wallet
+description: ja-translated The content provides detailed instructions on using the Sequence WaaS SDK for wallet management and transactions.
+sidebarTitle: MOCKDATA + ja-translated Use Wallets
 ---
 
+ja-translated Once the user has been authenticated, you can now utilize common web3 functions to interact with the blockchain - completely seamlessly.
+- MOCKDATA + ja-translated [**Get Wallet Address**](/sdk/headless-wallet/use-wallets#get-wallet-address): Access the wallet linked to the user's authenticated account. This wallet serves as the gateway to all account functions.
+- ja-translated [**Sign Messages**](/sdk/headless-wallet/use-wallets#sign-messages): Signing a message using the embedded wallet.
+- MOCKDATA + ja-translated [**Send Transactions**](/sdk/headless-wallet/use-wallets#send-transactions): After a user has been authenticated, use the WaaS SDK to send transactions using crafted EVM calldata.
 
-Once the user has been authenticated, you can now utilize common web3 functions to interact with the blockchain - completely seamlessly.
-
-- [**Get Wallet Address**](/sdk/headless-wallet/use-wallets#get-wallet-address): Access the wallet linked to the user's authenticated account. This wallet serves as the gateway to all account functions.
-- [**Sign Messages**](/sdk/headless-wallet/use-wallets#sign-messages): Signing a message using the embedded wallet.
-- [**Send Transactions**](/sdk/headless-wallet/use-wallets#send-transactions): After a user has been authenticated, use the WaaS SDK to send transactions using crafted EVM calldata.
-
-
-### Get User Wallet Address
-
-Each user's wallet address is unique, cannot be changed, and is 42 characters long, starting with `0x`:
+### ja-translated Get User Wallet Address
+MOCKDATA + ja-translated Each user's wallet address is unique, cannot be changed, and is 42 characters long, starting with `0x`:
 
 ```ts
 import { SequenceWaaS } from "@0xsequence/waas";
@@ -40,9 +35,8 @@ console.log(address)
 0xE4b10c53aa75E19E088cfDD0cff7D46a0E4206F0
 ```
 
-### Sign Messages
-
-Wallets can sign messages, which can be validated both onchain and offchain:
+### ja-translated Sign Messages
+MOCKDATA + ja-translated Wallets can sign messages, which can be validated both onchain and offchain:
 
 ```ts
 import { SequenceWaaS } from "@0xsequence/waas";
@@ -75,23 +69,21 @@ console.log(signature);
 }
 ```
 
-## Send Transactions
-
-All wallets can send transactions right after creation. No extra steps are required to create the wallet, as all users have a wallet by default.
+## ja-translated Send Transactions
+MOCKDATA + ja-translated All wallets can send transactions right after creation. No extra steps are required to create the wallet, as all users have a wallet by default.
 
 <Note>
-At any point when sending a transaction that requires a fee on a network, you can follow the Fee Options walkthrough for how to send a fee object alongside your transaction or cover gas fees for your users [found here](/sdk/headless-wallet/fee-options).
+  ja-translated At any point when sending a transaction that requires a fee on a network, you can follow the Fee Options walkthrough for how to send a fee object alongside your transaction or cover gas fees for your users [found here](/sdk/headless-wallet/fee-options).
 </Note>
 
+### MOCKDATA + ja-translated Raw transaction
 
-### Raw transaction
-
-- **Immediate Transactions:** Wallets are ready to send transactions immediately upon creation.
-- **Raw Transactions:** Specify transaction parameters such as recipient, value, and data. Gas limits and nonce are managed automatically.
-- **Network Requirements:** Transactions require specifying a **`chainId`** for the intended network., for example `1` for Ethereum mainnet, `42161` for Arbitrum, etc.
+- ja-translated **Immediate Transactions:** Wallets are ready to send transactions immediately upon creation.
+- MOCKDATA + ja-translated **Raw Transactions:** Specify transaction parameters such as recipient, value, and data. Gas limits and nonce are managed automatically.
+- ja-translated **Network Requirements:** Transactions require specifying a **`chainId`** for the intended network., for example `1` for Ethereum mainnet, `42161` for Arbitrum, etc.
 
 <Note>
-Error Handling: Use `isSentTransactionResponse` to verify transactions before execution to prevent failures. WaaS checks that a transaction won't fail before it runs. If it does fail, you'll get an error message instead of a transaction receipt. See more in [transaction receipts](/sdk/headless-wallet/transaction-receipts).
+  MOCKDATA + ja-translated Error Handling: Use `isSentTransactionResponse` to verify transactions before execution to prevent failures. WaaS checks that a transaction won't fail before it runs. If it does fail, you'll get an error message instead of a transaction receipt. See more in [transaction receipts](/sdk/headless-wallet/transaction-receipts).
 </Note>
 
 ```ts
@@ -137,9 +129,8 @@ if (isSentTransactionResponse(tx)) {
 }
 ```
 
-### Send ERC20 Tokens
-
-Helper methods are available for common operations, such as sending ERC20 tokens. This automatically handles the `data` field of the transaction:
+### ja-translated Send ERC20 Tokens
+MOCKDATA + ja-translated Helper methods are available for common operations, such as sending ERC20 tokens. This automatically handles the `data` field of the transaction:
 
 ```ts
 import { Sequence, isSentTransactionResponse } from "@0xsequence/waas";
@@ -181,8 +172,9 @@ if (isSentTransactionResponse(tx)) {
 }
 ```
 
-### Send ERC721 Tokens
-Sending ERC721 tokens  has a helper method. This automatically handles the `data` field of the transaction:
+### ja-translated Send ERC721 Tokens
+MOCKDATA + ja-translated Sending ERC721 tokens  has a helper method. This automatically handles the `data` field of the transaction:
+
 ```ts
 import { Sequence, isSentTransactionResponse } from "@0xsequence/waas";
 
@@ -222,9 +214,8 @@ if (isSentTransactionResponse(tx)) {
 }
 ```
 
-### Send ERC1155 Tokens
-
-Sending ERC1155 tokens is also supported:
+### ja-translated Send ERC1155 Tokens
+MOCKDATA + ja-translated Sending ERC1155 tokens is also supported:
 
 ```ts
 import { Sequence, isSentTransactionResponse } from "@0xsequence/waas";
@@ -255,15 +246,13 @@ const tx = await sequence.sendERC1155({
 });
 ```
 
-### Call any Contract
+### ja-translated Call any Contract
+MOCKDATA + ja-translated Use **`callContract`** to interact with any contract method, either through a function signature or ABI, supporting both named and positional arguments.
 
-Use **`callContract`** to interact with any contract method, either through a function signature or ABI, supporting both named and positional arguments.
+### ja-translated Function Signature
+MOCKDATA + ja-translated Providing a function signature is the easiest way to call a contract method, as it doesn't require an ABI. The function signature can be provided with named parameters or positional parameters.
 
-### Function Signature
-
-Providing a function signature is the easiest way to call a contract method, as it doesn't require an ABI. The function signature can be provided with named parameters or positional parameters.
-
-##### Named Arguments
+##### ja-translated Named Arguments
 
 ```ts
 const tx = await sequence.callContract({
@@ -278,9 +267,8 @@ const tx = await sequence.callContract({
 });
 ```
 
-##### Positional Arguments
-
-Notice that passing a named function signature with positional arguments is allowed.
+##### MOCKDATA + ja-translated Positional Arguments
+MOCKDATA + ja-translated Notice that passing a named function signature with positional arguments is allowed.
 
 ```ts
 const tx = await sequence.callContract({
@@ -292,9 +280,8 @@ const tx = await sequence.callContract({
 });
 ```
 
-#### ABI
-
-Providing an ABI is more verbose, but allows for more flexibility, as a single ABI can be used to call multiple methods. ABIs support named arguments and positional arguments.
+#### ja-translated ABI
+MOCKDATA + ja-translated Providing an ABI is more verbose, but allows for more flexibility, as a single ABI can be used to call multiple methods. ABIs support named arguments and positional arguments.
 
 ```ts
 const abi = `[{"constant":true,"inputs":[],"name":"name","outputs":[{"name":"","type":"string"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"_spender","type":"address"},{"name":"_value","type":"uint256"}],"name":"approve","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"totalSupply","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"_from","type":"address"},{"name":"_to","type":"address"},{"name":"_value","type":"uint256"}],"name":"transferFrom","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"decimals","outputs":[{"name":"","type":"uint8"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"_owner","type":"address"}],"name":"balanceOf","outputs":[{"name":"balance","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"symbol","outputs":[{"name":"","type":"string"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"_to","type":"address"},{"name":"_value","type":"uint256"}],"name":"transfer","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[{"name":"_owner","type":"address"},{"name":"_spender","type":"address"}],"name":"allowance","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"payable":true,"stateMutability":"payable","type":"fallback"},{"anonymous":false,"inputs":[{"indexed":true,"name":"owner","type":"address"},{"indexed":true,"name":"spender","type":"address"},{"indexed":false,"name":"value","type":"uint256"}],"name":"Approval","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"from","type":"address"},{"indexed":true,"name":"to","type":"address"},{"indexed":false,"name":"value","type":"uint256"}],"name":"Transfer","type":"event"}]`;
@@ -312,10 +299,9 @@ const tx = await sequence.callContract({
 ```
 
 <Warning>
-**Transaction Permissions:**
+  ja-translated **Transaction Permissions:**
 
-- **Email Accounts:** Transactions are enabled after the current session is confirmed via a link sent to the email or phone.
-- **Social Login Accounts:** Accounts like Google and Facebook can transact immediately after sign-in.
-- For more details, see [session management validation](/sdk/headless-wallet/manage-sessions#session-management).
-
+  - MOCKDATA + ja-translated **Email Accounts:** Transactions are enabled after the current session is confirmed via a link sent to the email or phone.
+  - ja-translated **Social Login Accounts:** Accounts like Google and Facebook can transact immediately after sign-in.
+  - MOCKDATA + ja-translated For more details, see [session management validation](/sdk/headless-wallet/manage-sessions#session-management).
 </Warning>
