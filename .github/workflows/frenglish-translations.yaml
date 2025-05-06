@@ -259,9 +259,11 @@ jobs:
           fi
 
       - name: Push changes
-        # Only run if the commit step actually committed something
+        # run only when we actually committed something
         if: steps.detect.outputs.skip != 'true' && steps.commit.outputs.changes_committed == 'true'
+        env:
+          # use head branch for PRs, ref_name for normal pushes
+          TARGET_REF: ${{ github.event_name == 'pull_request' && github.event.pull_request.head.ref || github.ref_name }}
         run: |
-          echo "Pushing changes to origin/${{ github.ref_name }}..."
-          # Use --atomic for safety if supported, otherwise standard push
-          git push origin HEAD:${{ github.ref_name }}
+          echo "Pushing changes to origin/${TARGET_REF}..."
+          git push origin HEAD:${TARGET_REF}
