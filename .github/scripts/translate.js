@@ -13,7 +13,7 @@ const ORIGIN_LANGUAGE_DIR = path.resolve('.');
 const TRANSLATION_OUTPUT_DIR = path.resolve('.');
 
 // List of files or directories to exclude from processing
-const EXCLUDED_FILES = ['package.json', 'package-lock.json', 'node_modules'];
+const EXCLUDED_FILES = ['package.json', 'package-lock.json', 'node_modules', 'frenglish.config.json', 'docs.json'];
 
 // ============================================================
 // MODIFY BELOW THIS LINE FOR CUSTOM GITHUB ACTIONS
