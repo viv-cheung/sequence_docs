@@ -1,16 +1,16 @@
 ---
-title: Databeat連携ガイド
-description: SequenceアプリケーションでDatabeatトラッキングを利用する方法を説明します。
+title: ja-translated Databeat Integration Guide
+description: MOCKDATA + ja-translated Learn how to use Databeat tracking with Sequence applications
 ---
 
-# Databeat連携
-このガイドでは、すでにSequenceドキュメントサイトに統合されているDatabeatトラッキングの使い方を説明します。
+# ja-translated Databeat Integration
+MOCKDATA + ja-translated This guide explains how to use Databeat tracking, which is already integrated into the Sequence documentation site.
 
-## 自動トラッキング
-SequenceドキュメントはDatabeatを使ってページビューを自動的にトラッキングしています。このトラッキングはバニラJavaScriptで実装されており、完全にクライアントサイドで動作します。
+## ja-translated Automatic Tracking
+MOCKDATA + ja-translated The Sequence docs automatically track all page views using Databeat. This tracking is implemented using vanilla JavaScript and is completely client-side.
 
-## 手動イベントトラッキング
-Databeatを使って、独自アプリケーション内でカスタムイベントを手動でトラッキングすることもできます。以下の手順で実施できます。
+## ja-translated Manual Event Tracking
+MOCKDATA + ja-translated You can also manually track custom events using Databeat in your own applications. Here's how to do it:
 
 ```javascript
 // Track a custom event
@@ -33,24 +33,24 @@ databeat.trackView({
 databeat.session('user-123', { hash: true, agentSalt: true });
 ```
 
-## 実装の詳細
-Databeat連携はバニラJavaScriptで実装されています。仕組みは以下の通りです：
-1. Databeatスクリプトを非同期で読み込みます。
-2. ホストエンドポイントと認証トークンで初期化します。
-3. ページビューを自動的にトラッキングします。
-4. SPAナビゲーションイベントのリスナーを設定します。
+## ja-translated Implementation Details
+MOCKDATA + ja-translated Our Databeat integration is implemented using vanilla JavaScript. Here's how it works:
+1. ja-translated We load the Databeat script asynchronously
+2. MOCKDATA + ja-translated We initialize it with our host endpoint and auth token
+3. ja-translated We automatically track page views
+4. MOCKDATA + ja-translated We set up listeners for SPA navigation events
 
-[databeat-tracker.js](/snippets/databeat-tracker.js) ファイルで実装全体を見ることができます。
+ja-translated You can see the full implementation in the [databeat-tracker.js](/snippets/databeat-tracker.js) file.
 
-## ご自身のアプリケーションでDatabeatを利用するには
-Databeatをアプリケーションに統合するには：
-1. パッケージをインストールします：
+## MOCKDATA + ja-translated Using Databeat in Your Application
+ja-translated To integrate Databeat into your own application:
+1. MOCKDATA + ja-translated Install the package:
 
 ```bash
 npm install @databeat/tracker@0.9.3
 ```
 
-2. JavaScriptで初期化します：
+2. ja-translated Initialize in your JavaScript:
 
 ```javascript
 // Using ES modules
@@ -84,7 +84,7 @@ databeat.track({
 });
 ```
 
-3. ビルドツールなしのバニラJS（CDN利用）の場合：
+3. MOCKDATA + ja-translated For vanilla JS without build tools (using CDN):
 
 ```html
 <!-- Option 1: Using unpkg CDN -->
@@ -111,8 +111,8 @@ databeat.track({
 </script>
 ```
 
-## カスタムイベントのトラッキング
-アプリケーションに関連する任意のカスタムイベントをトラッキングできます：
+## ja-translated Tracking Custom Events
+MOCKDATA + ja-translated You can track any custom events that are relevant to your application:
 
 ```javascript
 // Track game events
@@ -158,8 +158,8 @@ databeat.track({
 });
 ```
 
-## セッション管理
-Databeatはユーザーセッションの管理も可能です：
+## ja-translated Session Management
+MOCKDATA + ja-translated Databeat allows you to manage user sessions:
 
 ```javascript
 // Set a custom session ID (will be hashed for privacy)
@@ -181,12 +181,12 @@ const sessionId = databeat.getSessionId();
 const isAnon = databeat.isAnon();
 ```
 
-## イベントの手動フラッシュ
-Databeatはイベントをバッチ処理して定期的に送信しますが、イベントキューを手動でフラッシュすることもできます：
+## ja-translated Manually Flushing Events
+MOCKDATA + ja-translated Databeat batches events and sends them periodically, but you can manually flush the event queue:
 
 ```javascript
 // Manually flush the event queue
 await databeat.flush();
 ```
 
-これにより、開発中にイベントが正しくトラッキングされているか確認できます。
+ja-translated This will help you verify that events are being tracked correctly during development.
